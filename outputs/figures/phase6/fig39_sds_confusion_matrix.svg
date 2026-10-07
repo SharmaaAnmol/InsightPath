@@ -6,11 +6,11 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-07T18:16:21.203461</dc:date>
+    <dc:date>2026-10-07T18:21:50.797647</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
-      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+      <dc:title>Matplotlib v3.11.0, https://matplotlib.org/</dc:title>
      </cc:Agent>
     </dc:creator>
    </cc:Work>
@@ -42,7 +42,7 @@ z
      <g id="line2d_1">
       <path d="M 139.40978 313.800293 
 L 139.40978 27.72 
-" clip-path="url(#p6bcb1e5ba5)" style="fill: none; stroke: #cccccc; stroke-linecap: round"/>
+" clip-path="url(#p7db813f30f)" style="fill: none; stroke: #cccccc; stroke-linecap: round"/>
      </g>
      <g id="text_1">
       <!-- Low Success -->
@@ -263,7 +263,7 @@ z
      <g id="line2d_2">
       <path d="M 325.829927 313.800293 
 L 325.829927 27.72 
-" clip-path="url(#p6bcb1e5ba5)" style="fill: none; stroke: #cccccc; stroke-linecap: round"/>
+" clip-path="url(#p7db813f30f)" style="fill: none; stroke: #cccccc; stroke-linecap: round"/>
      </g>
      <g id="text_2">
       <!-- High Success -->
@@ -560,7 +560,7 @@ z
      <g id="line2d_3">
       <path d="M 46.199707 99.240073 
 L 419.04 99.240073 
-" clip-path="url(#p6bcb1e5ba5)" style="fill: none; stroke: #cccccc; stroke-linecap: round"/>
+" clip-path="url(#p7db813f30f)" style="fill: none; stroke: #cccccc; stroke-linecap: round"/>
      </g>
      <g id="text_4">
       <!-- Low Success -->
@@ -583,7 +583,7 @@ L 419.04 99.240073
      <g id="line2d_4">
       <path d="M 46.199707 242.28022 
 L 419.04 242.28022 
-" clip-path="url(#p6bcb1e5ba5)" style="fill: none; stroke: #cccccc; stroke-linecap: round"/>
+" clip-path="url(#p7db813f30f)" style="fill: none; stroke: #cccccc; stroke-linecap: round"/>
      </g>
      <g id="text_5">
       <!-- High Success -->
@@ -638,25 +638,25 @@ L 232.619854 27.72
 L 232.619854 170.760146 
 L 46.199707 170.760146 
 L 46.199707 27.72 
-" clip-path="url(#p6bcb1e5ba5)" style="fill: #135fa7"/>
+" clip-path="url(#p7db813f30f)" style="fill: #135fa7"/>
     <path d="M 232.619854 27.72 
 L 419.04 27.72 
 L 419.04 170.760146 
 L 232.619854 170.760146 
 L 232.619854 27.72 
-" clip-path="url(#p6bcb1e5ba5)" style="fill: #eaf2fb"/>
+" clip-path="url(#p7db813f30f)" style="fill: #eaf2fb"/>
     <path d="M 46.199707 170.760146 
 L 232.619854 170.760146 
 L 232.619854 313.800293 
 L 46.199707 313.800293 
 L 46.199707 170.760146 
-" clip-path="url(#p6bcb1e5ba5)" style="fill: #f7fbff"/>
+" clip-path="url(#p7db813f30f)" style="fill: #f7fbff"/>
     <path d="M 232.619854 170.760146 
 L 419.04 170.760146 
 L 419.04 313.800293 
 L 232.619854 313.800293 
 L 232.619854 170.760146 
-" clip-path="url(#p6bcb1e5ba5)" style="fill: #08306b"/>
+" clip-path="url(#p7db813f30f)" style="fill: #08306b"/>
    </g>
    <g id="text_7">
     <!-- 337 -->
@@ -1527,7 +1527,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p6bcb1e5ba5">
+  <clipPath id="p7db813f30f">
    <rect x="46.199707" y="27.72" width="372.840293" height="286.080293"/>
   </clipPath>
  </defs>
