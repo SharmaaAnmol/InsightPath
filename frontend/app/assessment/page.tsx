@@ -29,6 +29,7 @@ import {
   AssessmentRequest,
   AssessmentResponse,
 } from "@/lib/api";
+import { useAuth } from "@/context/AuthContext";
 
 const CAREER_GOALS = [
   "Data Scientist",
@@ -113,10 +114,12 @@ export default function AssessmentPage() {
   });
 
   // Submission & Result State
+  const { user, saveAssessment } = useAuth();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<AssessmentResponse | null>(null);
   const [resultSource, setResultSource] = useState<"live_backend" | "client_fallback" | null>(null);
+  const [savedToProfile, setSavedToProfile] = useState<boolean>(false);
 
   const applyPreset = (preset: (typeof PRESETS)[0]) => {
     setCareerGoal(preset.goal);
@@ -140,12 +143,14 @@ export default function AssessmentPage() {
     });
     setResult(null);
     setError(null);
+    setSavedToProfile(false);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
+    setSavedToProfile(false);
 
     // Validate bounds
     const vals = Object.values(scores);
@@ -169,6 +174,37 @@ export default function AssessmentPage() {
       const { data, source } = await submitAssessment(payload);
       setResult(data);
       setResultSource(source);
+
+      // Auto-save to Supabase if authenticated
+      if (user) {
+        try {
+          const scoresPayload = (data.radar_data || []).map((r) => ({
+            skill_key: r.skill_key,
+            skill_label: r.skill_name,
+            user_score: Number(r.user_score),
+            cohort_benchmark: Number(r.cohort_benchmark),
+            gap: Number((r.user_score - r.cohort_benchmark).toFixed(2)),
+            importance_rank: Number(r.importance_rank),
+          }));
+
+          await saveAssessment(
+            {
+              career_goal: data.career_goal,
+              experience_level: data.experience_level,
+              model_signal: data.model_signal,
+              model_probability: data.model_probability,
+              quadrant_assigned: data.quadrant_assigned,
+              quadrant_title: data.quadrant_title,
+              recommendation_summary: data.career_readiness_summary,
+            },
+            scoresPayload
+          );
+          setSavedToProfile(true);
+        } catch (saveErr) {
+          console.warn("Could not auto-save to user profile:", saveErr);
+        }
+      }
+
       // Scroll to top of results smoothly
       window.scrollTo({ top: 120, behavior: "smooth" });
     } catch (err: unknown) {
@@ -576,6 +612,39 @@ export default function AssessmentPage() {
                   </Button>
                 </div>
               </div>
+
+              {/* Profile Persistence Status */}
+              {savedToProfile ? (
+                <div className="p-3.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 dark:bg-emerald-500/5 text-emerald-800 dark:text-emerald-300 text-xs flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                    <span>
+                      Diagnostic scores successfully saved to your persistent profile &amp; roadmap history.
+                    </span>
+                  </div>
+                  <Link
+                    href="/profile"
+                    className="text-xs font-semibold underline text-emerald-700 dark:text-emerald-300 hover:text-emerald-900"
+                  >
+                    View in Profile →
+                  </Link>
+                </div>
+              ) : !user ? (
+                <div className="p-3.5 rounded-xl border border-indigo-500/20 bg-indigo-500/5 text-slate-700 dark:text-slate-300 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <div className="flex items-center space-x-2">
+                    <Sparkles className="w-4 h-4 text-indigo-500 shrink-0" />
+                    <span>
+                      Viewing evaluation in guest mode. Create a profile to save diagnostic history and calibrate roadmap milestones.
+                    </span>
+                  </div>
+                  <Link
+                    href="/signup"
+                    className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline shrink-0"
+                  >
+                    Create Profile & Save →
+                  </Link>
+                </div>
+              ) : null}
 
               {/* 1. Career Readiness Summary & Model Signal */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

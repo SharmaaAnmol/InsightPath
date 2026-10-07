@@ -16,6 +16,8 @@ import {
   AlertTriangle,
   Briefcase,
   Users,
+  User,
+  Lock,
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Sidebar } from "@/components/Sidebar";
@@ -24,6 +26,8 @@ import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ProgressBar } from "@/components/ProgressBar";
+import { useAuth } from "@/context/AuthContext";
 import { BarChartVisual } from "@/components/BarChartVisual";
 import { RegressionChartVisual } from "@/components/RegressionChartVisual";
 import { ModelComparisonVisual } from "@/components/ModelComparisonVisual";
@@ -67,6 +71,7 @@ import {
 } from "@/lib/api";
 
 export default function DashboardPage() {
+  const { user, profile, careerGoal, assessments, roadmapItems } = useAuth();
   const [activeTab, setActiveTab] = useState<"market" | "skills" | "jds" | "sds" | "framework">("market");
   const [selectedEvidence, setSelectedEvidence] = useState<EvidenceDetail | null>(null);
   const [isEvidenceOpen, setIsEvidenceOpen] = useState(false);
@@ -190,6 +195,89 @@ export default function DashboardPage() {
               </Link>
             </div>
           </div>
+
+          {/* Authenticated User Trajectory Card / Sign-in Banner */}
+          {user ? (
+            <div className="p-5 rounded-2xl bg-gradient-to-r from-teal-500/10 via-indigo-500/10 to-transparent border border-teal-500/20 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-5">
+              <div className="space-y-1.5">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span className="text-xs font-semibold uppercase tracking-wider text-teal-700 dark:text-teal-300">
+                    Active Career Trajectory
+                  </span>
+                  <Badge variant="outline" className="border-teal-500/30 text-teal-600 dark:text-teal-400 text-[10px]">
+                    {careerGoal?.target_role || "Data Scientist"}
+                  </Badge>
+                </div>
+                <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
+                  Welcome back, {profile?.full_name || user.email?.split("@")[0]}
+                </h3>
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  {assessments.length > 0 ? (
+                    <>
+                      Latest Diagnostic: <strong className="text-slate-800 dark:text-slate-200">{assessments[0].quadrant_assigned} • {assessments[0].quadrant_title}</strong> ({(assessments[0].model_probability * 100).toFixed(1)}% alignment)
+                    </>
+                  ) : (
+                    "No diagnostic runs recorded yet. Take the interactive assessment to calibrate your baseline."
+                  )}
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 shrink-0">
+                <div className="w-44 space-y-1">
+                  <div className="flex justify-between text-[11px] text-slate-500">
+                    <span>Roadmap Progress</span>
+                    <span className="font-semibold text-teal-600 dark:text-teal-400">
+                      {roadmapItems.filter((i) => i.status === "completed").length}/{roadmapItems.length}
+                    </span>
+                  </div>
+                  <ProgressBar
+                    value={
+                      roadmapItems.length
+                        ? Math.round(
+                            (roadmapItems.filter((i) => i.status === "completed").length /
+                              roadmapItems.length) *
+                              100
+                          )
+                        : 0
+                    }
+                    size="sm"
+                    showPercent={false}
+                  />
+                </div>
+
+                <Link href="/profile">
+                  <Button size="sm" variant="outline" className="text-xs h-8 gap-1.5 border-teal-500/30">
+                    <User className="w-3.5 h-3.5 text-teal-500" />
+                    <span>View Profile</span>
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          ) : (
+            <div className="p-4 rounded-xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-900/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+              <div className="flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center shrink-0">
+                  <Lock className="w-3.5 h-3.5" />
+                </div>
+                <span className="text-slate-600 dark:text-slate-300">
+                  Protected Telemetry: Sign in with your researcher credentials to access persistent career profiles, assessment history, and interactive roadmaps.
+                </span>
+              </div>
+              <div className="flex items-center gap-2 shrink-0">
+                <Link href="/login?redirect=/dashboard">
+                  <Button size="sm" variant="outline" className="text-xs h-7">
+                    Sign In
+                  </Button>
+                </Link>
+                <Link href="/signup">
+                  <Button size="sm" className="text-xs h-7 bg-teal-600 hover:bg-teal-500 text-white">
+                    Create Profile
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          )}
 
           {/* Top Macro Metrics Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

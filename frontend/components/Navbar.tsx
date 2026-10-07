@@ -13,11 +13,14 @@ import {
   Menu,
   X,
   ClipboardCheck,
+  LogOut,
+  User,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { useAuth } from "@/context/AuthContext";
 
 const NAV_LINKS = [
   { href: "/dashboard", label: "Overview", icon: Compass },
@@ -31,6 +34,7 @@ const NAV_LINKS = [
 export function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { user, profile, signOut } = useAuth();
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-[#07090e]/80 backdrop-blur-md transition-colors">
@@ -97,6 +101,44 @@ export function Navbar() {
               </Button>
             </Link>
 
+            {/* Auth State Controls */}
+            {user ? (
+              <div className="flex items-center space-x-2">
+                <Link
+                  href="/profile"
+                  className="flex items-center space-x-1.5 px-2.5 py-1 rounded-md text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-200 dark:border-slate-800"
+                >
+                  <div className="w-4 h-4 rounded-full bg-teal-500 text-white flex items-center justify-center text-[10px] font-bold">
+                    {(profile?.full_name || user.email || "U").charAt(0).toUpperCase()}
+                  </div>
+                  <span className="hidden sm:inline max-w-[100px] truncate">
+                    {profile?.full_name?.split(" ")[0] || "Profile"}
+                  </span>
+                </Link>
+                <button
+                  onClick={() => signOut()}
+                  title="Sign Out"
+                  className="p-1.5 rounded-md text-slate-400 hover:text-rose-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                >
+                  <LogOut className="w-4 h-4" />
+                </button>
+              </div>
+            ) : (
+              <div className="flex items-center space-x-2">
+                <Link
+                  href="/login"
+                  className="text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white px-2 py-1 transition-colors"
+                >
+                  Sign In
+                </Link>
+                <Link href="/signup">
+                  <Button variant="outline" size="sm" className="h-8 text-xs font-medium hidden sm:inline-flex border-teal-500/30 text-teal-600 dark:text-teal-400">
+                    Sign Up
+                  </Button>
+                </Link>
+              </div>
+            )}
+
             <ThemeToggle />
 
             {/* Mobile Hamburger Button */}
@@ -135,6 +177,50 @@ export function Navbar() {
               </Link>
             );
           })}
+
+          {/* Mobile Auth Section */}
+          <div className="pt-2 border-t border-slate-100 dark:border-slate-800 space-y-1">
+            {user ? (
+              <>
+                <Link
+                  href="/profile"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center space-x-2.5 px-3 py-2 rounded-md text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+                >
+                  <User className="w-4 h-4 text-teal-500" />
+                  <span>Profile ({profile?.full_name || user.email})</span>
+                </Link>
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    signOut();
+                  }}
+                  className="w-full flex items-center space-x-2.5 px-3 py-2 rounded-md text-xs font-medium text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/20"
+                >
+                  <LogOut className="w-4 h-4" />
+                  <span>Sign Out</span>
+                </button>
+              </>
+            ) : (
+              <div className="grid grid-cols-2 gap-2 pt-1 px-1">
+                <Link
+                  href="/login"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-center py-2 rounded-md text-xs font-medium border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+                >
+                  Sign In
+                </Link>
+                <Link
+                  href="/signup"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-center py-2 rounded-md text-xs font-medium bg-teal-600 text-white hover:bg-teal-500"
+                >
+                  Sign Up
+                </Link>
+              </div>
+            )}
+          </div>
+
           <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center px-1">
             <Link
               href="/about"
