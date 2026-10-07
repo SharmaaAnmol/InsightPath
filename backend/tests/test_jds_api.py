@@ -59,3 +59,16 @@ def test_jds_odds_ratios_endpoint():
     first_record = data["records"][0]
     assert "odds_ratio" in first_record
     assert "standardized_coef_beta" in first_record
+
+
+def test_jds_reduced_features_endpoint():
+    """Verify GET /api/v1/jds/reduced-features returns 2-feature parsimony model."""
+    response = client.get("/api/v1/jds/reduced-features")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["table_name"] == "full_vs_reduced_features"
+    assert "maths_stats_skills" in data["top_2_features"]
+    assert "dashboard_and_storytelling_skills" in data["top_2_features"]
+    assert data["pct_auc_retained"] > 95.0
+    assert len(data["records"]) > 0
+

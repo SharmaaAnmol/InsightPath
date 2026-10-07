@@ -69,3 +69,16 @@ class PremiumSkillsResponse(BaseModel):
     columns: List[str] = Field(default=[], description="Column headers")
     top_premium_skill: Optional[str] = None
     records: List[Dict[str, Any]]
+
+
+class ExperienceCompensationResponse(BaseModel):
+    table_name: str = Field(default="experience_compensation_regression", description="Table identifier")
+    source_path: str = Field(default="outputs/tables/phase4/phase4_h5_regression.csv")
+    linear_slope_beta: float = Field(default=1.9766, description="Lakh INR salary increase per year of experience")
+    linear_intercept: float = Field(default=7.7024, description="Base starting salary intercept in Lakh INR")
+    linear_r_squared: float = Field(default=0.3521, description="Coefficient of determination")
+    linear_p_value: float = Field(default=2.25e-135, description="Significance p-value with HC3 robust standard errors")
+    sample_size_n: int = Field(default=1602, description="DataScience Jobs sample size")
+    regression_models: List[Dict[str, Any]] = Field(default=[], description="All fitted regression specifications")
+    experience_summary: List[Dict[str, Any]] = Field(default=[], description="Summary statistics by dataset")
+

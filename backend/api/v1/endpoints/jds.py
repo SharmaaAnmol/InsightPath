@@ -11,6 +11,7 @@ from backend.schemas.jds import (
     JDSModelPerformanceResponse,
     JDSFeatureImportanceResponse,
     JDSOddsRatiosResponse,
+    JDSReducedFeaturesResponse,
 )
 from backend.services.data_service import data_service
 
@@ -51,3 +52,13 @@ def get_jds_odds_ratios() -> JDSOddsRatiosResponse:
         return data_service.get_jds_odds_ratios()
     except FileNotFoundError as err:
         raise HTTPException(status_code=404, detail=str(err))
+
+
+@router.get("/reduced-features", response_model=JDSReducedFeaturesResponse)
+def get_jds_reduced_features() -> JDSReducedFeaturesResponse:
+    """Returns parsimonious 2-feature model performance retaining 96.75% AUC."""
+    try:
+        return data_service.get_jds_reduced_features()
+    except FileNotFoundError as err:
+        raise HTTPException(status_code=404, detail=str(err))
+

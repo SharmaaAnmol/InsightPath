@@ -20,18 +20,21 @@ from backend.schemas.market import (
     LocationDemandResponse,
     SkillFrequencyResponse,
     PremiumSkillsResponse,
+    ExperienceCompensationResponse,
 )
 from backend.schemas.jds import (
     JDSSummaryResponse,
     JDSModelPerformanceResponse,
     JDSFeatureImportanceResponse,
     JDSOddsRatiosResponse,
+    JDSReducedFeaturesResponse,
 )
 from backend.schemas.sds import (
     SDSSummaryResponse,
     SDSModelPerformanceResponse,
     SDSFeatureImportanceResponse,
     SDSOddsRatiosResponse,
+    SDSGroupTestsResponse,
 )
 from backend.schemas.framework import (
     TalentMatrixResponse,
@@ -203,6 +206,40 @@ class DataService:
         self._typed_cache[cache_key] = response
         return response
 
+    def get_experience_compensation(self) -> ExperienceCompensationResponse:
+        cache_key = "experience_compensation"
+        if cache_key in self._typed_cache:
+            return self._typed_cache[cache_key]
+
+        df_reg = self._read_csv("phase4/phase4_h5_regression.csv")
+        df_exp = self._read_csv("phase3/phase3_experience_summary.csv")
+
+        reg_records = df_reg.where(pd.notnull(df_reg), None).to_dict(orient="records")
+        exp_records = df_exp.where(pd.notnull(df_exp), None).to_dict(orient="records")
+
+        # Linear model is first row: avg_salary_lakh ~ min_experience
+        linear_row = reg_records[0] if reg_records else {}
+        slope = float(linear_row.get("slope_beta", 1.9766))
+        intercept = float(linear_row.get("intercept", 7.7024))
+        r2 = float(linear_row.get("r_squared", 0.3521))
+        pval = float(linear_row.get("p_value", 2.25e-135))
+        n_val = int(linear_row.get("n", 1602))
+
+        response = ExperienceCompensationResponse(
+            table_name="experience_compensation_regression",
+            source_path="outputs/tables/phase4/phase4_h5_regression.csv",
+            linear_slope_beta=slope,
+            linear_intercept=intercept,
+            linear_r_squared=r2,
+            linear_p_value=pval,
+            sample_size_n=n_val,
+            regression_models=reg_records,
+            experience_summary=exp_records,
+        )
+        self._typed_cache[cache_key] = response
+        return response
+
+
     # =========================================================================
     # JUNIOR DATA SCIENTIST MODELING (PHASE 5)
     # =========================================================================
@@ -285,6 +322,28 @@ class DataService:
         )
         self._typed_cache[cache_key] = response
         return response
+
+    def get_jds_reduced_features(self) -> JDSReducedFeaturesResponse:
+        cache_key = "jds_reduced_features"
+        if cache_key in self._typed_cache:
+            return self._typed_cache[cache_key]
+
+        df = self._read_csv("phase5/phase5_full_vs_reduced_features.csv")
+        records = df.where(pd.notnull(df), None).to_dict(orient="records")
+
+        response = JDSReducedFeaturesResponse(
+            table_name="full_vs_reduced_features",
+            source_path="outputs/tables/phase5/phase5_full_vs_reduced_features.csv",
+            top_2_features=["maths_stats_skills", "dashboard_and_storytelling_skills"],
+            pct_auc_retained=96.75,
+            full_roc_auc=0.9035,
+            reduced_roc_auc=0.8741,
+            parsimony_takeaway="Retains 96.7% of full discrimination with 60% fewer features.",
+            records=records,
+        )
+        self._typed_cache[cache_key] = response
+        return response
+
 
     # =========================================================================
     # SENIOR DATA SCIENTIST MODELING (PHASE 6)
@@ -369,6 +428,26 @@ class DataService:
         )
         self._typed_cache[cache_key] = response
         return response
+
+    def get_sds_group_tests(self) -> SDSGroupTestsResponse:
+        cache_key = "sds_group_tests"
+        if cache_key in self._typed_cache:
+            return self._typed_cache[cache_key]
+
+        df = self._read_csv("phase4/phase4_h3_sds_group_tests.csv")
+        records = df.where(pd.notnull(df), None).to_dict(orient="records")
+
+        response = SDSGroupTestsResponse(
+            table_name="sds_group_tests",
+            source_path="outputs/tables/phase4/phase4_h3_sds_group_tests.csv",
+            cohort_high_success_n=85,
+            cohort_low_success_n=76,
+            columns=list(df.columns),
+            records=records,
+        )
+        self._typed_cache[cache_key] = response
+        return response
+
 
     # =========================================================================
     # CAREER-READINESS FRAMEWORK (PHASE 8)

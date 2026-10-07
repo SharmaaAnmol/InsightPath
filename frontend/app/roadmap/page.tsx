@@ -1,23 +1,26 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
+import React, { useState, useEffect } from "react";
 import {
-  MapPin,
   GraduationCap,
   Building2,
   Users,
   CheckCircle2,
-  ArrowRight,
   Sparkles,
   BookOpen,
-  SlidersHorizontal,
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Sidebar } from "@/components/Sidebar";
 import { Footer } from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { ChartCard } from "@/components/ChartCard";
+import { CareerRoadmapVisual } from "@/components/CareerRoadmapVisual";
+import { EvidenceModal, EvidenceDetail } from "@/components/EvidenceModal";
+
+import {
+  fetchCareerStages,
+  CareerStageItem,
+} from "@/lib/api";
 
 const BLUEPRINTS = {
   student: {
@@ -34,9 +37,9 @@ const BLUEPRINTS = {
       {
         phase: "Phase 1: Table-Stakes Foundations (Months 1–3)",
         focus: "SQL & Python Engineering Rigor",
-        evidence: "SQL requested in 48.2% and Python in 39.5% of all 17,443 requisitions.",
+        evidence: "SQL requested in 5.78% and Python in 5.30% of audited requisitions (Baseline Currency).",
         milestones: [
-          "Master complex SQL: CTEs, window functions, query plan optimization, and schema design.",
+          "Master complex SQL: CTEs, window functions, query plan optimization, and relational schema design.",
           "Write production Python: clean modular code, unit tests, typing, and Git workflows.",
           "Avoid toy datasets; build ingestion pipelines on raw, messy public APIs and databases.",
         ],
@@ -44,11 +47,11 @@ const BLUEPRINTS = {
       {
         phase: "Phase 2: Mathematical Modeling & Rigor (Months 4–6)",
         focus: "Applied Statistics, Inference & Machine Learning",
-        evidence: "Math/Stats is the highest predictive driver of salary hike (AOR = 3.65, β = +1.28).",
+        evidence: "Math/Stats drives the highest single promotional odds (AOR = 3.61, β = +1.28).",
         milestones: [
           "Study classical experimental design: A/B testing power analysis, p-value adjustments, bootstrap CI.",
           "Implement Scikit-Learn pipelines with leakage prevention, cross-validation, and ROC-AUC analysis.",
-          "Defend model assumptions: collinearity, residuals, and interpretability (SHAP / permutation).",
+          "Defend model assumptions: collinearity, residuals, and interpretability (permutation importance).",
         ],
       },
       {
@@ -57,147 +60,147 @@ const BLUEPRINTS = {
         evidence: "High storytelling aptitude yields a 3.23x adjusted odds ratio for top compensation.",
         milestones: [
           "Translate technical outputs into P&L and ROI business cases for non-technical stakeholders.",
-          "Build production executive dashboards (Tableau / PowerBI / Streamlit) emphasizing metric hierarchies.",
-          "Publish 2 end-to-end case studies detailing problem statement, methodology, trade-offs, and impact.",
+          "Build production executive dashboards (Tableau / PowerBI) emphasizing metric hierarchies.",
+          "Conduct oral project defenses: practice answering 'So what?' in 90-second executive summaries.",
         ],
       },
       {
-        phase: "Phase 4: Market Positioning & Portfolio Defense (Months 10–12)",
-        focus: "Domain Contextualization & Technical Interview Mastery",
-        evidence: "7 geo-clusters exhibit distinct compensation envelopes; Bengaluru commands 1.42x odds.",
+        phase: "Phase 4: Senior Readiness & Adaptive Mindset (Months 10–12)",
+        focus: "Intellectual Openness & Consulting Adaptability",
+        evidence: "Openness (AOR = 7.72) and Conscientiousness (AOR = 8.11) dominate senior consulting success.",
         milestones: [
-          "Conduct simulated whiteboard defenses of your architecture and analytical decisions.",
-          "Tailor application strategy to target geo-clusters and industry verticals (Fintech, SaaS, E-commerce).",
-          "Complete diagnostic benchmark on InsightPath to verify Q1 readiness profile.",
+          "Lead cross-functional projects with ambiguous requirements and uncertain data inputs.",
+          "Engage in structured peer code reviews and client expectation management exercises.",
+          "Publish complete portfolio repositories featuring documentation, dashboard links, and video walkthroughs.",
         ],
       },
     ],
   },
   university: {
     title: "University & Academic Curriculum Blueprint",
-    roleDescription: "Strategic modernization guide for computer science and data science academic departments.",
+    roleDescription: "Curricular restructuring blueprint for universities and coding bootcamps based on empirical labor market demand.",
     icon: BookOpen,
-    badge: "Higher Education",
+    badge: "Educator Track",
     kpis: [
-      { label: "Curriculum Shift", value: "End-to-End Systems" },
-      { label: "Project Alignment", value: "Industry Messy Data" },
-      { label: "Employability Uplift", value: "+45% Placement Rate" },
+      { label: "Placement Rate Target", value: ">85% in Tier-1/2" },
+      { label: "Curriculum Shift", value: "Dual-Currency Model" },
+      { label: "Key Addition", value: "Storytelling Practicum" },
     ],
     phases: [
       {
-        phase: "Intervention 1: Retire Toy Datasets & Synthetic Assumptions",
-        focus: "Messy, Real-World Data Ingestion",
-        evidence: "Phase 1 data audit identified severe anomalies, schema drift, and missingness in live industry data.",
+        phase: "Recommendation 1: De-emphasize Premature Big Data Infrastructure",
+        focus: "Reallocate Credits to Applied Inferential Statistics",
+        evidence: "Distributed Big Data shows Rank #5 permutation importance (0.0107) and neutral hike odds (AOR = 0.94).",
         milestones: [
-          "Replace standard Kaggle toy datasets (Titanic, Iris, Boston) with uncurated multi-table relational databases.",
-          "Incorporate mandatory data profiling, validation gates, and quality scorecards into grading criteria.",
-          "Teach data cleaning and anomaly detection as first-class statistical disciplines.",
+          "Eliminate distributed Hadoop/Spark cluster administration from introductory core curricula.",
+          "Replace low-retention infrastructure modules with rigorous applied hypothesis testing.",
+          "Mandate coverage of p-value adjustments, effect sizes, power calculations, and collinearity diagnostics.",
         ],
       },
       {
-        phase: "Intervention 2: Mandatory Business Translation & Storytelling",
-        focus: "Oral Defense & Stakeholder Communication",
-        evidence: "Storytelling aptitude (AOR = 3.23) is severely underrepresented in fresh graduate cohorts (Gap #2).",
+        phase: "Recommendation 2: Institutionalize Mandatory Storytelling Practicums",
+        focus: "Executive Communication & Stakeholder Defense",
+        evidence: "Storytelling is the #1 out-of-fold permutation importance driver (0.1062) for junior promotion velocity.",
         milestones: [
-          "Require oral capstone defenses before a non-technical executive jury for all final-year projects.",
-          "Grade students on their ability to articulate ROI, opportunity costs, and strategic implications.",
-          "Incorporate executive memo writing into machine learning and statistics course syllabi.",
+          "Require 30% of capstone project grades to be based on oral presentation to non-technical evaluators.",
+          "Teach dashboard design principles: visual hierarchy, cognitive load, and decision architecture.",
+          "Train students to draft 1-page executive memos summarizing technical machine-learning models.",
         ],
       },
       {
-        phase: "Intervention 3: Enterprise Capstone Partnerships",
-        focus: "Industry Co-op & Real Client Engagements",
-        evidence: "Postgraduate and industry-coached students achieve +2.8L starting salary shifts (H6 confirmed).",
+        phase: "Recommendation 3: Mandate End-to-End Messy Data Engineering",
+        focus: "From Raw Requisitions to Validated Schemas",
+        evidence: "Audited market datasets required extensive standardization across 642 unique employers.",
         milestones: [
-          "Establish semester-long industry project partnerships with local enterprise employers.",
-          "Deploy dual-evaluator rubrics: academic professor evaluates rigor; industry mentor evaluates utility.",
-          "Mandate Git version control, CI/CD automated test suites, and containerized deployment in course work.",
+          "Ban pre-cleaned Kaggle CSVs in intermediate and advanced coursework.",
+          "Assign assignments requiring web scraping, regex parsing, handling missingness, and outlier winsorization.",
+          "Incorporate automated data quality scorecards and schema assertion tests into automated grading.",
         ],
       },
     ],
   },
   mentor: {
-    title: "Mentorship & Professional Coaching Guide",
-    roleDescription: "Evidence-based framework for senior data leaders coaching junior and mid-level practitioners.",
+    title: "Mentor & Practitioner Coaching Guide",
+    roleDescription: "Targeted mentoring protocols to diagnose and transition talent across the Four-Quadrant matrix.",
     icon: Users,
-    badge: "Leadership & Coaching",
+    badge: "Mentorship Track",
     kpis: [
-      { label: "Primary Role", value: "Diagnostic Coaching" },
-      { label: "Ethical Safeguard", value: "Non-Gatekeeping Only" },
-      { label: "Focus Quadrant", value: "Q2 → Q1 Transition" },
+      { label: "Diagnostic Engine", value: "4-Quadrant Mapping" },
+      { label: "Primary Intervention", value: "Executive Presence" },
+      { label: "Assessment Cycle", value: "Quarterly Review" },
     ],
     phases: [
       {
-        phase: "Pillar 1: Diagnostic Assessment & Quadrant Mapping",
-        focus: "Objective Self-Awareness & Baseline",
-        evidence: "38% of practitioners reside in Quadrant Q2 (Pure Execution), hitting promotion plateaus.",
+        phase: "Protocol 1: Diagnosing Q2 (Execution Heavy, Communication Gap)",
+        focus: "The Execution Engine Trapped at Mid-Tier Compensation",
+        evidence: "Q2 salary velocity drops from 100% to 66-82% despite technical superiority (JDS CART Rules 3 & 4).",
         milestones: [
-          "Use the InsightPath diagnostic scorer to benchmark technical vs behavioral strengths.",
-          "Examine if the mentee is over-indexing on technical depth while neglecting business narrative.",
-          "Reassure mentees that behavioral scores are reflective instruments for personal growth.",
+          "Assign simulated executive stakeholder roleplay sessions to build business translation capability.",
+          "Guide candidate to build interactive dashboards for existing models rather than learning more algorithms.",
+          "Coach on verbal conciseness: structuring answers with the Pyramid Principle and executive summaries.",
         ],
       },
       {
-        phase: "Pillar 2: Bridging the Q2 to Q1 Promotion Plateau",
-        focus: "From Coder to Strategic Partner",
-        evidence: "Moving from Q2 to Q1 unlocks senior consulting and principal salary bands (₹18L–₹35L+).",
+        phase: "Protocol 2: Diagnosing Q3 (Communication Strong, Technical Gap)",
+        focus: "The Strategic Facilitator Needing Modeling Rigor",
+        evidence: "Communication partially compensates for math gaps (71.4% hike rate), but wage ceilings apply.",
         milestones: [
-          "Coach the mentee through live stakeholder meetings: how to frame trade-offs and dissent constructively.",
-          "Facilitate opportunities for the mentee to present findings directly to VP-level stakeholders.",
-          "Nurture intellectual curiosity and openness to cross-functional methodologies (H4 confirmed).",
+          "Assign targeted drills in mathematical modeling, cross-validation protocols, and regularization trade-offs.",
+          "Require candidate to audit existing models for data leakage, multicollinearity, and overfitting.",
+          "Pair candidate with senior technical architects on production code reviews.",
         ],
       },
       {
-        phase: "Pillar 3: Ethical Guardrail Maintenance",
-        focus: "Protecting Candidates from Unfair Stereotyping",
-        evidence: "Phase 6 ethical directive explicitly prohibits using personality models as employment filters.",
+        phase: "Protocol 3: Preparing Senior Talent for Leadership",
+        focus: "Fostering Intellectual Adaptability and Conscientiousness",
+        evidence: "Openness (AOR = 7.72) and Conscientiousness (AOR = 8.11) separate senior consulting advisory success.",
         milestones: [
-          "Ensure personality data is kept confidential between mentor and mentee.",
-          "Refocus conversations on observable behavioral skills and communication habits.",
-          "Celebrate improvements in storytelling confidence and cross-team empathy.",
+          "Transition mentoring from technical debugging to ambiguous problem scoping and client empathy.",
+          "Encourage exposure to cross-industry client cases and strategic advisory roadmaps.",
+          "Reinforce ethical AI principles and responsible model deployment standards.",
         ],
       },
     ],
   },
   employer: {
-    title: "Enterprise Talent Acquisition & Hiring Blueprint",
-    roleDescription: "Modernizing job requisitions, compensation benchmarking, and candidate evaluation.",
+    title: "Enterprise Employer Talent Strategy",
+    roleDescription: "Evidence-based hiring rubric and talent progression policy for engineering leaders and HR executives.",
     icon: Building2,
-    badge: "Enterprise Talent",
+    badge: "Employer Track",
     kpis: [
-      { label: "Requisitions Audited", value: "17,443 Postings" },
-      { label: "Firms Represented", value: "642 Enterprises" },
-      { label: "Hiring Efficiency", value: "+30% Quality of Hire" },
+      { label: "Hiring Signal", value: "Dual-Currency Rubric" },
+      { label: "Ethical Compliance", value: "Zero Psychometric Gating" },
+      { label: "Retention Impact", value: "+30% Promotion Velocity" },
     ],
     phases: [
       {
-        phase: "Recommendation 1: Eliminate Skill Inflation in Job Descriptions",
-        focus: "De-escalate Unrealistic Junior Postings",
-        evidence: "Market requisitions frequently demand 5+ years of experience for entry-level analyst postings.",
+        phase: "Policy 1: Modernize Screening Filters Beyond LeetCode",
+        focus: "Dual-Currency Candidate Evaluation",
+        evidence: "Procedural coding shows near-zero promotional lift (AOR = 1.04), while storytelling drives 3.23x lift.",
         milestones: [
-          "Separate non-negotiable Table-Stakes (SQL, Python) from nice-to-have specialized tooling.",
-          "Calibrate experience requirements against the empirical salary gradient (₹1.34L/yr baseline).",
-          "Publish explicit compensation ranges to attract high-caliber qualified applicants.",
+          "Replace purely algorithmic syntax quizzes with business problem scoping and data interpretation exercises.",
+          "Evaluate candidates on their ability to explain statistical trade-offs and communicate findings to executives.",
+          "Score portfolios for interactive dashboards, clean documentation, and end-to-end delivery.",
         ],
       },
       {
-        phase: "Recommendation 2: Dual-Currency Interview Design",
-        focus: "Evaluating Both Code and Narrative",
-        evidence: "Technical proficiency alone does not predict strategic project success (ROC-AUC 0.74 vs 0.76).",
+        phase: "Policy 2: Enforce Strict Ethical Safeguards on Psychometrics",
+        focus: "Ban Automated Gatekeeping via Personality Assessments",
+        evidence: "Phase 6 Ethical Guardrail: Personality reflects coaching diagnostics, never employment gatekeeping.",
         milestones: [
-          "Replace abstract LeetCode algorithms with practical, contextual data analysis challenges.",
-          "Include a mandatory 15-minute presentation where the candidate explains findings to a mock client.",
-          "Score candidates on clarity, assumption justification, and business impact translation.",
+          "Explicitly prohibit automated filtering, rejection, or promotion decisions based on Big Five assessments.",
+          "Use psychometric frameworks strictly for voluntary leadership coaching, onboarding, and self-reflection.",
+          "Audit internal hiring algorithms annually for disparate impact and demographic fairness.",
         ],
       },
       {
-        phase: "Recommendation 3: Geographic Wage Harmonization",
-        focus: "Fair Compensation Across Clusters",
-        evidence: "Bengaluru commands 1.42x odds premium, while Delhi-NCR and Mumbai form strong tier-2 hubs.",
+        phase: "Policy 3: Establish Clear Progression Tracks for Q1-Q4",
+        focus: "Clear Promotion Rubrics and Individual Contributor Ladders",
+        evidence: "Q2 practitioners hit career plateaus, creating flight risk and loss of top technical talent.",
         milestones: [
-          "Align compensation bands to verified regional cost-of-living and talent competition indices.",
-          "Offer competitive remote allowances for distributed talent pools in Pune, Hyderabad, and Chennai.",
-          "Provide continuous internal upskilling paths to transition internal Q2 analysts into Q1 leaders.",
+          "Create dual advancement tracks: Principal Individual Contributor (Technical) and Advisory / Leadership.",
+          "Fund executive communication coaching programs for high-performing technical specialists (Q2).",
+          "Tie promotion criteria to documented business impact rather than tenure alone.",
         ],
       },
     ],
@@ -205,9 +208,25 @@ const BLUEPRINTS = {
 };
 
 export default function RoadmapPage() {
-  const [activeStakeholder, setActiveStakeholder] = useState<keyof typeof BLUEPRINTS>("student");
-  const blueprint = BLUEPRINTS[activeStakeholder];
-  const Icon = blueprint.icon;
+  const [activeBlueprintKey, setActiveBlueprintKey] = useState<keyof typeof BLUEPRINTS>("student");
+  const [careerStages, setCareerStages] = useState<CareerStageItem[]>([]);
+
+  const [selectedEvidence, setSelectedEvidence] = useState<EvidenceDetail | null>(null);
+  const [isEvidenceOpen, setIsEvidenceOpen] = useState(false);
+
+  useEffect(() => {
+    fetchCareerStages().then((stageRes) => {
+      setCareerStages(stageRes.records);
+    });
+  }, []);
+
+  const activeBlueprint = BLUEPRINTS[activeBlueprintKey];
+  const Icon = activeBlueprint.icon;
+
+  const openEvidence = (detail: EvidenceDetail) => {
+    setSelectedEvidence(detail);
+    setIsEvidenceOpen(true);
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-[var(--background)] text-[var(--foreground)]">
@@ -216,192 +235,151 @@ export default function RoadmapPage() {
       <div className="flex-1 flex w-full">
         <Sidebar className="hidden lg:flex" />
 
-        <main className="flex-1 p-4 md:p-8 max-w-7xl mx-auto w-full space-y-8">
+        <main className="flex-1 p-4 md:p-8 max-w-7xl mx-auto w-full space-y-10">
           {/* Header */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200/80 dark:border-slate-800">
-            <div>
-              <div className="flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-1.5">
-                <MapPin className="w-3.5 h-3.5" />
-                <span>Phase 8 Career-Readiness Framework</span>
-              </div>
-              <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
-                Stakeholder Execution Blueprints
-              </h1>
-              <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-                Actionable, empirically grounded transformation roadmaps for Candidates, Universities, Mentors, and Enterprise Hiring.
-              </p>
+          <div className="space-y-3 pb-6 border-b border-slate-200/80 dark:border-slate-800">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-mono font-medium border border-teal-500/30 bg-teal-500/10 text-teal-600 dark:text-teal-400">
+              <Sparkles className="w-3.5 h-3.5 mr-1" />
+              <span>Phase 8 Career-Readiness & Action Blueprints</span>
             </div>
-
-            <div className="flex items-center space-x-2">
-              <Link href="/assessment">
-                <Button className="bg-teal-600 hover:bg-teal-500 text-white font-medium text-xs h-9 shadow-sm flex items-center space-x-1.5">
-                  <SlidersHorizontal className="w-3.5 h-3.5" />
-                  <span>Test Your Baseline</span>
-                </Button>
-              </Link>
-            </div>
+            <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">
+              Evidence-Based Implementation Blueprints
+            </h1>
+            <p className="text-sm text-slate-500 dark:text-slate-400 max-w-3xl leading-relaxed">
+              Operational blueprints translating empirical findings from 17,443 requisitions and 300 practitioners into structured roadmaps for students, academic departments, mentors, and hiring organizations.
+            </p>
           </div>
 
-          {/* Stakeholder Selector Tabs */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {(
-              [
-                { key: "student", label: "Student & Candidate", icon: GraduationCap, sub: "Personal Progression" },
-                { key: "university", label: "University & Academia", icon: BookOpen, sub: "Curriculum Redesign" },
-                { key: "mentor", label: "Mentors & Leaders", icon: Users, sub: "Coaching Playbook" },
-                { key: "employer", label: "Enterprise Hiring", icon: Building2, sub: "Requisition & Talent" },
-              ] as const
-            ).map((s) => {
-              const isSelected = activeStakeholder === s.key;
-              const TabIcon = s.icon;
-              return (
-                <button
-                  key={s.key}
-                  onClick={() => setActiveStakeholder(s.key)}
-                  className={`p-4 rounded-xl border text-left transition-all ${
-                    isSelected
-                      ? "border-teal-500/70 bg-teal-50/50 dark:bg-teal-950/20 shadow-xs ring-1 ring-teal-500/30"
-                      : "border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-slate-300 dark:hover:border-slate-700"
-                  }`}
-                >
-                  <div className="flex items-center space-x-2.5 mb-1.5">
-                    <div
-                      className={`p-2 rounded-lg border ${
-                        isSelected
-                          ? "bg-teal-500/10 border-teal-500/30 text-teal-600 dark:text-teal-400"
-                          : "bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-500"
-                      }`}
-                    >
-                      <TabIcon className="w-4 h-4" />
-                    </div>
-                    <span
-                      className={`text-xs font-bold ${
-                        isSelected ? "text-teal-700 dark:text-teal-300" : "text-slate-800 dark:text-slate-200"
-                      }`}
-                    >
-                      {s.label}
-                    </span>
-                  </div>
-                  <p className="text-[11px] text-slate-500 dark:text-slate-400 pl-1">{s.sub}</p>
-                </button>
-              );
-            })}
-          </div>
+          {/* Interactive Career Progression Roadmap */}
+          <ChartCard
+            title="Four-Tier Empirical Progression Framework"
+            subtitle="Explore stage-specific competencies, empirical rationales, recommended development milestones, and measurable KPIs"
+            badge={<Badge variant="outline" className="text-[10px]">Phase 8 Framework</Badge>}
+          >
+            <CareerRoadmapVisual
+              stages={careerStages}
+              onOpenEvidence={() =>
+                openEvidence({
+                  title: "Four-Tier Career Progression Framework",
+                  phase: "Phase 8: Career-Readiness Framework",
+                  dataset: "Cross-dataset synthesis across all 4 datasets",
+                  sampleSize: "N = 17,443 postings & 300 practitioners",
+                  method: "Multi-cohort evidence synthesis establishing required competencies and KPIs by career stage.",
+                  interpretation: "Documents how career value creation shifts systematically from syntactic entry compliance (Stage 1) to salary hike velocity via storytelling and statistical modeling (Stage 2), premium stack differentiation (Stage 3), and advisory leadership adaptability (Stage 4).",
+                  limitation: "Progression velocity varies by organization size, industry vertical, and geography.",
+                })
+              }
+            />
+          </ChartCard>
 
-          {/* Active Blueprint Overview Banner */}
-          <div className="p-6 rounded-xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900/60 space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div className="flex items-center space-x-3">
-                <div className="p-2.5 rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/20">
-                  <Icon className="w-5 h-5" />
-                </div>
-                <div>
-                  <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
-                    {blueprint.title}
-                  </h2>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">
-                    {blueprint.roleDescription}
-                  </p>
-                </div>
-              </div>
-              <Badge variant="outline" className="text-xs font-mono self-start sm:self-auto text-teal-600 dark:text-teal-400 border-teal-500/30">
-                {blueprint.badge}
-              </Badge>
-            </div>
-
-            {/* Blueprint Targets Row */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 border-t border-slate-100 dark:border-slate-800/80">
-              {blueprint.kpis.map((k, i) => (
-                <div key={i} className="p-3 rounded-lg bg-slate-50 dark:bg-slate-950/40 border border-slate-200/60 dark:border-slate-800/60">
-                  <div className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider">
-                    {k.label}
-                  </div>
-                  <div className="text-sm font-bold font-mono text-slate-900 dark:text-slate-100 mt-0.5">
-                    {k.value}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Chronological Action Milestones */}
+          {/* Track Selector Tabs */}
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-                Actionable Transformation Stages
-              </h3>
-              <span className="text-xs text-slate-400 font-mono">Synthesized from Phase 8 Framework</span>
+              <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+                Stakeholder-Specific Roadmaps
+              </h2>
             </div>
 
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {(Object.keys(BLUEPRINTS) as (keyof typeof BLUEPRINTS)[]).map((key) => {
+                const bp = BLUEPRINTS[key];
+                const BpIcon = bp.icon;
+                const isSelected = activeBlueprintKey === key;
+                return (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => setActiveBlueprintKey(key)}
+                    className={`p-3.5 rounded-xl border text-left transition-all flex flex-col justify-between space-y-2 ${
+                      isSelected
+                        ? "border-teal-500 bg-teal-50/60 dark:bg-teal-950/30 ring-1 ring-teal-500 shadow-xs"
+                        : "border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:bg-slate-50 dark:hover:bg-slate-800/40"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <BpIcon className={`w-4 h-4 ${isSelected ? "text-teal-600 dark:text-teal-400" : "text-slate-400"}`} />
+                      <Badge variant="outline" className="text-[10px] font-mono py-0 px-1.5">
+                        {bp.badge}
+                      </Badge>
+                    </div>
+                    <span className="text-xs font-bold text-slate-800 dark:text-slate-200 truncate block">
+                      {bp.title.split("&")[0].split("Blueprint")[0].split("Roadmap")[0].trim()}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Active Blueprint View */}
+          <div className="p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900/80 space-y-6 shadow-xs">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100 dark:border-slate-800">
+              <div className="space-y-1">
+                <div className="flex items-center space-x-2">
+                  <Icon className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+                    {activeBlueprint.title}
+                  </h3>
+                </div>
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  {activeBlueprint.roleDescription}
+                </p>
+              </div>
+
+              <div className="flex items-center gap-3">
+                {activeBlueprint.kpis.map((kpi, i) => (
+                  <div key={i} className="text-right">
+                    <span className="text-[10px] font-mono text-slate-400 uppercase block">
+                      {kpi.label}
+                    </span>
+                    <span className="text-xs font-bold font-mono text-teal-600 dark:text-teal-400">
+                      {kpi.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Phases timeline */}
             <div className="space-y-4">
-              {blueprint.phases.map((item, idx) => (
+              {activeBlueprint.phases.map((p, idx) => (
                 <div
                   key={idx}
-                  className="p-6 rounded-xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900/60 space-y-4 transition-all hover:border-slate-300 dark:hover:border-slate-700"
+                  className="p-4 rounded-xl border border-slate-200/60 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 space-y-3"
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-100 dark:border-slate-800/80">
-                    <div className="flex items-center space-x-2.5">
-                      <span className="w-6 h-6 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 text-xs font-bold font-mono flex items-center justify-center shrink-0 border border-teal-500/20">
-                        {idx + 1}
-                      </span>
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">
-                        {item.phase}
-                      </h4>
-                    </div>
-                    <Badge variant="secondary" className="text-[11px] self-start sm:self-auto">
-                      Focus: {item.focus}
-                    </Badge>
-                  </div>
-
-                  {/* Empirical Evidence Pill */}
-                  <div className="p-3 rounded-lg bg-teal-500/5 dark:bg-teal-950/20 border border-teal-500/20 text-xs text-teal-800 dark:text-teal-300 flex items-start space-x-2">
-                    <Sparkles className="w-3.5 h-3.5 text-teal-500 shrink-0 mt-0.5" />
-                    <span className="leading-relaxed">
-                      <strong>Empirical Rationale:</strong> {item.evidence}
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-slate-100">
+                      {p.phase}
+                    </h4>
+                    <span className="text-[11px] font-mono text-indigo-600 dark:text-indigo-400 font-semibold">
+                      Focus: {p.focus}
                     </span>
                   </div>
 
-                  {/* Concrete Checklist Items */}
-                  <div className="space-y-2 pt-1">
-                    <div className="text-xs font-semibold text-slate-700 dark:text-slate-300">
-                      Concrete Implementation Deliverables:
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5">
-                      {item.milestones.map((m, mIdx) => (
-                        <div
-                          key={mIdx}
-                          className="p-3 rounded-lg border border-slate-200/60 dark:border-slate-800/80 bg-slate-50/50 dark:bg-slate-950/30 text-xs text-slate-600 dark:text-slate-400 flex items-start space-x-2"
-                        >
-                          <CheckCircle2 className="w-3.5 h-3.5 text-teal-500 shrink-0 mt-0.5" />
-                          <span className="leading-snug">{m}</span>
-                        </div>
-                      ))}
-                    </div>
+                  <div className="p-2.5 rounded-lg bg-teal-500/10 border border-teal-500/20 text-[11px] text-teal-800 dark:text-teal-300 font-mono">
+                    <strong>Evidence Anchor: </strong>{p.evidence}
+                  </div>
+
+                  <div className="space-y-1.5 pt-1">
+                    {p.milestones.map((m, mIdx) => (
+                      <div key={mIdx} className="flex items-start space-x-2 text-xs text-slate-700 dark:text-slate-300">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-teal-500 shrink-0 mt-0.5" />
+                        <span>{m}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Quick CTA Card */}
-          <div className="p-6 rounded-xl border border-teal-500/30 bg-linear-to-r from-teal-500/10 via-indigo-500/5 to-transparent flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="space-y-1">
-              <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
-                Ready to Benchmark Your Current Quadrant?
-              </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
-                Run your self-assessment through our dual-track ML model to obtain personalized gap closures.
-              </p>
-            </div>
-            <Link href="/assessment">
-              <Button className="bg-teal-600 hover:bg-teal-500 text-white font-medium text-xs h-9 shadow-sm shrink-0 flex items-center space-x-2">
-                <span>Open Diagnostic Tool</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Button>
-            </Link>
           </div>
         </main>
       </div>
+
+      <EvidenceModal
+        isOpen={isEvidenceOpen}
+        onClose={() => setIsEvidenceOpen(false)}
+        evidence={selectedEvidence}
+      />
 
       <Footer />
     </div>

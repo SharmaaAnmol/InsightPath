@@ -69,3 +69,21 @@ class JDSOddsRatiosResponse(BaseModel):
     source_path: str = Field(default="outputs/tables/phase5/phase5_logistic_odds_ratios.csv")
     columns: List[str] = Field(default=[], description="Column headers")
     records: List[Dict[str, Any]]
+
+
+class JDSReducedFeaturesResponse(BaseModel):
+    table_name: str = Field(default="full_vs_reduced_features", description="Table identifier")
+    source_path: str = Field(default="outputs/tables/phase5/phase5_full_vs_reduced_features.csv")
+    top_2_features: List[str] = Field(
+        default=["maths_stats_skills", "dashboard_and_storytelling_skills"],
+        description="Top two parsimonious skill drivers",
+    )
+    pct_auc_retained: float = Field(default=96.75, description="Percentage of full discrimination power retained")
+    full_roc_auc: float = Field(default=0.9035, description="5-feature full model ROC-AUC")
+    reduced_roc_auc: float = Field(default=0.8741, description="2-feature parsimonious model ROC-AUC")
+    parsimony_takeaway: str = Field(
+        default="Retains 96.7% of full discrimination with 60% fewer features.",
+        description="Summary parsimony assessment",
+    )
+    records: List[Dict[str, Any]] = Field(default=[], description="Full comparison records across algorithms")
+

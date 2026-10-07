@@ -13,6 +13,7 @@ from backend.schemas.market import (
     LocationDemandResponse,
     SkillFrequencyResponse,
     PremiumSkillsResponse,
+    ExperienceCompensationResponse,
 )
 from backend.schemas.data import TableResponse
 from backend.services.data_service import data_service
@@ -81,3 +82,13 @@ def get_hypotheses_summary() -> TableResponse:
         return data_service.get_hypothesis_summary()
     except FileNotFoundError as err:
         raise HTTPException(status_code=404, detail=str(err))
+
+
+@router.get("/experience-compensation", response_model=ExperienceCompensationResponse)
+def get_experience_compensation() -> ExperienceCompensationResponse:
+    """Returns OLS regression and empirical experience distributions from Phase 4 H5 and Phase 3."""
+    try:
+        return data_service.get_experience_compensation()
+    except FileNotFoundError as err:
+        raise HTTPException(status_code=404, detail=str(err))
+

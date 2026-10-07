@@ -64,3 +64,21 @@ def test_sds_odds_ratios_endpoint():
     first_record = data["records"][0]
     assert "adjusted_odds_ratio" in first_record
     assert "standardized_coef_beta" in first_record
+
+
+def test_sds_group_tests_endpoint():
+    """Verify GET /api/v1/sds/group-tests returns Big Five comparisons with ethical notice."""
+    response = client.get("/api/v1/sds/group-tests")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["table_name"] == "sds_group_tests"
+    assert data["cohort_high_success_n"] == 85
+    assert data["cohort_low_success_n"] == 76
+    assert "ethical_safeguard_notice" in data
+    assert len(data["records"]) == 5
+    # Confirm conscientiousness, openness, extraversion, agreeableness, neuroticism
+    traits = [r["variable"] for r in data["records"]]
+    assert "conscientiousness" in traits
+    assert "openness_to_experience" in traits
+    assert "neuroticism" in traits
+

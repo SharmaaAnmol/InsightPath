@@ -85,3 +85,14 @@ class SDSOddsRatiosResponse(BaseModel):
     columns: List[str] = Field(default=[], description="Column headers")
     ethical_safeguard_notice: str = Field(default=ETHICAL_NOTICE)
     records: List[Dict[str, Any]]
+
+
+class SDSGroupTestsResponse(BaseModel):
+    table_name: str = Field(default="sds_group_tests", description="Table identifier")
+    source_path: str = Field(default="outputs/tables/phase4/phase4_h3_sds_group_tests.csv")
+    cohort_high_success_n: int = Field(default=85, description="High consulting success sample size")
+    cohort_low_success_n: int = Field(default=76, description="Low consulting success sample size")
+    ethical_safeguard_notice: str = Field(default=ETHICAL_NOTICE)
+    columns: List[str] = Field(default=[], description="Column headers")
+    records: List[Dict[str, Any]] = Field(default=[], description="Empirical group difference test results")
+

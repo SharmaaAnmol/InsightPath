@@ -1,19 +1,26 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
-import { Sparkles, SlidersHorizontal } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Sparkles } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SkillCard } from "@/components/SkillCard";
+import { ChartCard } from "@/components/ChartCard";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { BarChartVisual } from "@/components/BarChartVisual";
+import { EvidenceModal, EvidenceDetail } from "@/components/EvidenceModal";
+
+import {
+  fetchSkillFrequency,
+  fetchPremiumSkills,
+  SkillFrequencyItem,
+  PremiumSkillItem,
+} from "@/lib/api";
 
 const TALENT_GAPS = [
   {
     gapNumber: "01",
     name: "The Big Data Illusion",
-    prevalenceInJobs: "44.9% of Vacancies",
+    prevalenceInJobs: "Rank #5 in JDS (0.0107)",
     promotionalLift: "AOR = 0.94 (p = 0.866)",
     summary: "Massive market posting prevalence creates the illusion of mandatory expertise, yet distributed infrastructure skills yield near-zero promotion lift for early practitioners.",
     action: "Master query optimization and modeling intuition before deploying multi-node Spark clusters.",
@@ -21,15 +28,15 @@ const TALENT_GAPS = [
   {
     gapNumber: "02",
     name: "The Storytelling Deficit",
-    prevalenceInJobs: "21.9% of Vacancies",
-    promotionalLift: "AOR = 3.23 (p = 0.003)",
-    summary: "Rarely specified in job descriptions as a mandatory technical keyword, yet empirical modeling reveals it is the single strongest differentiator of junior salary hikes (d = 1.32).",
+    prevalenceInJobs: "Rank #1 Permutation Importance",
+    promotionalLift: "AOR = 3.23 (p = 0.002)",
+    summary: "Rarely specified in job descriptions as a mandatory technical keyword, yet empirical modeling reveals it is the single strongest differentiator of junior salary hikes.",
     action: "Pair analytical models with clear executive narratives, decision impact bridges, and business metrics.",
   },
   {
     gapNumber: "03",
     name: "The Coding Saturation Trap",
-    prevalenceInJobs: "82.4% of Postings",
+    prevalenceInJobs: "Rank #3 in JDS (0.0245)",
     promotionalLift: "AOR = 1.04 (p = 0.925)",
     summary: "Coding competency is saturated across both high and low performers (mean score 4.1 vs 4.0). Writing code is a ticket to enter, not a differentiator for promotion.",
     action: "Avoid spending 100% of study time on algorithmic syntax puzzles once baseline competence is reached.",
@@ -47,12 +54,33 @@ const TALENT_GAPS = [
     name: "The Geographic Mobility Divide",
     prevalenceInJobs: "68.5% in Tri-Metros",
     promotionalLift: "Premium Odds = 1.42x",
-    summary: "Elite compensation envelopes (>15L) are geographically locked into Bengaluru, NCR, and Mumbai. Candidates without geographic flexibility face an artificial wage ceiling.",
+    summary: "Elite compensation envelopes (>₹15L) are geographically locked into Bengaluru, NCR, and Mumbai. Candidates without geographic flexibility face an artificial wage ceiling.",
     action: "Target remote global engineering teams or plan strategic metro rotations for velocity tiers.",
   },
 ];
 
 export default function SkillsIntelligencePage() {
+  const [skills, setSkills] = useState<SkillFrequencyItem[]>([]);
+  const [premiums, setPremiums] = useState<PremiumSkillItem[]>([]);
+
+  const [selectedEvidence, setSelectedEvidence] = useState<EvidenceDetail | null>(null);
+  const [isEvidenceOpen, setIsEvidenceOpen] = useState(false);
+
+  useEffect(() => {
+    Promise.all([
+      fetchSkillFrequency(),
+      fetchPremiumSkills(),
+    ]).then(([skillRes, premRes]) => {
+      setSkills(skillRes.records);
+      setPremiums(premRes.records);
+    });
+  }, []);
+
+  const openEvidence = (detail: EvidenceDetail) => {
+    setSelectedEvidence(detail);
+    setIsEvidenceOpen(true);
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-[var(--background)] text-[var(--foreground)]">
       <Navbar />
@@ -88,20 +116,20 @@ export default function SkillsIntelligencePage() {
                 Baseline Table-Stakes Skills
               </h3>
               <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Skills heavily screened by automated ATS filters and recruiter keyword rubrics. Required to secure entry-level interviews, but offer near-zero marginal promotional elasticity.
+                Skills heavily screened by automated ATS filters and recruiter keyword rubrics. Required to secure entry-level interviews, but offering near-zero marginal promotional elasticity.
               </p>
               <div className="space-y-2 pt-2 text-xs font-mono">
                 <div className="flex justify-between border-b border-indigo-200/60 dark:border-indigo-800/60 pb-1">
                   <span>SQL Querying:</span>
-                  <span className="font-semibold">48.2% Prevalence • AOR ≈ 1.0</span>
+                  <span className="font-semibold">915 Postings (5.78%) • Relative Ratio 0.96x</span>
                 </div>
                 <div className="flex justify-between border-b border-indigo-200/60 dark:border-indigo-800/60 pb-1">
                   <span>Python Syntax:</span>
-                  <span className="font-semibold">39.5% Prevalence • AOR ≈ 1.0</span>
+                  <span className="font-semibold">840 Postings (5.30%) • Relative Ratio 1.30x</span>
                 </div>
                 <div className="flex justify-between pb-1">
-                  <span>Excel / Spreadsheet Modeling:</span>
-                  <span className="font-semibold">34.1% Prevalence • AOR ≈ 1.0</span>
+                  <span>Excel / Spreadsheet:</span>
+                  <span className="font-semibold">393 Postings (2.48%) • Relative Ratio 0.81x</span>
                 </div>
               </div>
             </div>
@@ -119,160 +147,139 @@ export default function SkillsIntelligencePage() {
                 Promotional & Wage Multipliers
               </h3>
               <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Competencies rarely advertised as discrete keyword requirements, yet statistically explain over 90% of observed salary hike variance and consulting excellence.
+                Capabilities that translate computational findings into executive business decisions, unlocking upper-quartile salary hikes and partner-track consulting leadership.
               </p>
               <div className="space-y-2 pt-2 text-xs font-mono">
                 <div className="flex justify-between border-b border-teal-200/60 dark:border-teal-800/60 pb-1">
-                  <span>Dashboarding & Storytelling:</span>
-                  <span className="font-semibold text-teal-600 dark:text-teal-400">AOR = 3.23x • d = 1.32</span>
+                  <span>Executive Storytelling:</span>
+                  <span className="font-semibold text-teal-600 dark:text-teal-400">3.23x Adjusted Odds (Rank #1)</span>
                 </div>
                 <div className="flex justify-between border-b border-teal-200/60 dark:border-teal-800/60 pb-1">
-                  <span>Mathematical & Statistical Rigor:</span>
-                  <span className="font-semibold text-teal-600 dark:text-teal-400">AOR = 3.65x • d = 1.22</span>
+                  <span>Mathematical Modeling:</span>
+                  <span className="font-semibold text-teal-600 dark:text-teal-400">3.61x Adjusted Odds (Rank #2)</span>
                 </div>
                 <div className="flex justify-between pb-1">
-                  <span>Openness to Experience (Senior):</span>
-                  <span className="font-semibold text-teal-600 dark:text-teal-400">AOR = 7.72x • Imp = 0.121</span>
+                  <span>Client Adaptability (Openness):</span>
+                  <span className="font-semibold text-teal-600 dark:text-teal-400">7.72x Senior Consulting AOR</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Detailed Skill Cards */}
-          <div className="space-y-4">
-            <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
-              Evaluated Competency Dimensions
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              <SkillCard
-                name="Dashboarding & Storytelling"
-                category="Communication & Story"
-                currencyType="Career Velocity"
-                prevalencePercent={21.9}
-                oddsRatio={3.23}
-                effectSize="d = 1.32"
-                description="The ability to translate model weights, residuals, and predictions into executive business decisions that non-technical leaders can act upon."
-                stageRelevance="Velocity (3-5y)"
+          {/* Visualizations Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* 1. Skill Frequency */}
+            <ChartCard
+              title="Technical Skill Prevalence Across 15,841 Requisitions"
+              subtitle="Empirical frequency and percentage prevalence of audited technical keywords"
+              badge={<Badge variant="outline" className="text-[10px]">Phase 3 EDA</Badge>}
+            >
+              <BarChartVisual
+                unitLabel="Demand Prevalence (%)"
+                maxValue={8.0}
+                items={skills.slice(0, 10).map((s) => ({
+                  label: s.skill_name,
+                  value: s.prevalence_pct,
+                  secondaryValue: `${s.frequency_count.toLocaleString()} jobs`,
+                  unit: "%",
+                  category: s.domain_category.split("/")[0],
+                  color: s.domain_category.includes("SQL") || s.domain_category.includes("Programming") ? "indigo" : "teal",
+                }))}
+                meaning="SQL (5.78%), Analytics (5.71%), and Python (5.30%) form the foundational tripartite baseline required for job entry."
+                onOpenEvidence={() =>
+                  openEvidence({
+                    title: "Technical Skill Frequency Analysis",
+                    phase: "Phase 3: Exploratory Data Analysis",
+                    dataset: "Analytics Jobs (N=15,841)",
+                    sampleSize: "N = 15,841 postings",
+                    method: "Dictionary-matched token extraction and frequency profiling across audited job postings.",
+                    interpretation: "Confirms that procedural programming syntax is the dominant gate for interview eligibility.",
+                    limitation: "Does not evaluate the code quality or depth expected by the employer.",
+                  })
+                }
               />
+            </ChartCard>
 
-              <SkillCard
-                name="Mathematical & Stats Foundations"
-                category="Mathematical Rigor"
-                currencyType="Career Velocity"
-                prevalencePercent={22.3}
-                oddsRatio={3.65}
-                effectSize="d = 1.22"
-                description="Understanding probability distributions, hypothesis testing assumptions, and optimization mechanics beneath API wrappers."
-                stageRelevance="Velocity (3-5y)"
+            {/* 2. Premium Salary Skill Signals */}
+            <ChartCard
+              title="Specialized Skill Wage Multipliers (Prevalence Ratios)"
+              subtitle="Relative prevalence ratio in upper-bracket salaries (>₹15L) vs baseline postings"
+              badge={<Badge variant="outline" className="text-[10px]">Phase 3 / H6</Badge>}
+            >
+              <BarChartVisual
+                unitLabel="Prevalence Ratio"
+                items={premiums.map((s) => ({
+                  label: s.skill_name,
+                  value: s.relative_prevalence_ratio,
+                  secondaryValue: `High: ${s.prevalence_in_high_salary_pct}% vs Low: ${s.prevalence_in_non_high_salary_pct}%`,
+                  unit: "x ratio",
+                  highlight: s.relative_prevalence_ratio > 2.0,
+                  color: s.relative_prevalence_ratio > 2.0 ? "teal" : s.relative_prevalence_ratio > 1.2 ? "indigo" : "amber",
+                }))}
+                meaning="Data Science (2.75x), R (2.56x), Spark (2.18x), and Machine Learning (2.15x) are true premium wage multipliers, while SQL (0.96x) and Excel (0.81x) are table-stakes."
+                onOpenEvidence={() =>
+                  openEvidence({
+                    title: "Premium Salary Differentiation Ratios",
+                    phase: "Phase 3 EDA & Phase 4 H6",
+                    dataset: "Analytics Jobs (N=15,841)",
+                    sampleSize: "N = 15,841 postings",
+                    method: "Prevalence ratio calculation between upper-tier salary bracket and baseline bracket.",
+                    interpretation: "Empirical proof of the dual-currency skill model: table-stakes skills do not generate wage premiums.",
+                    limitation: "Skills inferred via keyword matching in job descriptions.",
+                  })
+                }
               />
-
-              <SkillCard
-                name="Openness to Experience"
-                category="Executive Behavior"
-                currencyType="Career Velocity"
-                prevalencePercent={16.5}
-                oddsRatio={7.72}
-                effectSize="d = 1.80"
-                description="Intellectual curiosity and willingness to navigate ambiguous, unstructured customer business problems without preconceived technical dogmas."
-                stageRelevance="Leadership (10+y)"
-              />
-
-              <SkillCard
-                name="SQL & Data Warehousing"
-                category="Technical Tool"
-                currencyType="Market Access"
-                prevalencePercent={48.2}
-                oddsRatio={1.0}
-                effectSize="d = 0.35"
-                description="Standard query extraction, joins, aggregations, and window functions. Mandatory for early screenings across nearly half of all vacancies."
-                stageRelevance="Entry (0-2y)"
-              />
-
-              <SkillCard
-                name="Coding / Software Syntax"
-                category="Technical Tool"
-                currencyType="Saturated Foundation"
-                prevalencePercent={39.5}
-                oddsRatio={1.04}
-                effectSize="d = 0.21"
-                description="Scripting in Python or R. Uniformly proficient across both high and low salary hike cohorts, providing zero marginal promotional lift."
-                stageRelevance="Entry (0-2y)"
-              />
-
-              <SkillCard
-                name="Conscientiousness & Execution"
-                category="Executive Behavior"
-                currencyType="Career Velocity"
-                prevalencePercent={18.0}
-                oddsRatio={8.11}
-                effectSize="d = 1.85"
-                description="Methodical rigor, systematic validation, and reliable project execution under demanding senior consulting timelines."
-                stageRelevance="Leadership (10+y)"
-              />
-            </div>
+            </ChartCard>
           </div>
 
-          {/* The Five Systemic Talent Gaps */}
-          <div className="space-y-4">
-            <div>
-              <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
-                The Five Systemic Labor Market Talent Gaps
+          {/* 5 Structural Talent Gaps */}
+          <div className="space-y-6">
+            <div className="space-y-2">
+              <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+                The 5 Structural Talent Gaps
               </h2>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
-                Identified through Phase 7 Methodological Triangulation comparing employer requisitions against actual practitioner performance.
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+                Systematic market blind spots identified through Phase 7 cross-dataset synthesis.
               </p>
             </div>
 
-            <div className="space-y-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {TALENT_GAPS.map((gap) => (
                 <div
                   key={gap.gapNumber}
-                  className="p-5 rounded-xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900/80 space-y-2.5"
+                  className="p-5 rounded-xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900/60 space-y-3 flex flex-col justify-between"
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                    <div className="flex items-center space-x-2.5">
-                      <span className="w-6 h-6 rounded-md bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-mono font-bold text-xs text-teal-600 dark:text-teal-400">
-                        {gap.gapNumber}
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-mono font-bold text-teal-600 dark:text-teal-400">
+                        GAP {gap.gapNumber}
                       </span>
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">
-                        {gap.name}
-                      </h4>
+                      <Badge variant="outline" className="text-[10px] font-mono">
+                        {gap.promotionalLift}
+                      </Badge>
                     </div>
-                    <div className="flex items-center space-x-3 text-xs font-mono">
-                      <span className="text-slate-400">Postings: {gap.prevalenceInJobs}</span>
-                      <span className="text-teal-600 dark:text-teal-400 font-semibold">{gap.promotionalLift}</span>
-                    </div>
+                    <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
+                      {gap.name}
+                    </h3>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                      {gap.summary}
+                    </p>
                   </div>
-
-                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                    {gap.summary}
-                  </p>
-
-                  <div className="pt-2 border-t border-slate-100 dark:border-slate-800/80 text-xs text-teal-700 dark:text-teal-300">
-                    <strong>Recommended Strategic Action:</strong> {gap.action}
+                  <div className="pt-2 border-t border-slate-100 dark:border-slate-800/80 text-[11px] text-teal-700 dark:text-teal-300">
+                    <strong>Action: </strong>{gap.action}
                   </div>
                 </div>
               ))}
             </div>
           </div>
-
-          {/* Link to Diagnostic Scorer */}
-          <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-gradient-to-r from-slate-900 to-slate-800 dark:from-slate-900 dark:to-slate-950 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="space-y-1">
-              <h3 className="text-base font-bold">Assess Your Dual-Currency Skill Profile</h3>
-              <p className="text-xs text-slate-300">
-                Input your technical ratings to calculate your estimated salary hike probability using our validated Logistic L2 model.
-              </p>
-            </div>
-            <Link href="/assessment">
-              <Button size="sm" className="bg-teal-500 hover:bg-teal-400 text-slate-950 font-semibold text-xs shrink-0">
-                <SlidersHorizontal className="w-3.5 h-3.5 mr-1.5" />
-                <span>Launch Assessment</span>
-              </Button>
-            </Link>
-          </div>
         </div>
       </main>
+
+      <EvidenceModal
+        isOpen={isEvidenceOpen}
+        onClose={() => setIsEvidenceOpen(false)}
+        evidence={selectedEvidence}
+      />
 
       <Footer />
     </div>

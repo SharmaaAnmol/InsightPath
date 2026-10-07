@@ -12,6 +12,7 @@ from backend.schemas.sds import (
     SDSModelPerformanceResponse,
     SDSFeatureImportanceResponse,
     SDSOddsRatiosResponse,
+    SDSGroupTestsResponse,
 )
 from backend.services.data_service import data_service
 
@@ -52,3 +53,13 @@ def get_sds_odds_ratios() -> SDSOddsRatiosResponse:
         return data_service.get_sds_odds_ratios()
     except FileNotFoundError as err:
         raise HTTPException(status_code=404, detail=str(err))
+
+
+@router.get("/group-tests", response_model=SDSGroupTestsResponse)
+def get_sds_group_tests() -> SDSGroupTestsResponse:
+    """Returns empirical Big Five differences between high and low success senior cohorts (Phase 4 H3)."""
+    try:
+        return data_service.get_sds_group_tests()
+    except FileNotFoundError as err:
+        raise HTTPException(status_code=404, detail=str(err))
+

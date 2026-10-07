@@ -97,3 +97,17 @@ def test_market_premium_skills_endpoint():
     assert "skill_name" in first_record
     assert "relative_prevalence_ratio" in first_record
     assert "premium_rank" in first_record
+
+
+def test_market_experience_compensation_endpoint():
+    """Verify GET /api/v1/market/experience-compensation returns regression and empirical distributions."""
+    response = client.get("/api/v1/market/experience-compensation")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["table_name"] == "experience_compensation_regression"
+    assert data["sample_size_n"] == 1602
+    assert data["linear_slope_beta"] > 1.5
+    assert data["linear_r_squared"] > 0.3
+    assert len(data["regression_models"]) > 0
+    assert len(data["experience_summary"]) > 0
+
