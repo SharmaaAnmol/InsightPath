@@ -36,6 +36,13 @@ from backend.schemas.framework import (
     CompetenciesResponse,
     StakeholdersResponse,
 )
+from backend.schemas.assessment import (
+    AssessmentRequest,
+    AssessmentResponse,
+    SkillRadarPoint,
+    RecommendationItem,
+    LearningStage,
+)
 
 __all__ = [
     "HealthResponse",
@@ -62,4 +69,9 @@ __all__ = [
     "CareerStagesResponse",
     "CompetenciesResponse",
     "StakeholdersResponse",
+    "AssessmentRequest",
+    "AssessmentResponse",
+    "SkillRadarPoint",
+    "RecommendationItem",
+    "LearningStage",
 ]
