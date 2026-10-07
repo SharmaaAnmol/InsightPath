@@ -1,0 +1,15 @@
+segment_type,segment_name,postings_count,min_salary_median,avg_salary_mean,avg_salary_median,avg_salary_std,max_salary_median,salary_spread_mean,salary_spread_ratio_mean
+Job Title,Business Analyst,188,4.65,8.95,8.3,3.27,14.0,9.16,1.03
+Job Title,Data Analyst,187,3.0,5.71,5.0,3.12,8.9,6.48,1.07
+Job Title,Data Architect,50,17.35,25.09,24.25,7.41,31.5,15.15,0.59
+Job Title,Data Engineer,188,6.25,11.81,10.85,5.68,16.8,10.82,0.93
+Job Title,Data Scientist,188,7.0,13.53,12.8,5.43,20.0,13.69,1.02
+Job Title,Machine Learning Engineer,59,5.0,9.85,9.1,5.31,14.0,7.95,0.84
+Job Title,Senior Business Analyst,187,8.0,13.17,13.0,4.53,19.0,10.62,0.84
+Job Title,Senior Data Analyst,187,5.6,9.57,8.6,4.7,12.2,6.99,0.72
+Job Title,Senior Data Engineer,183,12.5,19.0,17.6,7.85,23.0,11.51,0.6
+Job Title,Senior Data Scientist,185,14.5,22.29,21.2,8.63,28.0,14.41,0.63
+Experience Tier,Entry (0-2 yrs),884,5.0,9.73,8.9,5.29,14.2,9.12,0.96
+Experience Tier,Mid (3-5 yrs),549,9.5,15.76,14.6,7.36,20.9,11.83,0.75
+Experience Tier,Senior (6-9 yrs),140,15.0,22.83,20.6,8.98,26.6,13.9,0.59
+Experience Tier,Lead (10+ yrs),29,21.0,26.12,25.8,5.42,32.0,11.42,0.46

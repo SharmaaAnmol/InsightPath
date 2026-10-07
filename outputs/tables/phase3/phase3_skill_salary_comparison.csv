@@ -1,0 +1,31 @@
+skill_name,skill_column,prevalence_in_high_salary_pct,prevalence_in_non_high_salary_pct,absolute_difference_pct,relative_prevalence_ratio,premium_rank
+R,skill_r,7.31,2.86,4.45,2.56,1
+Machine Learning,skill_machine_learning,6.43,2.99,3.44,2.15,2
+Sas,skill_sas,6.16,3.16,3.0,1.95,3
+Data Analytics,skill_data_analytics,4.18,1.97,2.21,2.12,4
+Java,skill_java,6.14,3.96,2.18,1.55,5
+Data Science,skill_data_science,3.14,1.14,2.0,2.75,6
+Finance,skill_finance,5.94,4.3,1.64,1.38,7
+Spark,skill_spark,2.92,1.34,1.58,2.18,8
+Python,skill_python,6.36,4.88,1.48,1.3,9
+Project Management,skill_project_management,4.0,2.86,1.14,1.4,10
+Sales,skill_sales,3.23,2.28,0.95,1.42,11
+Big Data,skill_big_data,2.3,1.41,0.89,1.63,12
+Hadoop,skill_hadoop,2.52,1.64,0.88,1.54,13
+Analytics,skill_analytics,6.21,5.51,0.7,1.13,14
+Financial Analysis,skill_financial_analysis,1.97,1.38,0.59,1.43,15
+Marketing,skill_marketing,2.41,1.92,0.49,1.26,16
+Accounting,skill_accounting,2.59,2.29,0.3,1.13,17
+Business Development,skill_business_development,1.75,1.54,0.21,1.14,18
+Auditing,skill_auditing,1.63,1.53,0.1,1.07,19
+Sql,skill_sql,5.59,5.85,-0.26,0.96,20
+Business Analysis,skill_business_analysis,3.8,4.07,-0.27,0.93,21
+Market Research,skill_market_research,1.28,1.56,-0.28,0.82,22
+Data Analysis,skill_data_analysis,3.62,4.01,-0.39,0.9,23
+Excel,skill_excel,2.12,2.62,-0.5,0.81,24
+Javascript,skill_javascript,2.98,3.54,-0.56,0.84,25
+Html,skill_html,1.52,2.09,-0.57,0.73,26
+Business Process,skill_business_process,0.27,2.37,-2.1,0.11,27
+Digital Marketing,skill_digital_marketing,1.75,4.3,-2.55,0.41,28
+Seo,skill_seo,1.17,3.9,-2.73,0.3,29
+Outsourcing,skill_outsourcing,0.13,3.13,-3.0,0.04,30

@@ -1,0 +1,31 @@
+dataset,var1,var2,pearson_r,correlation_strength
+JDS Skill Traits,big_data_skills,big_data_skills,1.0,Very Strong
+JDS Skill Traits,big_data_skills,maths_stats_skills,-0.122,Weak
+JDS Skill Traits,big_data_skills,coding_skills,0.047,Weak
+JDS Skill Traits,big_data_skills,dashboard_and_storytelling_skills,0.083,Weak
+JDS Skill Traits,maths_stats_skills,maths_stats_skills,1.0,Very Strong
+JDS Skill Traits,coding_skills,maths_stats_skills,0.448,Moderate
+JDS Skill Traits,coding_skills,coding_skills,1.0,Very Strong
+JDS Skill Traits,coding_skills,dashboard_and_storytelling_skills,0.408,Moderate
+JDS Skill Traits,ai_and_ml_skills,big_data_skills,-0.062,Weak
+JDS Skill Traits,ai_and_ml_skills,maths_stats_skills,0.365,Moderate
+JDS Skill Traits,ai_and_ml_skills,coding_skills,0.186,Weak
+JDS Skill Traits,ai_and_ml_skills,ai_and_ml_skills,1.0,Very Strong
+JDS Skill Traits,ai_and_ml_skills,dashboard_and_storytelling_skills,0.317,Moderate
+JDS Skill Traits,dashboard_and_storytelling_skills,maths_stats_skills,0.336,Moderate
+JDS Skill Traits,dashboard_and_storytelling_skills,dashboard_and_storytelling_skills,1.0,Very Strong
+SDS Personality Traits,neuroticism,neuroticism,1.0,Very Strong
+SDS Personality Traits,neuroticism,openness_to_experience,-0.0,Weak
+SDS Personality Traits,extraversion,neuroticism,-0.247,Weak
+SDS Personality Traits,extraversion,extraversion,1.0,Very Strong
+SDS Personality Traits,extraversion,openness_to_experience,0.401,Moderate
+SDS Personality Traits,openness_to_experience,openness_to_experience,1.0,Very Strong
+SDS Personality Traits,agreeableness,neuroticism,-0.155,Weak
+SDS Personality Traits,agreeableness,extraversion,0.265,Weak
+SDS Personality Traits,agreeableness,openness_to_experience,0.113,Weak
+SDS Personality Traits,agreeableness,agreeableness,1.0,Very Strong
+SDS Personality Traits,agreeableness,conscientiousness,0.304,Moderate
+SDS Personality Traits,conscientiousness,neuroticism,-0.135,Weak
+SDS Personality Traits,conscientiousness,extraversion,0.403,Moderate
+SDS Personality Traits,conscientiousness,openness_to_experience,0.453,Moderate
+SDS Personality Traits,conscientiousness,conscientiousness,1.0,Very Strong

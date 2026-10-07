@@ -1,0 +1,51 @@
+skill_identifier,skill_name,domain_category,frequency_count,prevalence_pct,skill_rank
+skill_sql,Sql,Database/SQL,915,5.78,1
+skill_analytics,Analytics,Foundational/Analytics,904,5.71,2
+skill_python,Python,Programming/Languages,840,5.3,3
+skill_finance,Finance,Business/Domain,756,4.77,4
+skill_java,Java,Programming/Languages,726,4.58,5
+skill_r,R,Programming/Languages,655,4.13,6
+skill_sas,Sas,AI/ML/Modeling,636,4.01,7
+skill_business_analysis,Business Analysis,Foundational/Analytics,633,4.0,8
+skill_machine_learning,Machine Learning,AI/ML/Modeling,629,3.97,9
+skill_data_analysis,Data Analysis,Foundational/Analytics,618,3.9,10
+skill_digital_marketing,Digital Marketing,Business/Domain,566,3.57,11
+skill_javascript,Javascript,Programming/Languages,535,3.38,12
+skill_project_management,Project Management,Business/Domain,505,3.19,13
+skill_seo,Seo,Business/Domain,494,3.12,14
+skill_data_analytics,Data Analytics,Business/Domain,412,2.6,15
+skill_sales,Sales,Business/Domain,404,2.55,16
+skill_excel,Excel,BI/Visualization,393,2.48,17
+skill_accounting,Accounting,Business/Domain,376,2.37,18
+skill_outsourcing,Outsourcing,Business/Domain,360,2.27,19
+skill_marketing,Marketing,Business/Domain,326,2.06,20
+skill_html,Html,Programming/Languages,305,1.93,21
+skill_hadoop,Hadoop,Cloud/Big Data,300,1.89,22
+skill_spark,Spark,Cloud/Big Data,284,1.79,23
+skill_business_process,Business Process,Business/Domain,280,1.77,24
+skill_data_science,Data Science,AI/ML/Modeling,271,1.71,25
+skill_big_data,Big Data,Cloud/Big Data,263,1.66,26
+skill_business_development,Business Development,Business/Domain,253,1.6,27
+skill_auditing,Auditing,Business/Domain,247,1.56,28
+skill_financial_analysis,Financial Analysis,Business/Domain,245,1.55,29
+skill_market_research,Market Research,Business/Domain,234,1.48,30
+skill_css,Css,Business/Domain,230,1.45,31
+skill_cpp,Cpp,Programming/Languages,229,1.45,32
+skill_data_mining,Data Mining,AI/ML/Modeling,225,1.42,33
+skill_google_analytics,Google Analytics,Business/Domain,224,1.41,34
+skill_budgeting,Budgeting,Business/Domain,220,1.39,35
+skill_operations,Operations,Business/Domain,220,1.39,36
+skill_sem,Sem,Business/Domain,216,1.36,37
+skill_mysql,Mysql,Business/Domain,203,1.28,38
+skill_jquery,Jquery,Business/Domain,203,1.28,39
+skill_analytical,Analytical,Business/Domain,200,1.26,40
+skill_hive,Hive,Database/SQL,199,1.26,41
+skill_consulting,Consulting,Business/Domain,189,1.19,42
+skill_product_management,Product Management,Business/Domain,179,1.13,43
+skill_nosql,Nosql,Database/SQL,178,1.12,44
+skill_business_intelligence,Business Intelligence,Business/Domain,177,1.12,45
+skill_csharp,Csharp,Programming/Languages,175,1.1,46
+skill_hr,Hr,Business/Domain,169,1.07,47
+skill_banking,Banking,Business/Domain,168,1.06,48
+skill_linux,Linux,Cloud/Big Data,164,1.04,49
+skill_recruitment,Recruitment,Business/Domain,162,1.02,50

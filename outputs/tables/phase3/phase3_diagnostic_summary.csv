@@ -1,0 +1,13 @@
+dataset,feature,diagnostic_type,observed_pattern,implication
+JDS Skill Traits,salary_hike_high_or_low,Class Balance,"73 High Hike (52.5%), 66 Low Hike (47.5%)",Balanced target; no synthetic resampling (SMOTE) required in Phase 5
+JDS Skill Traits,Subject ID 3291,Label Contradiction Anomaly,Identical skill vector across Row 3 (target=0) and Row 29 (target=1),Pre-registered dual-dataset benchmarking: Baseline N=139 vs Sensitivity N=137
+JDS Skill Traits,Technical Skills (5 domains),Measurement Scale & Ceiling,"Bounded [1.0, 5.0]; coding (mean 3.86) near ceiling; big data (mean 2.57) lower",StandardScaler must be encapsulated strictly within CV pipelines to avoid leakage
+SDS Personality Traits,success_classification_high_low,Class Balance,"85 High Success (52.8%), 76 Low Success (47.2%)",Balanced target; standard accuracy and ROC-AUC metrics appropriate
+SDS Personality Traits,Subject IDs (9 duplicate pairs),Observational Replication,18 rows represent 9 identical subject pairs across all 5 traits and target,CRITICAL: GroupKFold cross-validation grouped by id mandatory in Phase 6 to prevent leakage
+SDS Personality Traits,Big Five Traits (5 domains),Measurement Scale,"Raw psychometric scale [17.0, 68.0]; unimodal symmetric distributions",Logistic regression odds ratios interpretable per 1-point psychometric shift
+DataScience Jobs,num_of_jobs,Extreme Right Skew,"Median 1.0, mean 3.5, max 82.0 (skewness = 7.82)",Log-transform (log10_num_of_jobs) essential for linear regression stability
+DataScience Jobs,"Salary fields (min, avg, max)",Monotonicity & Collinearity,"min <= avg <= max verified 100%; high collinearity between min, avg, max (r > 0.95)",Use avg_salary_lakh as single continuous dependent variable to avoid redundancy
+Analytics Jobs,job_role_family,Taxonomical Imbalance,"Non-Analytics/Other = 84.65%; Core Analytics = 15.35% (n = 2,431)",Segment core data disciplines explicitly when evaluating skill premiums
+Analytics Jobs,location_cluster,Geographic Concentration,"Bengaluru (25.8%), NCR (25.2%), Mumbai (17.5%) encompass 68.5% of market","Tier-1 dummy encoding highly powered (n > 1,000 per cluster)"
+Analytics Jobs,job_type_clean,Missingness Artifact,75.8% missing in raw data; standardized to Unspecified,Tagged as Descriptive Only; excluded from predictive modeling design matrices
+Analytics Jobs,salary_rank / midpoint vs is_high_salary,Direct Target Leakage,is_high_salary is a mathematical threshold of salary_rank >= 5,NEVER include salary_rank or salary_midpoint as explanatory features for is_high_salary

@@ -1,0 +1,8 @@
+location_cluster,vacancies_count,mean_experience_midpoint,median_salary_midpoint,mean_salary_midpoint,high_salary_postings_count,pct_share,high_salary_rate_pct,cumulative_pct_share
+Bengaluru,4093,6.57,12.5,13.24,1299,25.84,31.74,25.84
+NCR,3988,5.83,12.5,12.57,1149,25.18,28.81,51.02
+Mumbai,2774,6.17,12.5,12.61,805,17.51,29.02,68.53
+Other/Tier-2,1737,6.0,8.0,10.56,427,10.97,24.58,79.5
+Pune,1171,6.21,8.0,11.49,317,7.39,27.07,86.89
+Hyderabad,1050,6.55,8.0,11.97,304,6.63,28.95,93.52
+Chennai,1028,6.08,8.0,10.41,225,6.49,21.89,100.01

@@ -1,0 +1,3 @@
+dataset,metric,mean,std,median,q1,q3,min,max,pearson_r_with_salary,spearman_rho_with_salary
+DataScience Jobs,min_experience,2.8,2.35,2.0,1.0,4.0,0.0,21.0,0.593,0.633
+Analytics Jobs,midpoint_experience,6.19,3.73,5.5,3.5,8.0,0.0,26.5,0.661,0.704

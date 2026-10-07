@@ -1,0 +1,6 @@
+skill_dimension,overall_mean,overall_median,overall_std,overall_min,overall_max,low_hike_mean,low_hike_median,high_hike_mean,high_hike_median,mean_difference,cohens_d_effect_size,mann_whitney_u,exploratory_p_value
+big_data_skills,3.85,3.8,0.85,2.3,5.0,3.75,3.75,3.94,3.8,0.19,0.225,2701.0,0.2172
+maths_stats_skills,4.29,4.6,0.84,2.2,5.0,3.83,3.8,4.71,5.0,0.88,1.222,3735.5,0.0
+coding_skills,4.27,4.6,0.89,2.2,5.0,3.85,3.9,4.64,5.0,0.79,0.985,3585.0,0.0
+ai_and_ml_skills,4.57,4.9,0.67,2.2,5.0,4.28,4.6,4.82,5.0,0.54,0.88,3284.0,0.0001
+dashboard_and_storytelling_skills,4.36,5.0,0.93,2.3,5.0,3.81,3.85,4.85,5.0,1.03,1.323,3827.5,0.0
