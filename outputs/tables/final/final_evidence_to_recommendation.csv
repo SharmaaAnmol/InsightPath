@@ -1,0 +1,7 @@
+recommendation_id,recommendation,empirical_evidence,confidence
+REC-1,Students: Build dual-artifact portfolios (modular Python code + interactive PowerBI dashboard + video pitch).,"Phase 4 H1 (d=1.04) & Phase 5 JDS Permutation Importance (0.1062, Rank #1); CART Root Split.",High
+REC-2,Students: De-emphasize standalone LeetCode grind; prioritize statistical modeling and business translation.,"Phase 4 H1 (Maths AOR=3.65) vs Coding ceiling compression (27.3% at 5.0, neutral market AOR=1.06).",High
+REC-3,Universities: Mandate oral project defenses and reallocate lab hours from Big Data to dashboard storytelling.,"Phase 4 H1 (Big Data p=0.217) & Phase 5 JDS (Big Data Rank #5, Importance 0.0107).",High
+REC-4,"Mid-Career: Upskill in specialized production stacks (Spark, ML, R, SAS) to breach the 15L+ salary ceiling.","Phase 4 H6 Logistic on N=15,841: Spark AOR=1.59, ML AOR=1.58, R AOR=1.56, SAS AOR=1.47.",High
+REC-5,Mentors: Coach senior aspirants on client ambiguity adaptability (Openness) and delivery conscientiousness.,"Phase 4 H3 & Phase 6 SDS: Openness AOR=7.72, Conscientiousness AOR=8.11, ROC-AUC=0.9699.",High
+REC-6,Employers: Modernize rubrics on proven drivers and strictly ban automated personality hiring filters.,Phase 0 Governance & Phase 6 Ethical Guardrails; context-dependency of psychometric ratings.,Mandatory

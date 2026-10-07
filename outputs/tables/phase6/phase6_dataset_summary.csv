@@ -1,0 +1,3 @@
+dataset_cohort,total_rows,unique_subject_ids,duplicate_rows,duplicate_unique_ids,target_high_success_n,target_low_success_n,target_high_success_pct,validation_design
+Primary_N161,161,152,18,9,85,76,52.8,StratifiedGroupKFold on subject ID (zero clone leakage)
+Sensitivity_N152,152,152,0,0,78,74,51.32,RepeatedStratifiedKFold (standard cross-validation)

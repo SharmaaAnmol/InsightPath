@@ -1,0 +1,2 @@
+model_name,validation_splits_n,roc_auc_mean,roc_auc_std,roc_auc_ci_lower,roc_auc_ci_upper,roc_auc_min,roc_auc_max,macro_f1_mean,macro_f1_std,balanced_accuracy_mean,balanced_accuracy_std,accuracy_mean,accuracy_std,precision_mean,recall_mean,log_loss_mean,brier_score_mean
+Baseline_Majority,25,0.5,0.0,0.5,0.5,0.5,0.5,0.3454,0.0049,0.5,0.0,0.5278,0.0115,0.5278,1.0,0.6917,0.2493

@@ -1,0 +1,8 @@
+dimension,mentor_context
+Core Challenge,"Mentors focus exclusively on technical upskilling, failing to prepare mentees for the behavioral transition required for senior consulting success."
+Empirical Evidence,Senior consulting success is predicted with 92.7% accuracy by Openness (AOR=7.72) and Conscientiousness (AOR=8.11); Neuroticism has zero held-out predictive value.
+Action 1: Client Simulation Sessions,"Conduct monthly roleplay simulations where mentees navigate difficult, ambiguous client scenarios, scope changes, and executive pushback."
+Action 2: Cultivate Intellectual Openness,Encourage mentees to work across unfamiliar business domains (e.g. pivoting from retail churn to manufacturing supply chain) to build cognitive adaptability.
+Action 3: Delivery Conscientiousness Audits,"Instill extreme rigor in documentation, stakeholder follow-up, meeting recaps, and reproducible artifact delivery."
+Measurable Target Indicator,Mentees achieve >=90% stakeholder approval ratings on complex projects; successful promotion from individual contributor to consulting lead within 24 months.
+Key Limitation / Guardrail,Strict ethical boundary: Never use Big Five personality scores to judge or categorize a mentee's character; focus on observable communication behaviors.

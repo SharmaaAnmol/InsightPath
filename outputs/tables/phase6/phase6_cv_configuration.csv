@@ -1,0 +1,8 @@
+parameter,value
+Validation Strategy (Primary),StratifiedGroupKFold on subject ID
+Number of Folds,5 folds per repetition
+Number of Repetitions,"5 independent random seeds [42, 43, 44, 45, 46]"
+Total Evaluation Splits,25 evaluation splits
+Group Identifier,id (strictly excluded from feature matrix X)
+Group Leakage Control,Guaranteed zero overlap between train and validation subject IDs
+Sensitivity Validation Strategy,"RepeatedStratifiedKFold (5 folds x 5 repeats, seed=42)"

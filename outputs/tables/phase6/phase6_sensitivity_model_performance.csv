@@ -1,0 +1,8 @@
+model_name,roc_auc_mean_primary,macro_f1_mean_primary,accuracy_mean_primary,brier_score_mean_primary,roc_auc_mean_sensitivity,macro_f1_mean_sensitivity,accuracy_mean_sensitivity,brier_score_mean_sensitivity,delta_roc_auc,delta_macro_f1,delta_accuracy,abs_delta_auc,stability_status
+Random_Forest,0.9946,0.94,0.9405,0.04,0.9942,0.9365,0.9369,0.0434,-0.0004,-0.0035,-0.0036,0.0004,HIGHLY ROBUST (Delta <= 0.02)
+Gradient_Boosting,0.9882,0.9374,0.9379,0.0471,0.9882,0.9309,0.9316,0.0506,0.0,-0.0065,-0.0063,0.0,HIGHLY ROBUST (Delta <= 0.02)
+Logistic_Regression_L2,0.9699,0.9259,0.9268,0.0622,0.965,0.926,0.9266,0.0675,-0.0049,0.0001,-0.0002,0.0049,HIGHLY ROBUST (Delta <= 0.02)
+Logistic_Regression_ElasticNet,0.9688,0.9221,0.923,0.062,0.9632,0.9206,0.9212,0.0676,-0.0056,-0.0015,-0.0018,0.0056,HIGHLY ROBUST (Delta <= 0.02)
+Logistic_Regression_L1,0.9683,0.9196,0.9205,0.0622,0.9615,0.9167,0.9173,0.0681,-0.0068,-0.0029,-0.0032,0.0068,HIGHLY ROBUST (Delta <= 0.02)
+Decision_Tree,0.9399,0.9036,0.9044,0.0729,0.9394,0.8844,0.8855,0.0772,-0.0005,-0.0192,-0.0189,0.0005,HIGHLY ROBUST (Delta <= 0.02)
+Baseline_Majority,0.5,0.3454,0.5278,0.2493,0.5,0.339,0.5131,0.2499,0.0,-0.0064,-0.0147,0.0,HIGHLY ROBUST (Delta <= 0.02)

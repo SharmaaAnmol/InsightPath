@@ -1,0 +1,32 @@
+{
+  "model_name": "Logistic_Regression_L2",
+  "phase": "Phase 6 \u2014 Senior Data Scientist Personality Modeling",
+  "sample_size": 161,
+  "features": [
+    "neuroticism",
+    "extraversion",
+    "openness_to_experience",
+    "agreeableness",
+    "conscientiousness"
+  ],
+  "target": "success_classification_high_low",
+  "cv_validation_protocol": "5-Fold x 5-Repeat StratifiedGroupKFold (25 splits)",
+  "mean_roc_auc": 0.9699,
+  "mean_macro_f1": 0.9259,
+  "mean_accuracy": 0.9268,
+  "brier_score": 0.0622,
+  "hyperparameters": {
+    "penalty": "l2",
+    "C": 1.0,
+    "solver": "lbfgs",
+    "random_state": 42
+  },
+  "standardized_odds_ratios": {
+    "conscientiousness": 8.1143,
+    "openness_to_experience": 7.7166,
+    "extraversion": 2.5954,
+    "neuroticism": 2.2221,
+    "agreeableness": 1.8734
+  },
+  "sensitivity_verdict": "ROBUST"
+}

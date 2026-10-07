@@ -1,0 +1,8 @@
+dimension,student_context
+Core Challenge,Grinding hundreds of algorithmic LeetCode/Python challenges while neglecting communication and statistical inference depth.
+Empirical Evidence,Python/SQL have neutral salary odds (AOR ~1.0); Storytelling (AOR=3.23) and Maths/Stats (AOR=3.65) drive 96.7% of junior promotion velocity.
+Action 1: The 'Dual-Artifact' Portfolio,"For every project, publish both clean modular Python code AND an interactive PowerBI/Tableau executive dashboard with a 2-minute video presentation."
+Action 2: Statistical Rigor Focus,"Master formal hypothesis testing, regression diagnostics, and A/B test power analysis rather than just calling .fit() on black-box neural nets."
+Action 3: Geographic Targeting,"Target entry requisitions in Bengaluru, NCR, or Mumbai (68.5% demand), or remote roles anchored in metro wage brackets."
+Measurable Target Indicator,Achieve 3 public portfolio projects with deployed dashboards; attain >=80% interview callback rate on storytelling project walkthroughs.
+Key Limitation / Guardrail,Do not skip Python/SQL syntax mastery; they remain mandatory gatekeepers to reach the interview stage.

@@ -1,0 +1,6 @@
+trait_dimension,primary_importance,sensitivity_importance,delta_importance,concordant
+openness_to_experience,0.0904,0.1196,0.0293,True
+conscientiousness,0.0723,0.0624,-0.0099,True
+agreeableness,0.0154,0.0144,-0.001,True
+extraversion,0.0096,0.0074,-0.0021,True
+neuroticism,0.0005,0.001,0.0004,True

@@ -1,0 +1,6 @@
+rq_number,phase4_hypothesis,trait_dimension,phase4_finding,phase6_odds_ratio,phase6_permutation_rank,concordance_verdict
+RQ7,H3 (Big Five Group Differences),conscientiousness,"Massive group difference (d = 1.85, p < 1e-15)",8.1143,2,CONCORDANT: Primary statistical and predictive driver of senior success
+RQ7,H3 (Big Five Group Differences),openness_to_experience,"Massive group difference (d = 1.80, p < 1e-16)",7.7166,1,CONCORDANT: Second dominant predictive and statistical driver
+RQ7,H3 (Big Five Group Differences),extraversion,"Large group difference (d = 1.13, p = 5.79e-10)",2.5954,4,CONCORDANT: Moderate positive independent predictive contribution
+RQ7,H3 (Big Five Group Differences),agreeableness,"Moderate group difference (d = 0.61, p = 8.74e-4), non-sig in multivariable logistic (p = 0.056)",1.8734,3,CONCORDANT: Subordinate predictive role; adds marginal out-of-sample lift
+RQ7,H3 & H4 (Neuroticism Suppressor),neuroticism,"No bivariate difference (d = -0.01, p = 0.454); multivariable suppressor (AOR = 3.94)",2.2221,5,"CONCORDANT: In multivariable context provides modest positive beta, but lowest permutation importance"

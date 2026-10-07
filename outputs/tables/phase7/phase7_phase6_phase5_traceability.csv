@@ -1,0 +1,11 @@
+dimension,phase5_jds,phase6_sds
+Cohort Sample Size,N = 139 Primary (N = 137 Sensitivity),N = 161 Primary (N = 152 Sensitivity)
+Predictor Variables,5 Technical Skill Dimensions (scale 1.0 - 5.0),5 Big Five Personality Dimensions (interval 17.0 - 68.0)
+Classification Target,salary_hike_high_or_low (52.5% High / 47.5% Low),success_classification_high_low (52.8% High / 47.2% Low)
+Cross-Validation Protocol,5-Fold x 5-Repeat StratifiedKFold (25 splits),5-Fold x 5-Repeat StratifiedGroupKFold on ID (25 splits)
+Champion Model Selected,"Logistic Regression L2 (Ridge, C=1.0)","Logistic Regression L2 (Ridge, C=1.0)"
+Champion ROC-AUC (Mean ± SD),"0.9035 ± 0.0594 [95% CI: 0.8802, 0.9268]","0.9699 ± 0.0268 [95% CI: 0.9594, 0.9804]"
+Champion Accuracy & Baseline Lift,85.29% (+32.78% lift over 52.51% baseline),92.68% (+39.90% lift over 52.78% baseline)
+Primary Predictive Drivers,Storytelling (Rank #1) & Maths/Stats (Rank #2),Openness (Rank #1) & Conscientiousness (Rank #2)
+Weakest Predictive Feature,"Big Data Skills (Rank #5, Imp = 0.0107)","Neuroticism (Rank #5, Imp = 0.0005)"
+Sensitivity Invariance Verdict,ROBUST (Delta AUC = 0.0015 <= 0.02),HIGHLY ROBUST (Delta AUC = 0.0049 <= 0.02)

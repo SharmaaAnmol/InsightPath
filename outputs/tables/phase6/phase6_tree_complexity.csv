@@ -1,0 +1,2 @@
+max_depth_configured,actual_depth,total_nodes,leaf_nodes,root_split_feature,root_split_threshold,criterion,min_samples_leaf
+3,3,7,4,openness_to_experience,38.5,gini,5

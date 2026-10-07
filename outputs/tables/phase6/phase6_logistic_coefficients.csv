@@ -1,0 +1,7 @@
+parameter,full_sample_coef,cv_mean_coef,cv_std_coef,z_stat,is_intercept
+Intercept,-0.5035,-0.4424,0.0628,-7.041,True
+neuroticism,0.7985,0.7441,0.1187,6.266,False
+extraversion,0.9538,0.9152,0.1976,4.631,False
+openness_to_experience,2.0434,1.9578,0.1653,11.847,False
+agreeableness,0.6278,0.6048,0.1317,4.594,False
+conscientiousness,2.0936,1.9905,0.1352,14.726,False

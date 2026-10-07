@@ -1,6 +1,6 @@
 audit_dimension,specification,compliance_status
-Python Version,3.13.6,VERIFIED
-scikit-learn Version,1.9.1,VERIFIED
+Python Version,3.14.6,VERIFIED
+scikit-learn Version,1.9.0,VERIFIED
 Random Seed,random_state = 42 (Pinned across all splitters & estimators),VERIFIED
 CV Strategy,RepeatedStratifiedKFold (5 Folds x 5 Repeats = 25 Splits),VERIFIED
 Primary Cohort,"data/processed/jds_processed.csv (N=139, 73 High, 66 Low)",VERIFIED

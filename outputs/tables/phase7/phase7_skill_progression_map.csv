@@ -1,0 +1,6 @@
+competency_area,stage_1_entry,stage_2_junior,stage_3_mid,stage_4_senior
+Programming & Data Wrangling,"SQL queries, Python pandas, data cleansing","Modular Python pipelines, Git versioning","Production API integration, CI/CD, PySpark","Architectural governance, toolstack strategy"
+Mathematics & Statistics,"Descriptive statistics, basic probability","Hypothesis testing, regression modeling, A/B testing","Multivariate modeling, causal inference, Bayesian methods","Analytical risk evaluation, research scoping"
+Machine Learning & AI,"Supervised algorithms (regression, decision trees)","Model evaluation, feature engineering, cross-validation","Deep learning, NLP/LLM fine-tuning, MLOps deployment","Business AI feasibility assessment, ethical audit"
+Communication & Storytelling,"Static charts, descriptive slide summaries","Interactive dashboards (PowerBI/Tableau), insight narrative","Executive briefings, translating tech debt to business cost","C-suite strategic persuasion, consultative advisory"
+Behavioral & Client Leadership,"Task adherence, receptive to feedback","Proactive project ownership, peer code reviews","Cross-functional stakeholder management, mentoring","Intellectual agility (Openness), flawless delivery rigor (Conscientiousness)"

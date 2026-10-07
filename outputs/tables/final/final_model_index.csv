@@ -1,0 +1,7 @@
+model_id,target_cohort,model_name,family,features,validation_protocol,roc_auc,macro_f1,accuracy,brier_score,status
+MOD-JDS-CHAMP,Junior Data Scientists (N=139),Logistic_Regression_L2,Ridge Regularized Logistic Regression,"5 Skills (Maths, Storytelling, AI/ML, Coding, Big Data)",5-Fold x 5-Repeat StratifiedKFold (25 splits),0.9035,0.8506,0.8529,0.1182,Champion Model (Serialized)
+MOD-JDS-PARSIM,Junior Data Scientists (N=139),Reduced_Logistic_2Feature,Ridge Regularized Logistic Regression,2 Skills (Maths/Stats + Storytelling),5-Fold x 5-Repeat StratifiedKFold (25 splits),0.8741,0.8214,0.8243,0.129,Parsimonious Benchmark (96.75% power retained)
+MOD-JDS-TREE,Junior Data Scientists (N=139),Decision_Tree,Constrained CART (max_depth=3),5 Skills,5-Fold x 5-Repeat StratifiedKFold (25 splits),0.8198,0.7808,0.7841,0.1676,White-Box Tool (6 leaf rules)
+MOD-SDS-CHAMP,Senior Data Scientists (N=161),Logistic_Regression_L2,Ridge Regularized Logistic Regression,5 Big Five Traits,5-Fold x 5-Repeat StratifiedGroupKFold on ID (25 splits),0.9699,0.9259,0.9268,0.0622,Champion Model (Serialized)
+MOD-SDS-ENSEMBLE,Senior Data Scientists (N=161),Random_Forest,"Constrained Random Forest (100 trees, depth 3)",5 Big Five Traits,5-Fold x 5-Repeat StratifiedGroupKFold on ID (25 splits),0.9946,0.94,0.9405,0.04,Non-Linear Benchmark
+MOD-SDS-TREE,Senior Data Scientists (N=161),Decision_Tree,Constrained CART (max_depth=3),5 Big Five Traits,5-Fold x 5-Repeat StratifiedGroupKFold on ID (25 splits),0.9399,0.9036,0.9044,0.0729,White-Box Tool (4 leaf rules)

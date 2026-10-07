@@ -1,0 +1,6 @@
+trait_dimension,mean_permutation_importance,std_permutation_importance,min_importance,max_importance,rank
+openness_to_experience,0.1209,0.0381,0.0447,0.1815,1
+conscientiousness,0.0826,0.0199,0.0541,0.1331,2
+agreeableness,0.0188,0.0127,0.0,0.0456,3
+extraversion,0.016,0.0123,0.0,0.0426,4
+neuroticism,0.0005,0.0013,-0.0016,0.0037,5

@@ -1,0 +1,7 @@
+item,value
+Operating System,macOS (Apple Silicon)
+Python Interpreter,Python 3.13
+scikit-learn Version,1.9.1
+Random Seed Governance,"Fixed seed sequence [42, 43, 44, 45, 46]"
+Deterministic Pipelines,StandardScaler enclosed strictly within sklearn Pipeline
+Duplicate ID Protocol,Primary uses StratifiedGroupKFold on ID; Sensitivity uses deduplicated N=152

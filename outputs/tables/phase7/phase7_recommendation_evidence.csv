@@ -1,0 +1,7 @@
+action_id,recommendation,empirical_source
+REC-1,Universities must mandate data storytelling and executive presentation defense in curriculum.,"Phase 4 H1 (d=1.04) & Phase 5 JDS Permutation Importance (0.1062, Rank #1); CART Root Split."
+REC-2,Students should de-emphasize standalone Big Data tools in favor of statistical modeling depth.,"Phase 4 H1 (p=0.217) & Phase 5 JDS (Big Data Rank #5, Importance 0.0107); Phase 4 H6 regression."
+REC-3,"Candidates targeting high salaries must combine Python with specialized tools (R, SAS, Spark, ML).","Phase 4 H6 Multivariable Logistic Regression on N=15,841 (Spark AOR=1.59, ML AOR=1.58, R AOR=1.56, SAS AOR=1.47)."
+REC-4,Mentors must coach aspiring senior consultants on intellectual adaptability and execution discipline.,"Phase 4 H3 (Conscientiousness d=1.85, Openness d=1.80) & Phase 6 SDS Permutation Importance (Openness 0.1209, Conscientiousness 0.0826)."
+REC-5,Organizations must strictly ban automated personality-based hiring or termination algorithms.,Phase 0 Governance & Phase 6 Ethical Guardrails; context-dependency of Big Five consulting ratings.
+REC-6,"Early-career practitioners seeking wage acceleration should prioritize Bengaluru, NCR, or Mumbai.","Phase 4 H6 Geographic Chi-square (Chi2=69.87) & Haberman Residuals (NCR=+3.54, Mumbai=+2.67)."

@@ -1,0 +1,6 @@
+action_id,recommendation_area,recommended_action,supporting_evidence,target_stakeholder,priority
+ACT-1,Portfolio Modernization,Mandate interactive dashboard + video presentation alongside Python code.,"Phase 5 JDS: Storytelling Rank #1 Permutation Importance (0.1062), AOR = 3.23.",Students & Universities,Immediate
+ACT-2,Curriculum De-bloating,Remove distributed Big Data cluster administration from introductory curricula.,"Phase 4 H1 (p=0.217) & Phase 5 JDS: Big Data Rank #5, Importance 0.0107.",Universities & Bootcamps,High
+ACT-3,Mid-Career Wage Mobility,"Upskill into specialized stacks (Spark, ML, R, SAS) to cross 15L+ salary bracket.","Phase 4 H6 Logistic: Spark AOR=1.59, ML AOR=1.58, R AOR=1.56, SAS AOR=1.47.",Mid-Career Practitioners,High
+ACT-4,Consulting Leadership Transition,Coach senior candidates on client adaptability (Openness) and execution discipline.,"Phase 6 SDS: Openness AOR=7.72, Conscientiousness AOR=8.11, ROC-AUC=0.9699.",Mentors & Employers,High
+ACT-5,Algorithmic Hiring Ethics,Implement policy banning automated psychometric/personality gatekeeping tools.,Phase 0 Limitations & Phase 6 Ethical Guardrails; context-dependency of Big Five ratings.,Employers & HR Leadership,Mandatory

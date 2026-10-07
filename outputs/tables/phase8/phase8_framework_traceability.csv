@@ -1,0 +1,9 @@
+framework_element,underlying_data_source,phase_traceability,key_metric
+4-Quadrant: Advanced Readiness (Q1),JDS N=139 & SDS N=161,Phase 5 CART Rule 1 & Phase 6 Tree Leaf 4,100% High Hike / 94.3% Consulting Success
+4-Quadrant: Technical Strong (Q2),JDS N=139,Phase 5 CART Rules 3 & 4,Salary velocity drops to 66-82% without storytelling
+4-Quadrant: Communication Strong (Q3),JDS N=139,Phase 5 CART Rule 2,71.4% High Hike (communication compensates partially)
+4-Quadrant: Stagnation Trap (Q4),JDS N=139 & SDS N=161,Phase 5 CART Rule 6 & Phase 6 Leaf 1,97.7% Low Hike / 100% Low Consulting Success
+Stage 1: Entry / Foundation,"Analytics Jobs N=15,841",Phase 3 EDA & Phase 4 H6 Baseline Skills,SQL (48.2%) & Python (39.5%) Table Stakes
+Stage 2: Junior / Velocity,JDS N=139,"Phase 4 H1, H2 & Phase 5 ML","Storytelling AOR=3.23, Maths AOR=3.65 (ROC-AUC=0.9035)"
+Stage 3: Mid-Career / Expansion,DataScience Jobs & Analytics Jobs,"Phase 4 H5, H6 Multivariable Logistic","Spark AOR=1.59, ML AOR=1.58, Beta=1.98L/year"
+Stage 4: Senior Leadership,SDS N=161,"Phase 4 H3, H4 & Phase 6 ML","Openness AOR=7.72, Conscientiousness AOR=8.11 (ROC-AUC=0.9699)"

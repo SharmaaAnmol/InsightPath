@@ -1,0 +1,8 @@
+dimension,employer_context
+Core Challenge,"Job descriptions publish bloated 'wishlists' (asking for 10+ tools), creating high recruiting friction, while internal evaluation relies on subjective bias."
+Empirical Evidence,A 2-feature competency model (Maths + Storytelling) captures 96.75% of junior predictive velocity; experience scales salary linearly at 1.98L/year.
+Action 1: Calibrate Job Descriptions,Remove unrealistic tool requirements (e.g. requiring Spark and Kubernetes for junior roles); explicitly state requirements for data communication and dashboarding.
+Action 2: Standardize Rubrics on Proven Drivers,Evaluate junior candidates on statistical reasoning and business narrative defense rather than LeetCode algorithmic puzzle speed.
+Action 3: Strict Ethical AI Ban on Personality Tools,Prohibit automated personality pre-screening software in recruitment to prevent discrimination and avoid unvalidated exclusion.
+Measurable Target Indicator,Reduction in time-to-hire by >=30%; post-hire 12-month retention rates increase to >=85%; elimination of algorithmic bias liabilities.
+Key Limitation / Guardrail,Requires alignment between HR talent acquisition teams and technical engineering directors.

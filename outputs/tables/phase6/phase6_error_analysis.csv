@@ -1,0 +1,7 @@
+quadrant,prediction_count,percentage_of_total,is_misclassification
+True Positive (High Success correctly predicted),409,50.81,False
+True Negative (Low Success correctly predicted),337,41.86,False
+False Positive (Low Success predicted High),43,5.34,True
+False Negative (High Success predicted Low),16,1.99,True
+Boundary Uncertainty (0.35 <= P <= 0.65),60,7.45,False
+Misclassifications inside Uncertainty Zone,15,25.42,True

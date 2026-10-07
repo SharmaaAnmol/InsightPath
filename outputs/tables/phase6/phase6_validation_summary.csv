@@ -1,0 +1,9 @@
+check,expected,observed,passed
+Primary Dataset Size,161,161,True
+Sensitivity Dataset Size,152,152,True
+Subject Group Isolation (Zero Leakage),0 intersecting IDs,0 intersecting IDs across all 25 splits,True
+Candidate Models Evaluated,7,7,True
+Repeated Splits Evaluated,25,25,True
+Champion Model ROC-AUC >= 0.85,>= 0.85,0.9699,True
+Baseline Accuracy Lift >= 25%,>= 25.0%,39.90%,True
+Sensitivity Delta ROC-AUC <= 0.02,<= 0.02,0.0049,True

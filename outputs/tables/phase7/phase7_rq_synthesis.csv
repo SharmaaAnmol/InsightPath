@@ -1,0 +1,10 @@
+rq_id,topic,empirical_answer
+RQ1,Macro Role Demand,"Data Scientist (35.2%), ML Engineer (21.4%), and Data Analyst (15.8%) represent 72.4% of total demand across 642 organizations."
+RQ2,Experience & Salary,Strong positive monotonic relationship (Spearman rho = 0.633 - 0.704); linear elasticity beta = 1.98L/year; salary variance expands sharply at >= 5 years.
+RQ3,Geographic Clusters,"Bengaluru (43.8%), NCR (14.2%), and Mumbai (10.5%) constitute 68.5% of total demand, exhibiting statistically significant wage premiums."
+RQ4,Skill Frequency,"SQL (48.2%) and Python (39.5%) dominate postings as foundational requirements; ML (21.6%), Big Data (19.2%), R (16.5%), and SAS (15.2%) form specialized clusters."
+RQ5,Premium Salary Skills,"Spark (AOR=1.59), ML (AOR=1.58), SAS (AOR=1.47), and R (AOR=1.56) command significant independent premia, whereas SQL and Python do not."
+RQ6,Junior Competencies,"Dashboarding/Storytelling (d=1.04, AOR=3.23) and Maths/Stats (d=1.05, AOR=3.65) associate most strongly with junior salary hikes; Big Data is non-significant (p=0.217)."
+RQ7,Senior Personality,"Conscientiousness (d=1.85, AOR=8.11) and Openness (d=1.80, AOR=7.72) associate overwhelmingly with consulting success; Neuroticism shows zero bivariate difference."
+RQ8,Predictive Models,Regularized Logistic models achieve ROC-AUC = 0.9035 (JDS) and 0.9699 (SDS) under 25-split cross-validation; parsimonious linear models match or exceed complex ensembles.
+RQ9,Framework Synthesis,Multi-lens evidence integrates into an operational 4-Quadrant Talent Matrix and 4-Stage Progression Roadmap without row-level joins.

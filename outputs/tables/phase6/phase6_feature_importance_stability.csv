@@ -1,0 +1,6 @@
+trait_dimension,rank_1_pct,rank_2_pct,rank_3_pct,rank_4_pct,rank_5_pct,top_2_frequency_pct,average_rank
+openness_to_experience,84.0,16.0,0.0,0.0,0.0,100.0,1.16
+conscientiousness,16.0,84.0,0.0,0.0,0.0,100.0,1.84
+neuroticism,0.0,0.0,0.0,4.0,96.0,0.0,4.96
+extraversion,0.0,0.0,44.0,52.0,4.0,0.0,3.6
+agreeableness,0.0,0.0,56.0,44.0,0.0,0.0,3.44

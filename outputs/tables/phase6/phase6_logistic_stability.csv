@@ -1,0 +1,6 @@
+trait_dimension,mean_coefficient,std_coefficient,min_coefficient,max_coefficient,sign_consistency_pct,cv_stability_verdict
+conscientiousness,1.9905,0.1352,1.7621,2.1781,100.0,HIGHLY STABLE
+openness_to_experience,1.9578,0.1653,1.7343,2.335,100.0,HIGHLY STABLE
+extraversion,0.9152,0.1976,0.5038,1.2836,100.0,HIGHLY STABLE
+neuroticism,0.7441,0.1187,0.5339,0.9709,100.0,HIGHLY STABLE
+agreeableness,0.6048,0.1317,0.2853,0.8547,100.0,HIGHLY STABLE

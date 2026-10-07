@@ -1,0 +1,8 @@
+model_name,family,hyperparameters,purpose
+Baseline_Majority,Dummy Classifier,strategy='prior',Empirical zero-rule benchmark
+Logistic_Regression_L2,Regularized Linear (Ridge),"penalty='l2', C=1.0, solver='lbfgs'",Primary interpretable parametric model with closed-form odds ratios
+Logistic_Regression_L1,Sparse Linear (Lasso),"penalty='l1', C=1.0, solver='saga'",Feature selection benchmark
+Logistic_Regression_ElasticNet,ElasticNet Linear,"penalty='elasticnet', l1_ratio=0.5, C=1.0, solver='saga'",Balanced regularization benchmark
+Decision_Tree,CART Decision Tree,"max_depth=3, min_samples_leaf=5, criterion='gini'",Rule-based white-box decision logic
+Random_Forest,Ensemble (Bagging),"n_estimators=100, max_depth=3, min_samples_leaf=3, max_features='sqrt'",Constrained non-linear ensemble benchmark
+Gradient_Boosting,Ensemble (Boosting),"n_estimators=50, max_depth=2, learning_rate=0.05",Shallow sequential boosting benchmark

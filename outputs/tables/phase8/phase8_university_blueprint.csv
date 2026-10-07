@@ -1,0 +1,8 @@
+dimension,university_context
+Core Challenge,Curricula overemphasize standalone big data infrastructure (Hadoop/Spark clusters) while under-indexing on data storytelling and business translation.
+Empirical Evidence,"Big Data skills show zero independent impact on junior salary hikes (p=0.217, Importance 0.0107, Rank #5); Storytelling is Rank #1 driver."
+Action 1: Mandatory Executive Defenses,Replace written exam reports with mandatory oral project defenses where students present findings to simulated non-technical business stakeholders.
+Action 2: Reallocate Lab Hours,Shift 40% of lab time from distributed system configuration to interactive dashboard design (Tableau/PowerBI) and experimental A/B test design.
+Action 3: Real Messy Industry Data,"Eliminate synthetic toy datasets (Iris, Titanic); train students on raw, multi-source enterprise data with missingness and conflicting labels."
+Measurable Target Indicator,100% of graduating data science capstones include an executive summary and interactive dashboard; graduate median placement salary increases by >=25%.
+Key Limitation / Guardrail,Curricular modernization requires retraining academic faculty on modern BI visualization and consultative communication.

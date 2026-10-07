@@ -1,0 +1,12 @@
+artifact,phase,file_path,type,purpose,status
+Four Raw Source Datasets,Phase 0,data/raw/,Data,Immutably preserved source data,VERIFIED READ-ONLY
+Processed Datasets (5 files),Phase 2,data/processed/,Data,Standardized modeling matrices,VERIFIED COMPLETE
+"Phase 3 Figures (15 files, PNG+SVG)",Phase 3,outputs/figures/phase3/,Figures,Exploratory visual analysis,VERIFIED COMPLETE
+"Phase 4 Figures (7 files, PNG+SVG)",Phase 4,outputs/figures/phase4/,Figures,Inferential hypothesis forest plots,VERIFIED COMPLETE
+"Phase 5 Figures (10 files, PNG+SVG)",Phase 5,outputs/figures/phase5/,Figures,JDS predictive ML performance & trees,VERIFIED COMPLETE
+"Phase 6 Figures (8 files, PNG+SVG)",Phase 6,outputs/figures/phase6/,Figures,SDS predictive ML performance & trees,VERIFIED COMPLETE
+"Phase 7 Figures (4 files, PNG+SVG)",Phase 7,outputs/figures/phase7/,Figures,Cross-dataset triangulation maps,VERIFIED COMPLETE
+"Phase 8 Figures (4 files, PNG+SVG)",Phase 8,outputs/figures/phase8/,Figures,Four-Quadrant Matrix & Roadmaps,VERIFIED COMPLETE
+Champion Models (JDS & SDS),Phases 5 & 6,outputs/models/,Models,Serialized pipelines & metadata JSON,VERIFIED SERIALIZED
+Final Round 2 Master Report,Phase 9,docs/phase9/FINAL_ROUND2_REPORT.md,Report,Comprehensive 25-page hackathon submission,VERIFIED COMPLETE
+Final Executive Presentation,Phase 9,outputs/reports/InsightPath_Rusty_Wolves_Final_Presentation.pptx,Presentation,15-slide executive deck,VERIFIED COMPLETE

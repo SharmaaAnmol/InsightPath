@@ -1,0 +1,6 @@
+trait_dimension,standardized_coef_beta,coef_std_error,adjusted_odds_ratio,or_ci_lower_95,or_ci_upper_95,relative_importance_rank
+conscientiousness,2.0936,0.1352,8.1143,6.2258,10.5758,1
+openness_to_experience,2.0434,0.1653,7.7166,5.5815,10.6684,2
+extraversion,0.9538,0.1976,2.5954,1.7619,3.8232,3
+neuroticism,0.7985,0.1187,2.2221,1.7607,2.8045,4
+agreeableness,0.6278,0.1317,1.8734,1.4473,2.4249,5
