@@ -1,0 +1,6 @@
+trait_dimension,valid_records,min_score,max_score,score_span,within_17_to_68
+neuroticism,161,17.0,68.0,51.0,True
+ extraversion,161,17.0,67.0,50.0,True
+openness_to_experience,161,18.0,65.0,47.0,True
+agreeableness,161,17.0,68.0,51.0,True
+conscientiousness,161,18.0,66.0,48.0,True

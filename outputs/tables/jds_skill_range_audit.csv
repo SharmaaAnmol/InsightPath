@@ -1,0 +1,6 @@
+skill_dimension,valid_records,min_score,max_score,within_1_to_5,ceiling_5_0_count,ceiling_5_0_pct
+big_data_skills,139,2.3,5.0,True,25,17.99
+maths-stats_skills,139,2.2,5.0,True,57,41.01
+coding_skills,139,2.2,5.0,True,62,44.6
+ai_and_ml_skills,139,2.2,5.0,True,68,48.92
+dashboard_and_storytelling_skills,139,2.3,5.0,True,81,58.27

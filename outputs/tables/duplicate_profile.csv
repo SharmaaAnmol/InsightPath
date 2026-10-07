@@ -1,0 +1,5 @@
+dataset,total_rows,exact_duplicate_rows,exact_duplicate_pct,id_column,unique_ids,duplicate_ids,id_uniqueness_ratio
+DataScience Jobs,1602,0,0.0,reference_no,1460,142,0.9114
+Analytics Jobs,15841,0,0.0,s_no,15841,0,1.0
+JDS Skill Traits,171,31,18.129,id,137,2,0.9856
+SDS Personality Traits,161,0,0.0,id,152,9,0.9441

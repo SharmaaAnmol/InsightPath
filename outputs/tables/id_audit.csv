@@ -1,0 +1,5 @@
+dataset,identifier_column,data_type,is_numeric,total_records,missing_count,unique_count,duplicate_count,uniqueness_ratio,min_value,max_value
+DataScience Jobs,reference_no,int64,True,1602,0,1460,142,0.9114,1012,8998
+Analytics Jobs,s_no,int64,True,15841,0,15841,0,1.0,1,15841
+JDS Skill Traits,id,object,True,171,32,137,2,0.9856,2007,4000
+SDS Personality Traits,id,object,True,161,0,152,9,0.9441,8001,8979

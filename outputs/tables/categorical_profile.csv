@@ -1,0 +1,17 @@
+dataset,column,total_valid_values,unique_categories,whitespace_anomaly,casing_inconsistency,most_frequent_value,top_value_frequency,top_value_percentage
+DataScience Jobs,reference_no,1602,1460,False,False,8110,3,0.19
+DataScience Jobs,company_name,1602,642,False,False,TCS,10,0.62
+DataScience Jobs,job_title,1602,10,False,False,Data Scientist,188,11.74
+DataScience Jobs,min_experience,1602,18,False,False,1,358,22.35
+DataScience Jobs,avg_salary,1602,305,False,False,9.7L,16,1.0
+DataScience Jobs,min_salary,1602,197,False,False,5.0L,62,3.87
+DataScience Jobs,max_salary,1602,304,False,False,20.0L,63,3.93
+DataScience Jobs,num_of_jobs,1602,220,False,False,5,123,7.68
+Analytics Jobs,s_no,15841,15841,False,False,1,1,0.01
+Analytics Jobs,experience,15841,128,False,False,5-10 yrs,1010,6.38
+Analytics Jobs,job_description,12333,7859,True,False,Accenture Technology powers our clients businesses,117,0.95
+Analytics Jobs,job_desig,15841,10097,True,True,Business Analyst,108,0.68
+Analytics Jobs,job_type,3830,5,False,True,Analytics,2971,77.57
+Analytics Jobs,key_skills,15840,11155,True,True,"part time, freelancing, data entry, present job, w",66,0.42
+Analytics Jobs,location,15841,1355,False,True,Bengaluru,3333,21.04
+Analytics Jobs,salary,15841,6,False,False,10to15,3608,22.78

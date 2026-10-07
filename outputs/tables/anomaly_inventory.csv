@@ -1,0 +1,13 @@
+dataset,column,issue_type,affected_count,affected_percentage,example_values,severity,recommended_phase2_action
+JDS Skill Traits,ALL (Rows 140-171),Trailing Empty Rows,32,18.71,All 7 columns None / NaN,CRITICAL,Filter out completely blank trailing rows (dropna where all null); analytical sample N=139.
+SDS Personality Traits,"' extraversion', 'success_ classification_ high_low'",Whitespace in Header Names,2,28.57,"Leading space in ' extraversion', spaces in target name",HIGH,"Sanitize column headers with .str.strip().str.replace(' ', '_').str.lower()."
+Analytics Jobs,job_type,Extreme Missingness & Inconsistent Casing,12011,75.82,"NaN (12,011), 'Analytics', 'analytics', 'ANALYTICS'",HIGH,Standardize populated casing; document as uninformative and exclude from predictive modeling.
+Analytics Jobs,job_description,High Missingness,3508,22.14,NaN,MEDIUM,Impute with empty string for text processing; use key_skills as primary skill source.
+DataScience Jobs,"avg_salary, min_salary, max_salary",Text Currency Representation,1602,100.0,"'4.5L', '16.0L', '7.8L'",HIGH,Develop numeric parser stripping 'L' and casting to continuous float64 (Lakhs INR).
+Analytics Jobs,salary,Discrete Textual Salary Brackets,15841,100.0,"'10to15', '15to25', '6to10'",HIGH,Encode as ordinal factor and compute interval midpoints for numeric approximations.
+Analytics Jobs,experience,Unstructured Interval Strings,15841,100.0,"'6-10 yrs', '2-5 yrs', '5-10 yrs'",HIGH,"Regex extraction to create min_experience, max_experience, and midpoint_experience."
+DataScience Jobs,reference_no,Non-Unique Identifiers,142,8.86,Ref 1024 shared by Exl India & IHS Markit,MEDIUM,Retain rows as postings; never use reference_no as primary key or modeling feature.
+JDS Skill Traits,id,Duplicate IDs with Conflicting Targets,4,2.88,ID 3291 has target 0 in row 3 and target 1 in row 29,CRITICAL,Audit feature vectors of ID 3291. Treat as label conflict; evaluate model sensitivity with/without.
+SDS Personality Traits,id,Duplicate Anonymized Subject IDs,18,11.18,ID 8065 has 2 distinct rows with different traits and targets,HIGH,Do not treat ID as unique key; treat rows as distinct observations; drop ID from modeling.
+DataScience Jobs,num_of_jobs,Extreme Right Skewness & Bulk Hiring Outliers,139,8.68,"Max=4,200 vs Median=22",MEDIUM,Compute log-transformed volume log10(num_of_jobs) alongside raw counts.
+Analytics Jobs,key_skills,Single Missing Record,1,0.006,NaN,LOW,Impute with 'Not Specified' or empty string.
