@@ -1,0 +1,38 @@
+# Geographic Macro Cluster Mapping Configuration
+target_clusters:
+  - "Bengaluru"
+  - "NCR"
+  - "Mumbai"
+  - "Pune"
+  - "Hyderabad"
+  - "Chennai"
+  - "Other/Tier-2"
+
+cluster_keywords:
+  Bengaluru:
+    keywords: ["bengaluru", "bangalore"]
+    description: "Primary southern tech hub including Whitefield, Electronic City"
+  NCR:
+    keywords: ["delhi", "gurgaon", "gurugram", "noida", "ncr", "faridabad", "ghaziabad"]
+    description: "National Capital Region technology corridor"
+  Mumbai:
+    keywords: ["mumbai", "navi mumbai", "thane"]
+    description: "Financial capital technology and analytics hub"
+  Pune:
+    keywords: ["pune"]
+    description: "Western technology and engineering hub"
+  Hyderabad:
+    keywords: ["hyderabad", "secunderabad"]
+    description: "Cyberabad technology corridor"
+  Chennai:
+    keywords: ["chennai"]
+    description: "Southern manufacturing, SaaS, and IT corridor"
+  Other/Tier-2:
+    fallback: true
+    description: "All other metropolitan, tier-2 cities (Kolkata, Ahmedabad, Jaipur, Kochi) or non-matching locations"
+
+precedence_rules:
+  - "Extract primary token before comma or slash delimiter"
+  - "Evaluate primary token against cluster keywords in order"
+  - "If primary token is generic (e.g. 'India'), evaluate full string across cluster keywords"
+  - "Default to Other/Tier-2 if no supported metro match exists"

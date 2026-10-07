@@ -1,0 +1,10 @@
+# Configuration for Skill Feature Generation
+top_k_skills: 50
+delimiter: ","
+case_folding: "lower"
+strip_whitespace: true
+filter_punctuation_tokens: true
+source_column: "key_skills_clean"
+output_profile_table: "outputs/tables/skill_frequency_profile.csv"
+feature_prefix: "skill_"
+description: "Configurable multi-hot indicator generation for top-K empirical skills derived from Analytics Jobs vocabulary"

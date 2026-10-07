@@ -1,0 +1,5 @@
+filename,root_path,raw_path,size_bytes,root_sha256,raw_sha256,is_identical,status
+DataScience Jobs.csv,./DataScience Jobs.csv,data/raw/DataScience Jobs.csv,96390,24658523ee3e2959188cd0ef90cf50251fc32711112ba3f27ada6d8aa5237033,24658523ee3e2959188cd0ef90cf50251fc32711112ba3f27ada6d8aa5237033,True,PASS
+Analytics Jobs.csv,./Analytics Jobs.csv,data/raw/Analytics Jobs.csv,3610518,c0bfd52e0685e6c8508099c9efb22fc2fe702d4bbce2ce8aaf828e5be94a098b,c0bfd52e0685e6c8508099c9efb22fc2fe702d4bbce2ce8aaf828e5be94a098b,True,PASS
+JDS Skill Traits.xlsx,./JDS Skill Traits.xlsx,data/raw/JDS Skill Traits.xlsx,16190,2dc0a3f0702bf175bd559a3e2f2fa73ccc7f65ba12fb88d74c1804ca22608106,2dc0a3f0702bf175bd559a3e2f2fa73ccc7f65ba12fb88d74c1804ca22608106,True,PASS
+SDS Personality Traits.xlsx,./SDS Personality Traits.xlsx,data/raw/SDS Personality Traits.xlsx,14839,112a08e50c655e57d3a43e8fed9359bd37a8f6f2de58963bc2f14af9b8fb1aaa,112a08e50c655e57d3a43e8fed9359bd37a8f6f2de58963bc2f14af9b8fb1aaa,True,PASS

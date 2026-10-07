@@ -1,0 +1,55 @@
+# Feature Exclusion Configuration
+# Identifiers, high-missingness columns, and target labels strictly excluded from predictive modeling feature matrices
+
+identifier_exclusions:
+  DataScience_Jobs:
+    - "reference_no"
+    rationale: "Non-unique posting reference ID; carries no generalizable domain predictive signal"
+  Analytics_Jobs:
+    - "s_no"
+    rationale: "Arbitrary sequential scraper record index"
+  JDS_Skill_Traits:
+    - "id"
+    rationale: "Anonymized employee identifier tag; carries key collisions and no generalizable skill signal"
+  SDS_Personality_Traits:
+    - "id"
+    rationale: "Anonymized consultant subject tag; contains 9 duplicate ID occurrences with differing evaluations"
+
+descriptive_only_exclusions:
+  Analytics_Jobs:
+    - "job_type"
+    - "job_type_clean"
+    rationale: "75.82% missing; zero category variance across populated entries (solely 'Analytics')"
+    - "job_description"
+    - "job_description_clean"
+    rationale: "Truncated teaser snippets (<=109 chars) with 22.14% missingness"
+    - "key_skills"
+    - "key_skills_clean"
+    rationale: "Raw unstructured text string; superseded by parsed binary indicator features"
+    - "experience"
+    rationale: "Raw string interval; superseded by min_experience, max_experience, midpoint_experience"
+    - "salary"
+    rationale: "Raw text bracket; superseded by salary_rank, salary_midpoint, is_high_salary"
+    - "location"
+    - "location_clean"
+    rationale: "High-cardinality raw text; superseded by location_cluster"
+    - "job_desig"
+    rationale: "10,097 unstructured free-text designations; superseded by job_role_family"
+
+target_leakage_safeguards:
+  JDS_Skill_Traits:
+    target: "salary_hike_high_or_low"
+    allowed_predictors:
+      - "big_data_skills"
+      - "maths_stats_skills"
+      - "coding_skills"
+      - "ai_and_ml_skills"
+      - "dashboard_and_storytelling_skills"
+  SDS_Personality_Traits:
+    target: "success_classification_high_low"
+    allowed_predictors:
+      - "neuroticism"
+      - "extraversion"
+      - "openness_to_experience"
+      - "agreeableness"
+      - "conscientiousness"

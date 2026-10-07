@@ -1,0 +1,30 @@
+dataset,metric,before,after,delta
+JDS Skill Traits,Total Rows,171,139,-32
+JDS Skill Traits,Total Columns,7,7,0
+JDS Skill Traits,Total Missing Values,224,0,-224
+JDS Skill Traits,Maths Header,maths-stats_skills,maths_stats_skills,Renamed
+JDS Skill Traits,Target Class 1,73,73,0
+JDS Skill Traits,Target Class 0,66,66,0
+JDS Skill Traits,Sensitivity Rows (ID 3291 excluded),171,137,-34
+SDS Personality Traits,Total Rows,161,161,0
+SDS Personality Traits,Total Columns,7,7,0
+SDS Personality Traits,Total Missing Values,0,0,0
+SDS Personality Traits,Header Whitespace,Present,Sanitized,Fixed
+SDS Personality Traits,Target Class 1,85,85,0
+SDS Personality Traits,Target Class 0,76,76,0
+Data Science Jobs,Total Rows,1602,1602,0
+Data Science Jobs,Total Columns,8,14,6
+Data Science Jobs,Numeric Salary Fields,0,3,3
+Data Science Jobs,Salary Ordering Violations,Unparsed,0,Verified
+Data Science Jobs,Salary Spread Derived,0,2,2
+Data Science Jobs,Log Num of Jobs Derived,0,1,1
+Analytics Jobs,Total Rows,15841,15841,0
+Analytics Jobs,Total Columns,8,72,64
+Analytics Jobs,Parsed Experience Fields,0,3,3
+Analytics Jobs,Salary Ordinal / Midpoints,0,3,3
+Analytics Jobs,Top-K Skill Indicators,0,50,50
+Analytics Jobs,Location Clusters,1355,7,-1348
+Analytics Jobs,Role Families,10097,6,-10091
+Analytics Jobs,job_type Missing Handled,12011,0,-12011
+Analytics Jobs,job_description Missing Handled,3508,0,-3508
+Analytics Jobs,key_skills Missing Handled,1,0,-1

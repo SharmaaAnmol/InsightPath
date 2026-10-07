@@ -1,0 +1,5 @@
+dataset,row_count_valid,observed_rows,expected_rows,observed_columns,zero_unexpected_nulls,ranges_valid,target_valid,status
+JDS Skill Traits (Baseline),True,139,139,7,True,True,True,PASS
+SDS Personality Traits,True,161,161,7,True,True,True,PASS
+Data Science Jobs,True,1602,1602,14,True,True,True,PASS
+Analytics Jobs,True,15841,15841,72,True,True,True,PASS
