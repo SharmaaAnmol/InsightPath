@@ -1,0 +1,4 @@
+model_specification,dependent_variable,n,experience_slope_beta,experience_se_hc3,ci_lower,ci_upper,t_stat,p_value,r_squared,adj_r_squared,f_stat,num_predictors
+avg_salary_lakh ~ min_experience + job_title (Linear Adjusted),avg_salary_lakh,1602,1.5115,0.1,1.3156,1.7075,15.12,1.1986627386101678e-51,0.5478,0.545,172.38,10
+log(avg_salary_lakh) ~ min_experience + job_title (Semi-Log Adjusted),log_avg_salary,1602,0.1137,0.0071,0.0999,0.1276,16.083,3.3519986353656615e-58,0.5808,0.5782,200.39,10
+log(avg_salary_lakh) ~ min_experience + job_title + log10_num_of_jobs (Full Adjusted),log_avg_salary,1602,0.1133,0.0072,0.0992,0.1274,15.751,6.812599097170164e-56,0.5809,0.578,183.29,11

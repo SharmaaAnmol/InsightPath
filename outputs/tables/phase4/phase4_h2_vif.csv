@@ -1,0 +1,6 @@
+feature,vif,tolerance,interpretation
+big_data_skills,1.042,0.96,Low / Ideal (no collinearity concern)
+maths_stats_skills,1.447,0.691,Low / Ideal (no collinearity concern)
+coding_skills,1.391,0.719,Low / Ideal (no collinearity concern)
+ai_and_ml_skills,1.219,0.82,Low / Ideal (no collinearity concern)
+dashboard_and_storytelling_skills,1.326,0.754,Low / Ideal (no collinearity concern)

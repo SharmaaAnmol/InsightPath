@@ -1,0 +1,5 @@
+hypothesis,analysis,primary_cohort,sensitivity_cohort,tests_evaluated,tests_stable,substantive_conclusion_impact,robustness_verdict
+H1,JDS Skill Differences (Mann-Whitney U),N=139,N=137 (Excluded contradictory duplicate ID 3291),5,5,None. 4 of 5 skills remain highly significant; Big Data remains non-significant. Direction and effect sizes are invariant.,COMPLETELY ROBUST
+H2,JDS Multivariable Logistic Regression,N=139,N=137 (Excluded ID 3291),5,5,None. Maths/Stats and Storytelling remain strongest independent predictors; relative odds ratio ranks are preserved.,COMPLETELY ROBUST
+H3,SDS Personality Trait Differences (Mann-Whitney U),N=161,N=152 (Deduplicated 9 duplicate IDs),5,5,"None. Conscientiousness, Openness, and Extraversion remain massive differentiators (d > 1.1, q < 1e-6); Neuroticism remains zero.",COMPLETELY ROBUST
+H4,SDS Multivariable Logistic Regression,N=161,N=152 (Deduplicated 9 duplicate IDs),5,5,None. Conscientiousness and Openness remain dominant independent predictors of senior consulting success.,COMPLETELY ROBUST

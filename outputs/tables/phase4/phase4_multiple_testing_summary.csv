@@ -1,0 +1,5 @@
+hypothesis,test_family,num_comparisons_m,num_sig_raw_p,num_sig_fdr_q,fdr_alpha,family_verdict
+H1,JDS Skill Comparisons (H1),5,4,4,0.05,4 / 5 tests survived FDR correction
+H3,SDS Personality Comparisons (H3),5,4,4,0.05,4 / 5 tests survived FDR correction
+N/A,Regional Salary Rank Post-hoc (H6),21,18,18,0.05,18 / 21 tests survived FDR correction
+H6,Skill-Premium Contingency Family (H6),50,35,35,0.05,35 / 50 tests survived FDR correction

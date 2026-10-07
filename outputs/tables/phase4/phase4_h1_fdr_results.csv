@@ -1,0 +1,6 @@
+variable,mann_whitney_u,raw_p,fdr_adjusted_p,significant_after_fdr,cohens_d,rank_biserial_r,hypothesis,family
+big_data_skills,2701.0,0.21723125429287382,0.217231,False,0.225,-0.121,H1,JDS Skill Group Comparisons
+maths_stats_skills,3735.5,6.657535629392648e-09,0.0,True,1.222,-0.551,H1,JDS Skill Group Comparisons
+coding_skills,3585.0,2.0275005979496902e-07,0.0,True,0.985,-0.488,H1,JDS Skill Group Comparisons
+ai_and_ml_skills,3284.0,8.567173857110044e-05,0.000107,True,0.88,-0.363,H1,JDS Skill Group Comparisons
+dashboard_and_storytelling_skills,3827.5,2.3984746423395638e-11,0.0,True,1.323,-0.589,H1,JDS Skill Group Comparisons

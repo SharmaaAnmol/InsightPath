@@ -1,0 +1,22 @@
+model,parameter,coef_beta,std_error,wald_z,p_value,odds_ratio,or_ci_lower,or_ci_upper,standardized,sig_indicator
+H6_Multivariable_Premium_Salary_N15841,const,-1.0587,0.1913,-5.535,3.1149959148011425e-08,0.347,0.238,0.505,False,***
+H6_Multivariable_Premium_Salary_N15841,midpoint_experience,1.4947,0.0269,55.614,0.0,4.458,4.229,4.699,True,***
+H6_Multivariable_Premium_Salary_N15841,loc_Chennai,-0.5422,0.1013,-5.353,8.671304283021792e-08,0.581,0.477,0.709,False,***
+H6_Multivariable_Premium_Salary_N15841,loc_Hyderabad,-0.1782,0.0921,-1.936,0.052900297552157596,0.837,0.699,1.002,False,ns
+H6_Multivariable_Premium_Salary_N15841,loc_Mumbai,0.0728,0.0653,1.115,0.26490114539909704,1.076,0.946,1.222,False,ns
+H6_Multivariable_Premium_Salary_N15841,loc_NCR,0.1273,0.0589,2.16,0.030797787272673887,1.136,1.012,1.275,False,*
+H6_Multivariable_Premium_Salary_N15841,loc_Other/Tier-2,-0.2368,0.0812,-2.916,0.0035481836899684195,0.789,0.673,0.925,False,**
+H6_Multivariable_Premium_Salary_N15841,loc_Pune,-0.1908,0.089,-2.144,0.032060011064900217,0.826,0.694,0.984,False,*
+H6_Multivariable_Premium_Salary_N15841,role_Business Analyst,-0.0415,0.2069,-0.201,0.840963558454805,0.959,0.64,1.439,False,ns
+H6_Multivariable_Premium_Salary_N15841,role_Data Analyst,-0.275,0.242,-1.137,0.2557414995881586,0.76,0.473,1.221,False,ns
+H6_Multivariable_Premium_Salary_N15841,role_Data Engineer,-0.1092,0.2238,-0.488,0.6255456845000786,0.897,0.578,1.39,False,ns
+H6_Multivariable_Premium_Salary_N15841,role_Data Scientist,0.3144,0.2211,1.422,0.1550264291991093,1.369,0.888,2.112,False,ns
+H6_Multivariable_Premium_Salary_N15841,role_Non-Analytics/Other,-0.1926,0.1889,-1.019,0.3080263170921145,0.825,0.57,1.194,False,ns
+H6_Multivariable_Premium_Salary_N15841,skill_python,0.0571,0.1026,0.556,0.5779428437414376,1.059,0.866,1.294,False,ns
+H6_Multivariable_Premium_Salary_N15841,skill_r,0.4454,0.1103,4.039,5.366928986739653e-05,1.561,1.258,1.938,False,***
+H6_Multivariable_Premium_Salary_N15841,skill_sql,-0.0139,0.0917,-0.152,0.8794184332285961,0.986,0.824,1.18,False,ns
+H6_Multivariable_Premium_Salary_N15841,skill_machine_learning,0.458,0.1223,3.746,0.00017996761785616156,1.581,1.244,2.009,False,***
+H6_Multivariable_Premium_Salary_N15841,skill_sas,0.3828,0.1066,3.59,0.0003307338135288819,1.466,1.19,1.807,False,***
+H6_Multivariable_Premium_Salary_N15841,skill_spark,0.4621,0.1514,3.052,0.002274640670941346,1.587,1.18,2.136,False,**
+H6_Multivariable_Premium_Salary_N15841,skill_excel,0.2196,0.1406,1.562,0.11831759388822242,1.246,0.946,1.641,False,ns
+H6_Multivariable_Premium_Salary_N15841,skill_analytics,-0.1792,0.0928,-1.931,0.05351152207756594,0.836,0.697,1.003,False,ns

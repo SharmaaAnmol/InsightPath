@@ -1,0 +1,6 @@
+variable,n_group1,n_group2,group1_label,group2_label,mean_group1,mean_group2,mean_diff,median_group1,median_group2,median_diff,std_group1,std_group2,mann_whitney_u,p_value_mwu,welch_t_stat,p_value_t,cohens_d,cohens_d_ci_lower,cohens_d_ci_upper,rank_biserial_r,rank_biserial_ci_lower,rank_biserial_ci_upper
+big_data_skills,73,66,High Hike (Y=1),Low Hike (Y=0),3.94,3.75,0.19,3.8,3.75,0.05,0.713,0.969,2701.0,0.21723125429287382,1.303,0.19505135026312223,0.225,-0.109,0.559,-0.121,-0.282,0.046
+maths_stats_skills,73,66,High Hike (Y=1),Low Hike (Y=0),4.712,3.83,0.882,5.0,3.8,1.2,0.427,0.946,3735.5,6.657535629392648e-09,6.96,5.708313286648948e-10,1.222,0.86,1.585,-0.551,-0.657,-0.423
+coding_skills,73,66,High Hike (Y=1),Low Hike (Y=0),4.644,3.853,0.791,5.0,3.9,1.1,0.658,0.938,3585.0,2.0275005979496902e-07,5.698,9.489199317999557e-08,0.985,0.632,1.337,-0.488,-0.605,-0.35
+ai_and_ml_skills,73,66,High Hike (Y=1),Low Hike (Y=0),4.822,4.283,0.539,5.0,4.6,0.4,0.319,0.823,3284.0,8.567173857110044e-05,4.988,3.321373455362332e-06,0.88,0.531,1.228,-0.363,-0.5,-0.209
+dashboard_and_storytelling_skills,73,66,High Hike (Y=1),Low Hike (Y=0),4.845,3.814,1.032,5.0,3.85,1.15,0.49,1.007,3827.5,2.3984746423395638e-11,7.55,3.06781948895181e-11,1.323,0.956,1.691,-0.589,-0.688,-0.468

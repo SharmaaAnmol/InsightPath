@@ -1,0 +1,6 @@
+variable,primary_n,sensitivity_n,primary_mean_diff,sens_mean_diff,primary_mwu_p,sens_mwu_p,primary_fdr_q,sens_fdr_q,primary_cohens_d,sens_cohens_d,delta_cohens_d,primary_rank_biserial_r,sens_rank_biserial_r,conclusion_stable,stability_status
+big_data_skills,139,137,0.19,0.188,0.21723125429287382,0.20801908168300542,0.217231,0.208019,0.225,0.222,-0.003,-0.121,-0.125,True,ROBUST (Substantively Unchanged)
+maths_stats_skills,139,137,0.882,0.872,6.657535629392648e-09,1.0551260867951162e-08,0.0,0.0,1.222,1.206,-0.016,-0.551,-0.546,True,ROBUST (Substantively Unchanged)
+coding_skills,139,137,0.791,0.777,2.0275005979496902e-07,4.1678659487657973e-07,0.0,1e-06,0.985,0.963,-0.022,-0.488,-0.479,True,ROBUST (Substantively Unchanged)
+ai_and_ml_skills,139,137,0.539,0.544,8.567173857110044e-05,9.563722181580653e-05,0.000107,0.00012,0.88,0.882,0.002,-0.363,-0.362,True,ROBUST (Substantively Unchanged)
+dashboard_and_storytelling_skills,139,137,1.032,1.006,2.3984746423395638e-11,5.7717589533104844e-11,0.0,0.0,1.323,1.3,-0.023,-0.589,-0.581,True,ROBUST (Substantively Unchanged)

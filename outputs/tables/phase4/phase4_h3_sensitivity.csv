@@ -1,0 +1,6 @@
+trait,primary_n,dedup_n,primary_mean_diff,dedup_mean_diff,primary_mwu_p,dedup_mwu_p,primary_fdr_q,dedup_fdr_q,primary_cohens_d,dedup_cohens_d,delta_cohens_d,conclusion_stable,stability_status
+neuroticism,161,152,-0.134,0.236,0.45393251061682516,0.368065264393845,0.453933,0.368065,-0.012,0.021,0.033,True,ROBUST (Substantively Unchanged)
+extraversion,161,152,11.977,11.77,5.785878581555915e-10,3.505113168956212e-09,0.0,0.0,1.132,1.097,-0.035,True,ROBUST (Substantively Unchanged)
+openness_to_experience,161,152,15.178,15.215,3.644371127075962e-17,2.7668576657567145e-16,0.0,0.0,1.803,1.783,-0.02,True,ROBUST (Substantively Unchanged)
+agreeableness,161,152,6.599,6.609,0.0008744406423124498,0.0008636627112258182,0.001093,0.00108,0.609,0.607,-0.002,True,ROBUST (Substantively Unchanged)
+conscientiousness,161,152,17.946,17.743,1.439895844177503e-16,1.8202036700124683e-15,0.0,0.0,1.847,1.791,-0.056,True,ROBUST (Substantively Unchanged)

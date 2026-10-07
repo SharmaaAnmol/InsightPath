@@ -1,0 +1,27 @@
+hypothesis,dataset,contrast_or_variable,effect_metric,point_estimate,ci_95_lower,ci_95_upper,benchmark_interpretation
+H1,JDS Skill Traits,big_data_skills (High vs Low Hike),Cohen's d,0.225,-0.109,0.559,Small (d < 0.5)
+H1,JDS Skill Traits,big_data_skills (High vs Low Hike),Rank-Biserial r_rb,-0.121,-0.282,0.046,Moderate/Weak
+H1,JDS Skill Traits,maths_stats_skills (High vs Low Hike),Cohen's d,1.222,0.86,1.585,Huge (d > 1.2)
+H1,JDS Skill Traits,maths_stats_skills (High vs Low Hike),Rank-Biserial r_rb,-0.551,-0.657,-0.423,Strong non-parametric association
+H1,JDS Skill Traits,coding_skills (High vs Low Hike),Cohen's d,0.985,0.632,1.337,Large (d > 0.8)
+H1,JDS Skill Traits,coding_skills (High vs Low Hike),Rank-Biserial r_rb,-0.488,-0.605,-0.35,Moderate/Weak
+H1,JDS Skill Traits,ai_and_ml_skills (High vs Low Hike),Cohen's d,0.88,0.531,1.228,Large (d > 0.8)
+H1,JDS Skill Traits,ai_and_ml_skills (High vs Low Hike),Rank-Biserial r_rb,-0.363,-0.5,-0.209,Moderate/Weak
+H1,JDS Skill Traits,dashboard_and_storytelling_skills (High vs Low Hike),Cohen's d,1.323,0.956,1.691,Huge (d > 1.2)
+H1,JDS Skill Traits,dashboard_and_storytelling_skills (High vs Low Hike),Rank-Biserial r_rb,-0.589,-0.688,-0.468,Strong non-parametric association
+H3,SDS Personality Traits,neuroticism (High vs Low Success),Cohen's d,-0.012,-0.321,0.298,Negligible (d ~ 0.0)
+H3,SDS Personality Traits,extraversion (High vs Low Success),Cohen's d,1.132,0.799,1.465,Large (d > 0.8)
+H3,SDS Personality Traits,openness_to_experience (High vs Low Success),Cohen's d,1.803,1.436,2.17,Extraordinary (d > 1.5)
+H3,SDS Personality Traits,agreeableness (High vs Low Success),Cohen's d,0.609,0.293,0.926,Negligible (d ~ 0.0)
+H3,SDS Personality Traits,conscientiousness (High vs Low Success),Cohen's d,1.847,1.478,2.217,Extraordinary (d > 1.5)
+H5,DataScience Jobs,min_experience vs avg_salary_lakh,Pearson r,0.593,0.561,0.624,Moderate-to-strong positive correlation (r > 0.50)
+H5,DataScience Jobs,min_experience vs avg_salary_lakh,Spearman rho,0.633,0.602,0.662,Moderate-to-strong positive correlation (r > 0.50)
+H5,DataScience Jobs,min_experience vs log(avg_salary_lakh),Pearson r (Semi-log),0.582,0.549,0.613,Moderate-to-strong positive correlation (r > 0.50)
+H5,Analytics Jobs,midpoint_experience vs salary_midpoint,Pearson r,0.661,0.652,0.669,Moderate-to-strong positive correlation (r > 0.50)
+H5,Analytics Jobs,midpoint_experience vs salary_midpoint,Spearman rho,0.704,0.696,0.712,Moderate-to-strong positive correlation (r > 0.50)
+H6,Analytics Jobs,location_cluster x is_high_salary,Cramér's V,0.06,,,"Small but highly significant categorical association (V = 0.060, N=15,841)"
+H6,Analytics Jobs,R vs is_high_salary,Odds Ratio,2.677,2.287,3.132,Strong positive odds ratio (> 2.0)
+H6,Analytics Jobs,Outsourcing vs is_high_salary,Odds Ratio,0.041,0.018,0.092,Strong positive odds ratio (> 2.0)
+H6,Analytics Jobs,Machine Learning vs is_high_salary,Odds Ratio,2.232,1.9,2.621,Strong positive odds ratio (> 2.0)
+H6,Analytics Jobs,Business Process vs is_high_salary,Odds Ratio,0.11,0.061,0.196,Strong positive odds ratio (> 2.0)
+H6,Analytics Jobs,Seo vs is_high_salary,Odds Ratio,0.292,0.219,0.389,Strong positive odds ratio (> 2.0)

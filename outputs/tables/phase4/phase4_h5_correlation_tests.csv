@@ -1,0 +1,6 @@
+dataset,var_x,var_y,n,metric,estimate,ci_lower,ci_upper,p_value,interpretation
+DataScience Jobs,min_experience,avg_salary_lakh,1602,Pearson r,0.593,0.561,0.624,5.648841578229907e-153,Moderate-to-strong positive linear correlation
+DataScience Jobs,min_experience,avg_salary_lakh,1602,Spearman rho,0.633,0.602,0.662,2.90576825742347e-180,Moderate monotonic positive rank correlation
+DataScience Jobs,min_experience,log(avg_salary_lakh),1602,Pearson r (Semi-log),0.582,0.549,0.613,7.443371088975599e-146,Semi-log linear relationship
+Analytics Jobs,midpoint_experience,salary_midpoint,15841,Pearson r,0.661,0.652,0.669,0.0,Moderate positive linear association
+Analytics Jobs,midpoint_experience,salary_midpoint,15841,Spearman rho,0.704,0.696,0.712,0.0,Moderate positive rank correlation

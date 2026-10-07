@@ -1,0 +1,6 @@
+variable,mann_whitney_u,raw_p,fdr_adjusted_p,significant_after_fdr,cohens_d,rank_biserial_r,hypothesis,family
+neuroticism,3451.5,0.45393251061682516,0.453933,False,-0.012,-0.069,H3,SDS Personality Group Comparisons
+extraversion,5059.5,5.785878581555915e-10,0.0,True,1.132,-0.566,H3,SDS Personality Group Comparisons
+openness_to_experience,5716.5,3.644371127075962e-17,0.0,True,1.803,-0.77,H3,SDS Personality Group Comparisons
+agreeableness,4212.5,0.0008744406423124498,0.001093,True,0.609,-0.304,H3,SDS Personality Group Comparisons
+conscientiousness,5669.0,1.439895844177503e-16,0.0,True,1.847,-0.755,H3,SDS Personality Group Comparisons

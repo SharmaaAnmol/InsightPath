@@ -1,0 +1,5 @@
+model_specification,dependent_variable,independent_variable,n,intercept,slope_beta,slope_se_hc3,ci_lower,ci_upper,t_stat,p_value,r_squared,adj_r_squared,f_stat,f_pvalue
+avg_salary_lakh ~ min_experience (Linear),avg_salary_lakh,min_experience,1602,7.7024,1.9766,0.0798,1.8202,2.133,24.763,2.2511993791911962e-135,0.3521,0.3517,613.2,7.195056419956913e-115
+log(avg_salary_lakh) ~ min_experience (Semi-Log),log_avg_salary,min_experience,1602,1.986,0.1517,0.0066,0.1387,0.1647,22.877,7.822360009283523e-116,0.3387,0.3383,523.37,1.8989991219918142e-100
+min_salary_lakh ~ min_experience (Linear),min_salary_lakh,min_experience,1602,4.201,1.5838,0.0617,1.4629,1.7047,25.675,2.2490690688557787e-145,0.4135,0.4132,659.18,5.028987967056894e-122
+max_salary_lakh ~ min_experience (Linear),max_salary_lakh,min_experience,1602,12.7705,2.2768,0.12,2.0416,2.512,18.974,2.7768953410587215e-80,0.231,0.2305,360.03,1.421685506806059e-72

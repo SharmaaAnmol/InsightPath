@@ -1,0 +1,8 @@
+location_cluster,total_postings,observed_high_salary,expected_high_salary,observed_standard_salary,expected_standard_salary,high_salary_pct,std_residual_high,adj_standardized_residual_high,local_direction
+Bengaluru,4093,1299,1169.43,2794,2923.57,31.74,3.789,5.206,Over-represented
+Chennai,1028,225,293.71,803,734.29,21.89,-4.009,-4.906,Under-represented
+Hyderabad,1050,304,300.0,746,750.0,28.95,0.231,0.283,Neutral
+Mumbai,2774,805,792.57,1969,1981.43,29.02,0.441,0.575,Neutral
+NCR,3988,1149,1139.43,2839,2848.57,28.81,0.284,0.388,Neutral
+Other/Tier-2,1737,427,496.29,1310,1240.71,24.58,-3.11,-3.9,Under-represented
+Pune,1171,317,334.57,854,836.43,27.07,-0.961,-1.181,Neutral

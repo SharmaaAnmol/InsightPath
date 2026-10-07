@@ -1,0 +1,7 @@
+model,parameter,coef_beta,std_error,wald_z,p_value,odds_ratio,or_ci_lower,or_ci_upper,standardized,sig_indicator
+H2_JDS_Primary_N139,const,-0.2996,0.2809,-1.067,0.2861129458027577,0.741,0.427,1.285,False,ns
+H2_JDS_Primary_N139,big_data_skills,0.8434,0.3138,2.688,0.007196485369547985,2.324,1.257,4.299,True,**
+H2_JDS_Primary_N139,maths_stats_skills,1.5368,0.4193,3.665,0.0002472963468796096,4.65,2.044,10.577,True,***
+H2_JDS_Primary_N139,coding_skills,0.5438,0.3068,1.773,0.07630893217125122,1.723,0.944,3.143,True,ns
+H2_JDS_Primary_N139,ai_and_ml_skills,0.8431,0.314,2.685,0.0072515436688539775,2.324,1.256,4.3,True,**
+H2_JDS_Primary_N139,dashboard_and_storytelling_skills,1.2641,0.3452,3.662,0.00025068879554968586,3.54,1.799,6.964,True,***

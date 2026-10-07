@@ -1,0 +1,7 @@
+model,parameter,coef_beta,std_error,wald_z,p_value,odds_ratio,or_ci_lower,or_ci_upper,standardized,sig_indicator
+H4_SDS_Primary_N161,const,-1.1334,0.5148,-2.202,0.02767881001918977,0.322,0.117,0.883,False,*
+H4_SDS_Primary_N161,neuroticism,1.3705,0.4274,3.207,0.001341609767686461,3.937,1.704,9.099,True,**
+H4_SDS_Primary_N161,extraversion,1.3696,0.492,2.784,0.005371494655706025,3.934,1.5,10.318,True,**
+H4_SDS_Primary_N161,openness_to_experience,3.0433,0.6558,4.64,3.4764220527611428e-06,20.974,5.8,75.845,True,***
+H4_SDS_Primary_N161,agreeableness,0.9014,0.4713,1.913,0.05579948149851669,2.463,0.978,6.203,True,ns
+H4_SDS_Primary_N161,conscientiousness,3.2878,0.7766,4.234,2.298578559734363e-05,26.785,5.846,122.721,True,***

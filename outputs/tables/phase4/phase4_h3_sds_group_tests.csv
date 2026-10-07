@@ -1,0 +1,6 @@
+variable,n_group1,n_group2,group1_label,group2_label,mean_group1,mean_group2,mean_diff,median_group1,median_group2,median_diff,std_group1,std_group2,mann_whitney_u,p_value_mwu,welch_t_stat,p_value_t,cohens_d,cohens_d_ci_lower,cohens_d_ci_upper,rank_biserial_r,rank_biserial_ci_lower,rank_biserial_ci_upper
+neuroticism,85,76,High Success (Y=1),Low Success (Y=0),36.129,36.263,-0.134,35.0,33.0,2.0,9.272,13.212,3451.5,0.45393251061682516,-0.074,0.9414940915392237,-0.012,-0.321,0.298,-0.069,-0.221,0.087
+extraversion,85,76,High Success (Y=1),Low Success (Y=0),48.859,36.882,11.977,50.0,34.0,16.0,7.469,13.225,5059.5,5.785878581555915e-10,6.964,2.1508718944827872e-10,1.132,0.799,1.465,-0.566,-0.663,-0.451
+openness_to_experience,85,76,High Success (Y=1),Low Success (Y=0),48.494,33.316,15.178,48.0,31.0,17.0,5.683,10.68,5716.5,3.644371127075962e-17,11.068,1.178386350571911e-19,1.803,1.436,2.17,-0.77,-0.826,-0.698
+agreeableness,85,76,High Success (Y=1),Low Success (Y=0),47.718,41.118,6.599,48.0,39.5,8.5,4.954,14.876,4212.5,0.0008744406423124498,3.689,0.00038571980549253197,0.609,0.293,0.926,-0.304,-0.438,-0.157
+conscientiousness,85,76,High Success (Y=1),Low Success (Y=0),53.682,35.737,17.946,54.0,33.5,20.5,6.103,12.585,5669.0,1.439895844177503e-16,11.3,6.874180472754838e-20,1.847,1.478,2.217,-0.755,-0.815,-0.68

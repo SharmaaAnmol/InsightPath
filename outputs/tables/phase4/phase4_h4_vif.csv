@@ -1,0 +1,6 @@
+feature,vif,tolerance,interpretation
+neuroticism,1.093,0.915,Low / Ideal (no collinearity concern)
+extraversion,1.398,0.715,Low / Ideal (no collinearity concern)
+openness_to_experience,1.385,0.722,Low / Ideal (no collinearity concern)
+agreeableness,1.146,0.873,Low / Ideal (no collinearity concern)
+conscientiousness,1.443,0.693,Low / Ideal (no collinearity concern)
