@@ -42,13 +42,17 @@ class Settings:
     SDS_MODEL_PATH: Path = MODELS_DIR / "phase6" / "sds_champion_logistic_l2.joblib"
     SDS_METADATA_PATH: Path = MODELS_DIR / "phase6" / "sds_champion_metadata.json"
     
-    # CORS configuration
-    CORS_ORIGINS: List[str] = [
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-        "http://localhost:8000",
-        "http://127.0.0.1:8000",
-    ]
+    # CORS configuration with environment variable support
+    CORS_ORIGINS: List[str] = (
+        [origin.strip() for origin in os.getenv("CORS_ORIGINS", "").split(",") if origin.strip()]
+        if os.getenv("CORS_ORIGINS")
+        else [
+            "http://localhost:3000",
+            "http://127.0.0.1:3000",
+            "http://localhost:8000",
+            "http://127.0.0.1:8000",
+        ]
+    )
 
 
 settings = Settings()
