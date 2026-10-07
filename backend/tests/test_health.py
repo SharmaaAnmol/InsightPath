@@ -22,6 +22,9 @@ def test_root_health_endpoint():
     assert "details" in data
     assert data["details"]["models"]["jds_model_loaded"] is True
     assert data["details"]["models"]["sds_model_loaded"] is True
+    assert "host" in data["details"]
+    assert "port" in data["details"]
+    assert data["details"]["tables_count"] > 0
 
 
 def test_v1_health_endpoint():
@@ -33,3 +36,6 @@ def test_v1_health_endpoint():
     assert data["service"] == "InsightPath API"
     assert data["artifacts_verified"] is True
     assert data["details"]["tables_dir_exists"] is True
+    assert "host" in data["details"]
+    assert "port" in data["details"]
+    assert data["details"]["tables_count"] > 0

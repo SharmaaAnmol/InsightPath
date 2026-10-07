@@ -80,8 +80,20 @@ class ModelService:
         return {
             "jds_model_loaded": self._jds_model is not None,
             "jds_model_path": str(settings.JDS_MODEL_PATH),
+            "jds_pipeline_steps": (
+                list(self._jds_model.named_steps.keys())
+                if hasattr(self._jds_model, "named_steps")
+                else []
+            ),
+            "jds_champion_roc_auc": 0.9035,
             "sds_model_loaded": self._sds_model is not None,
             "sds_model_path": str(settings.SDS_MODEL_PATH),
+            "sds_pipeline_steps": (
+                list(self._sds_model.named_steps.keys())
+                if hasattr(self._sds_model, "named_steps")
+                else []
+            ),
+            "sds_champion_roc_auc": 0.9699,
         }
 
     def predict_jds(self, request: JDSPredictRequest) -> JDSPredictResponse:

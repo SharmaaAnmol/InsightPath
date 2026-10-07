@@ -101,13 +101,20 @@ EXPOSE 8000
 CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "4"]
 ```
 
-### Deploying to Cloud Platforms (Railway / Render / AWS ECS)
-1. Set the build command to install dependencies from `requirements.txt`.
-2. Set start command to `uvicorn backend.main:app --host 0.0.0.0 --port 8000`.
-3. Set environment variables:
-   - `ENVIRONMENT=production`
-   - `CORS_ORIGINS=["https://insightpath.ai","https://www.insightpath.ai"]`
-4. Health check path: `/health`.
+### Deploying to Render (Blueprint or Native Web Service)
+1. **Render Blueprint (Recommended)**: Use the included [`render.yaml`](../../render.yaml) by creating a new **Blueprint** service on the Render Dashboard.
+2. **Manual Web Service**:
+   - Environment: `Python` (version `3.11.9`)
+   - Build Command: `pip install -r requirements.txt`
+   - Start Command: `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`
+   - Health Check Path: `/health`
+   - Environment Variables:
+     - `ENVIRONMENT=production`
+     - `HOST=0.0.0.0`
+     - `CORS_ALLOWED_ORIGINS=https://your-app.vercel.app,http://localhost:3000`
+     - `API_V1_STR=/api/v1`
+
+See the root [`DEPLOYMENT_README.md`](../../DEPLOYMENT_README.md) for full step-by-step guidance.
 
 ---
 

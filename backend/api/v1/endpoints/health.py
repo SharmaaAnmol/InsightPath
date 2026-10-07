@@ -24,6 +24,12 @@ def get_v1_health() -> HealthResponse:
         and settings.TABLES_DIR.exists()
     )
 
+    tables_count = (
+        len(list(settings.TABLES_DIR.glob("**/*.csv")))
+        if settings.TABLES_DIR.exists()
+        else 0
+    )
+
     return HealthResponse(
         status="ok" if artifacts_ok else "degraded",
         version=settings.VERSION,
@@ -34,5 +40,8 @@ def get_v1_health() -> HealthResponse:
             "models": model_status,
             "project_root": str(settings.PROJECT_ROOT),
             "tables_dir_exists": settings.TABLES_DIR.exists(),
+            "tables_count": tables_count,
+            "host": settings.HOST,
+            "port": settings.PORT,
         },
     )

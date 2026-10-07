@@ -98,6 +98,12 @@ def get_root_health() -> HealthResponse:
         and settings.TABLES_DIR.exists()
     )
 
+    tables_count = (
+        len(list(settings.TABLES_DIR.glob("**/*.csv")))
+        if settings.TABLES_DIR.exists()
+        else 0
+    )
+
     return HealthResponse(
         status="ok" if artifacts_ok else "degraded",
         version=settings.VERSION,
@@ -108,10 +114,18 @@ def get_root_health() -> HealthResponse:
             "models": model_status,
             "project_root": str(settings.PROJECT_ROOT),
             "tables_dir_exists": settings.TABLES_DIR.exists(),
+            "tables_count": tables_count,
+            "host": settings.HOST,
+            "port": settings.PORT,
         },
     )
 
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("backend.main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run(
+        "backend.main:app",
+        host=settings.HOST,
+        port=settings.PORT,
+        reload=(settings.ENVIRONMENT == "development"),
+    )

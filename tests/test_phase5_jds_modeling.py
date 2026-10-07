@@ -36,7 +36,7 @@ from src.modeling.jds.cross_validation import evaluate_pipelines_cv
 class TestPhase5JDSModeling(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.base_dir = Path("/Users/anmolsharma/Desktop/DataScienceTool")
+        cls.base_dir = Path(__file__).resolve().parent.parent
         cls.tables_dir = cls.base_dir / "outputs" / "tables" / "phase5"
         cls.figures_dir = cls.base_dir / "outputs" / "figures" / "phase5"
         cls.models_dir = cls.base_dir / "outputs" / "models" / "phase5"

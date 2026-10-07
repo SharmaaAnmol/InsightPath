@@ -35,7 +35,7 @@ from src.statistics.contingency import run_geographic_chisquare_test
 class TestPhase4Statistics(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.base_dir = Path("/Users/anmolsharma/Desktop/DataScienceTool")
+        cls.base_dir = Path(__file__).resolve().parent.parent
         cls.data_dir = cls.base_dir / "data" / "processed"
         cls.tables_dir = cls.base_dir / "outputs" / "tables" / "phase4"
         cls.figures_dir = cls.base_dir / "outputs" / "figures" / "phase4"

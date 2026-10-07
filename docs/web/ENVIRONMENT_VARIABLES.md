@@ -25,14 +25,18 @@ Backend variables are managed via Pydantic `BaseSettings` and can be supplied vi
 
 | Variable Name | Required | Default | Description |
 |---|---|---|---|
-| `PROJECT_NAME` | No | `InsightPath Career Intelligence API` | Name of the FastAPI application. |
+| `HOST` | No | `0.0.0.0` | Network binding interface. Must be `0.0.0.0` on Render/Docker. |
+| `PORT` | No | `8000` | Port to listen on. Dynamically injected as `$PORT` by Render. |
+| `PROJECT_NAME` | No | `InsightPath API` | Name of the FastAPI application. |
 | `VERSION` | No | `1.0.0` | API version string. |
 | `API_V1_STR` | No | `/api/v1` | Routing prefix for v1 endpoints. |
 | `ENVIRONMENT` | No | `development` | Deployment environment (`development`, `staging`, `production`). |
-| `CORS_ORIGINS` | No | `["http://localhost:3000", ...]` | Allowed CORS origin URLs. JSON array format. |
+| `CORS_ALLOWED_ORIGINS` | No | `http://localhost:3000` | Allowed CORS origins. Comma-separated strings, wildcard `*`, or JSON array. |
 | `PROJECT_ROOT` | No | Auto-resolved | Absolute path to project root (auto-detected via pathlib). |
 | `TABLES_DIR` | No | `outputs/tables` | Directory containing precomputed Phase 3-9 CSV tables. |
-| `MODELS_DIR` | No | `models` | Directory containing champion serialized ML pipelines. |
+| `MODELS_DIR` | No | `outputs/models` | Directory containing champion serialized ML pipelines. |
+| `JDS_MODEL_PATH` | No | `outputs/models/phase5/jds_champion_logistic_l2.joblib` | Path to Phase 5 JDS champion model. |
+| `SDS_MODEL_PATH` | No | `outputs/models/phase6/sds_champion_logistic_l2.joblib` | Path to Phase 6 SDS champion model. |
 
 ---
 
