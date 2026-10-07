@@ -62,7 +62,7 @@ export function RadarChart({ data, size = 360, className }: RadarChartProps) {
         width={size}
         height={size}
         viewBox={`0 0 ${size} ${size}`}
-        className="overflow-visible"
+        className="max-w-full h-auto overflow-visible"
         role="img"
         aria-label="Skill radar chart comparing user score to observed cohort benchmark"
       >

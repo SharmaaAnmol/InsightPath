@@ -57,6 +57,30 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+@app.middleware("http")
+async def add_security_headers(request, call_next):
+    """Enforces standard HTTP security response headers."""
+    response = await call_next(request)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["X-XSS-Protection"] = "1; mode=block"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    return response
+
+
+from fastapi.responses import JSONResponse
+
+
+@app.exception_handler(FileNotFoundError)
+async def file_not_found_exception_handler(request, exc: FileNotFoundError):
+    """Handles missing analytical artifacts gracefully with a 404 response."""
+    return JSONResponse(
+        status_code=404,
+        content={"detail": f"Analytical artifact not found: {str(exc)}"},
+    )
+
+
 # Mount API v1 router
 app.include_router(api_v1_router, prefix=settings.API_V1_STR)
 

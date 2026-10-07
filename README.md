@@ -192,3 +192,20 @@ pip install -r requirements.txt
 * **Phase 7 — Cross-Dataset Synthesis**: **COMPLETE** (Methodological Triangulation report, 9 synthesis tables, 4 figures, gap analysis).
 * **Phase 8 — Career-Readiness Framework & Business Blueprint**: **COMPLETE** (4-Quadrant Matrix, 4 stakeholder blueprints, 10 tables, 4 figures).
 * **Phase 9 — Round 2 Report & Presentation Assembly**: **COMPLETE** (25-page report in MD & DOCX, 15-slide deck in PPTX, 8 audit tables, master runner).
+
+---
+
+## 12. InsightPath Web Platform & Production Architecture
+
+The analytical models, career frameworks, and labor market telemetry from Phases 0–9 are deployed through a modern web application:
+
+* **Frontend**: Next.js 15 App Router, React 19, TypeScript, Tailwind CSS, and Lucide icons.
+* **Backend**: FastAPI serving precomputed analytical CSV tables and serialized champion model inference (`models/jds/jds_champion_pipeline.pkl`).
+* **Authentication & Telemetry**: Supabase with PostgreSQL Row Level Security (RLS) isolating user career profiles, diagnostic runs, and roadmap states.
+* **Security & Non-Deterministic Ethics**: Strict absence of deterministic salary promises, security headers enabled on all API responses, zero service-role keys exposed to the client.
+
+### Web Documentation Guides
+- **[REST API Reference](docs/web/API_REFERENCE.md)**: Complete endpoint specifications, Pydantic schemas, and sample payloads.
+- **[Local Setup Guide](docs/web/LOCAL_SETUP.md)**: Step-by-step developer setup for FastAPI and Next.js.
+- **[Production Deployment Guide](docs/web/DEPLOYMENT.md)**: Deployment to Vercel, Docker, and Supabase.
+- **[Environment Variables Specification](docs/web/ENVIRONMENT_VARIABLES.md)**: Configuration reference and security practices.
