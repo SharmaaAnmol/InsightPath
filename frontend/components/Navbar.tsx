@@ -15,6 +15,7 @@ import {
   ClipboardCheck,
   LogOut,
   User,
+  Zap,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -94,10 +95,17 @@ export function Navbar() {
               About
             </Link>
 
+            <Link href="/demo">
+              <Button size="sm" className="h-8 text-xs bg-gradient-to-r from-amber-500 to-teal-500 hover:from-amber-400 hover:to-teal-400 text-slate-950 font-bold shadow-xs">
+                <Zap className="w-3.5 h-3.5 mr-1 fill-current" />
+                <span>Judge Demo (2m)</span>
+              </Button>
+            </Link>
+
             <Link href="/assessment">
-              <Button size="sm" className="h-8 text-xs bg-slate-900 hover:bg-slate-800 dark:bg-teal-500 dark:hover:bg-teal-400 dark:text-slate-950 text-white font-medium shadow-xs">
+              <Button size="sm" variant="outline" className="h-8 text-xs font-medium hidden sm:inline-flex border-slate-300 dark:border-slate-700">
                 <ClipboardCheck className="w-3.5 h-3.5 mr-1.5" />
-                <span>Take Assessment</span>
+                <span>Assessment</span>
               </Button>
             </Link>
 
@@ -157,6 +165,14 @@ export function Navbar() {
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
         <div className="md:hidden border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#07090e]/95 px-4 pt-2 pb-4 space-y-1">
+          <Link
+            href="/demo"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center space-x-2.5 px-3 py-2 rounded-md text-xs font-bold bg-gradient-to-r from-amber-500/20 to-teal-500/20 text-slate-900 dark:text-teal-300 border border-teal-500/30"
+          >
+            <Zap className="w-4 h-4 text-amber-500 fill-current" />
+            <span>Judge Demo Mode (Under 2 min)</span>
+          </Link>
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href;
             const Icon = link.icon;

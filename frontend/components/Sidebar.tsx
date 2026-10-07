@@ -13,10 +13,12 @@ import {
   SlidersHorizontal,
   FileText,
   ShieldAlert,
+  Zap,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const SIDEBAR_ITEMS = [
+  { href: "/demo", label: "Judge Demo (2 min)", icon: Zap, highlight: true },
   { href: "/dashboard", label: "Executive Dashboard", icon: LayoutDashboard },
   { href: "/market", label: "Market Intelligence", icon: BarChart2 },
   { href: "/skills", label: "Skills Dual-Currency", icon: Sparkles },
@@ -54,13 +56,19 @@ export function Sidebar({ className = "" }: { className?: string }) {
                     "flex items-center space-x-2.5 px-3 py-2 rounded-lg text-xs font-medium transition-colors group",
                     isActive
                       ? "text-teal-600 dark:text-teal-400 bg-teal-500/10 dark:bg-teal-500/15 font-semibold"
+                      : item.highlight
+                      ? "text-amber-600 dark:text-amber-400 font-bold bg-amber-500/10 hover:bg-amber-500/15 border border-amber-500/20"
                       : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/50 dark:hover:bg-slate-800/50"
                   )}
                 >
                   <Icon
                     className={cn(
                       "w-4 h-4 transition-colors",
-                      isActive ? "text-teal-500" : "text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300"
+                      isActive
+                        ? "text-teal-500"
+                        : item.highlight
+                        ? "text-amber-500 fill-current"
+                        : "text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300"
                     )}
                   />
                   <span>{item.label}</span>

@@ -18,6 +18,7 @@ import {
   Users,
   User,
   Lock,
+  Zap,
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Sidebar } from "@/components/Sidebar";
@@ -180,15 +181,21 @@ export default function DashboardPage() {
               </p>
             </div>
 
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2.5">
+              <Link href="/demo">
+                <Button className="bg-gradient-to-r from-amber-500 to-teal-500 hover:from-amber-400 hover:to-teal-400 text-slate-950 font-bold shadow-sm flex items-center space-x-1.5 text-xs h-9">
+                  <Zap className="w-3.5 h-3.5 fill-current" />
+                  <span>Judge Demo (2m)</span>
+                </Button>
+              </Link>
               <Link href="/assessment">
-                <Button className="bg-teal-600 hover:bg-teal-500 text-white font-medium shadow-sm flex items-center space-x-2 text-xs h-9">
-                  <SlidersHorizontal className="w-3.5 h-3.5" />
-                  <span>Interactive Assessment</span>
+                <Button variant="outline" className="text-slate-700 dark:text-slate-200 font-medium shadow-sm flex items-center space-x-2 text-xs h-9">
+                  <SlidersHorizontal className="w-3.5 h-3.5 text-teal-500" />
+                  <span>Diagnostic Scorer</span>
                 </Button>
               </Link>
               <Link href="/methodology">
-                <Button variant="outline" className="text-xs h-9">
+                <Button variant="ghost" className="text-xs h-9 text-slate-500 hover:text-slate-900 dark:hover:text-slate-100">
                   <FileCheck2 className="w-3.5 h-3.5 mr-1.5" />
                   <span>Audit Trail</span>
                 </Button>

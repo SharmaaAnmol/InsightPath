@@ -16,6 +16,7 @@ import {
   Clock,
   Printer,
   Compass,
+  Zap,
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Sidebar } from "@/components/Sidebar";
@@ -257,6 +258,35 @@ export default function AssessmentPage() {
               </Link>
             </div>
           </div>
+
+          {/* Quick Judge Demo Mode Callout */}
+          <Link
+            href="/demo"
+            className="block p-3.5 rounded-xl border border-teal-500/30 bg-gradient-to-r from-amber-500/10 via-teal-500/10 to-indigo-500/10 hover:from-amber-500/15 hover:to-indigo-500/15 transition-all group"
+          >
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div className="flex items-center space-x-2.5">
+                <div className="w-7 h-7 rounded-lg bg-teal-500/20 text-teal-600 dark:text-teal-400 flex items-center justify-center shrink-0">
+                  <Zap className="w-4 h-4 fill-current text-amber-500" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+                    <span>Hackathon Judge Demo Mode (Under 2 Minutes)</span>
+                    <Badge variant="outline" className="text-[10px] py-0 border-teal-500/40 text-teal-600 dark:text-teal-400 font-mono">
+                      Fast Walkthrough
+                    </Badge>
+                  </div>
+                  <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                    Evaluating InsightPath? Launch the guided flow with 1-click personas, instant model signals, and traceable evidence.
+                  </p>
+                </div>
+              </div>
+              <div className="text-xs font-semibold text-teal-600 dark:text-teal-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform sm:self-center">
+                <span>Launch Judge Demo</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </div>
+            </div>
+          </Link>
 
           {/* Mandatory Ethical Notice Banner */}
           <div className="p-4 rounded-xl border border-amber-500/30 bg-amber-500/10 dark:bg-amber-500/5 text-amber-900 dark:text-amber-200 text-xs flex items-start space-x-3">

@@ -12,6 +12,7 @@ import {
   ShieldCheck,
   ChevronRight,
   ExternalLink,
+  Zap,
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -51,16 +52,16 @@ export default function LandingPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
-              <Link href="/dashboard">
-                <Button size="lg" className="h-11 px-6 text-sm bg-slate-900 hover:bg-slate-800 dark:bg-teal-500 dark:hover:bg-teal-400 dark:text-slate-950 text-white font-semibold shadow-md group">
-                  <span>Explore Dashboard</span>
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              <Link href="/demo">
+                <Button size="lg" className="h-11 px-6 text-sm bg-gradient-to-r from-amber-500 via-teal-500 to-indigo-600 hover:from-amber-400 hover:to-indigo-500 text-slate-950 font-bold shadow-lg shadow-teal-500/20 group">
+                  <Zap className="w-4 h-4 mr-2 text-slate-950 fill-current" />
+                  <span>Judge Demo Mode (Under 2 Min)</span>
+                  <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Link href="/assessment">
-                <Button size="lg" variant="outline" className="h-11 px-6 text-sm border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800/80 font-medium">
-                  <Cpu className="w-4 h-4 mr-2 text-teal-500" />
-                  <span>Run Career Assessment</span>
+              <Link href="/dashboard">
+                <Button size="lg" variant="outline" className="h-11 px-5 text-sm border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800/80 font-medium">
+                  <span>Explore Dashboard</span>
                 </Button>
               </Link>
               <Link href="/methodology">
