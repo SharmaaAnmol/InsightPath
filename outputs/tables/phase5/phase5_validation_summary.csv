@@ -1,0 +1,20 @@
+validation_criterion,status,evidence_note
+Phase 0 ML plan read and followed,COMPLIANT,All 4 candidate families + baseline evaluated
+Phase 4 evidence utilized as prior baseline,COMPLIANT,Traceability matrix and reduced feature model built
+Primary JDS N=139 verified,COMPLIANT,"Exact shape (139, 5) verified"
+Sensitivity JDS N=137 verified,COMPLIANT,"Exact shape (137, 5) verified"
+Identifiers excluded from feature matrix X,COMPLIANT,Zero ID columns present in design matrix
+No pre-split normalization leakage,COMPLIANT,StandardScaler fits strictly on training folds
+No SMOTE or synthetic rebalancing,COMPLIANT,Class balance ~53:47 naturally preserved
+Repeated Stratified CV implemented (25 splits),COMPLIANT,5 folds x 5 repeats executed with random_state=42
+Majority class baseline benchmarked,COMPLIANT,Empirical base rate = 52.52% evaluated
+Model parsimony principle enforced,COMPLIANT,Logistic L2 champion preferred over complex ensembles
+Decision Tree depth constrained (<= 3),COMPLIANT,"Actual depth = 3, 6 leaves, transparent rules"
+"Random Forest constrained (100 trees, depth 3)",COMPLIANT,Constrained to prevent small-sample overfitting
+Permutation feature importance computed on held-out folds,COMPLIANT,Evaluated on validation folds across 25 splits
+Full vs reduced feature parsimony evaluated,COMPLIANT,2-feature model retains 96.7% of full model AUC
+Sensitivity robustness audit executed,COMPLIANT,"Delta AUC = 0.0015 <= 0.02, Robust to Observational Noise"
+All 24 tables exported and validated non-empty,COMPLIANT,outputs/tables/phase5/ complete
+All 10 figures rendered in PNG and SVG,COMPLIANT,outputs/figures/phase5/ complete
+Final model serialized with metadata,COMPLIANT,outputs/models/phase5/ complete
+Phase 5 boundaries respected (No SDS modeling),COMPLIANT,SDS personality strictly preserved for Phase 6

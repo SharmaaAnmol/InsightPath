@@ -6,7 +6,8 @@
 **PHASE 2 — COMPLETE**  
 **PHASE 3 — COMPLETE**  
 **PHASE 4 — COMPLETE**  
-**PHASE 5 — READY TO START**
+**PHASE 5 — COMPLETE**  
+**PHASE 6 — READY TO START**
 
 ---
 
@@ -134,6 +135,30 @@
 
 ---
 
+### Phase 5: Junior Data Scientist Skill Modeling Checklist (COMPLETE)
+- [x] JDS Primary ($N=139$) and Sensitivity ($N=137$) analytical datasets ingested without target leakage
+- [x] 5-fold $\times$ 5-repeat Stratified Cross-Validation framework deployed (25 splits, `random_state=42`)
+- [x] 7 candidate model pipelines constructed with strict within-fold standard scaling (`src/modeling/jds/pipelines.py`)
+- [x] Baseline naive majority model evaluated (Accuracy $52.51\%$, ROC-AUC $0.5000$)
+- [x] Full model performance evaluation completed across all 25 splits (`outputs/tables/phase5/phase5_model_performance.csv`)
+- [x] Champion model selected with justification: Logistic Regression L2 (ROC-AUC $0.9035$, Macro F1 $0.8506$, Accuracy $85.29\%$)
+- [x] Standardized coefficients and odds ratios calculated with 95% Wald CIs (`phase5_logistic_odds_ratios.csv`)
+- [x] Out-of-sample permutation feature importance evaluated with 25-split stability (`phase5_rf_permutation_importance.csv`, `phase5_feature_importance_stability.csv`)
+- [x] Pruned CART decision tree rules extracted programmatically (`phase5_tree_rules.csv`)
+- [x] Out-of-fold prediction error analysis and uncertainty boundaries computed (`phase5_error_analysis.csv`, `phase5_oof_predictions.csv`)
+- [x] Parsimonious 2-feature model evaluated (Maths/Stats + Storytelling: ROC-AUC $0.8741$, retaining $96.75\%$ power)
+- [x] Sensitivity analysis completed on $N=137$ excluding ID 3291 ($\Delta\text{ROC-AUC} = -0.0015 \le 0.02$, ROBUST TO OBSERVATIONAL NOISE)
+- [x] Traceability to Phase 4 inferential findings established (`phase5_phase4_traceability.csv`)
+- [x] All 24 analytical CSV tables generated in `outputs/tables/phase5/`
+- [x] All 10 publication figures generated in both 300 DPI PNG and vector SVG (`outputs/figures/phase5/`)
+- [x] Champion model serialized to `outputs/models/phase5/jds_champion_logistic_l2.joblib` with metadata JSON
+- [x] Executable modeling walkthrough notebook created (`notebooks/05_jds_modeling/05_jds_modeling.ipynb`)
+- [x] Automated test suite passing (`tests/test_phase5_jds_modeling.py`, 56/56 repository tests passing)
+- [x] Comprehensive JDS Modeling Report authored (`docs/phase5/PHASE_5_JDS_MODELING_REPORT.md`)
+- [x] Phase 5 Execution & Audit Report authored (`docs/phase5/PHASE_5_EXECUTION_REPORT.md`)
+
+---
+
 ## Project Roadmap Overview
 
 | Phase | Phase Title | Status | Primary Target Deliverables |
@@ -143,8 +168,8 @@
 | **Phase 2** | Data Cleaning & Transformation | **COMPLETE** | Cleaned datasets in `data/interim/` & `data/processed/`, 7 docs, 14 tests, notebook |
 | **Phase 3** | Purpose-Driven Exploratory Data Analysis | **COMPLETE** | 15 publication figures (PNG/SVG), 13 tables, EDA report, 9 tests, notebook |
 | **Phase 4** | Statistical Analysis & Hypothesis Testing | **COMPLETE** | 26 tables, 7 figures (PNG/SVG), decision matrix, 2 reports, 12 tests, notebook |
-| **Phase 5** | Junior Data Scientist Skill Modeling | **READY TO START** | JDS classification pipelines, CV evaluation, odds ratios |
-| **Phase 6** | Senior Data Scientist Personality Modeling | PENDING | SDS classification pipelines, CV evaluation, odds ratios |
+| **Phase 5** | Junior Data Scientist Skill Modeling | **COMPLETE** | 7 pipelines, 25 CV splits, 24 tables, 10 figures, serialized model, 2 reports |
+| **Phase 6** | Senior Data Scientist Personality Modeling | **READY TO START** | SDS classification pipelines, CV evaluation, odds ratios |
 | **Phase 7** | Cross-Dataset Analytical Synthesis | PENDING | Triangulation synthesis report, talent gap analysis |
 | **Phase 8** | Career-Readiness Framework Construction | PENDING | 4-Quadrant Talent Matrix, stakeholder blueprints |
 | **Phase 9** | Final Round 2 Report & Presentation Assembly | PENDING | 20–25 page Hackathon Report, Executive slide deck |

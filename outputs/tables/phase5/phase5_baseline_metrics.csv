@@ -1,0 +1,2 @@
+baseline_strategy,majority_class,majority_class_prevalence_pct,baseline_accuracy,baseline_macro_f1,baseline_roc_auc,baseline_balanced_accuracy,baseline_precision,baseline_recall,benchmark_role
+Zero-Rule / Empirical Majority Class Classifier,1 (High Salary Hike),52.52,0.5251,0.3442,0.5,0.5,0.5251,1.0,Minimum viable threshold. Models must substantially exceed this benchmark to demonstrate genuine predictive utility.

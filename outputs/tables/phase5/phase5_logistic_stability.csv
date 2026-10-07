@@ -1,0 +1,6 @@
+feature,feature_label,cv_splits_n,mean_coef_beta,std_coef_beta,ci_95_lower,ci_95_upper,mean_odds_ratio,min_coef_beta,max_coef_beta,sign_consistency_pct,stability_status
+maths_stats_skills,Maths Stats,25,1.252,0.1333,1.1998,1.3042,3.497,1.0008,1.6666,100.0,STABLE
+dashboard_and_storytelling_skills,Dashboard And Storytelling,25,1.1132,0.1645,1.0487,1.1777,3.044,0.9099,1.4814,100.0,STABLE
+ai_and_ml_skills,Ai And Ml,25,0.752,0.1522,0.6923,0.8116,2.121,0.3906,1.0329,100.0,STABLE
+big_data_skills,Big Data,25,0.6677,0.1088,0.6251,0.7103,1.95,0.4241,0.9047,100.0,STABLE
+coding_skills,Coding,25,0.5367,0.1392,0.4821,0.5913,1.71,0.2636,0.8876,100.0,STABLE

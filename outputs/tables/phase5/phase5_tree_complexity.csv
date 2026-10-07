@@ -1,0 +1,2 @@
+algorithm,criterion,max_depth_constraint,actual_depth,total_nodes,leaf_nodes_n,min_samples_leaf,total_training_samples,interpretability_assessment
+CART Decision Tree Classifier,gini,3,3,11,6,5,139,Fully transparent human-readable rule set

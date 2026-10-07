@@ -1,0 +1,6 @@
+feature,feature_label,cv_splits_evaluated,mean_rank,std_rank,pct_ranked_number_1,pct_ranked_top_2,modal_rank,rank_stability
+dashboard_and_storytelling_skills,Dashboard And Storytelling,25,1.16,0.37,84.0,100.0,1,VERY HIGH
+maths_stats_skills,Maths Stats,25,1.92,0.48,16.0,92.0,2,VERY HIGH
+ai_and_ml_skills,Ai And Ml,25,3.68,0.84,0.0,4.0,3,HIGH
+coding_skills,Coding,25,3.72,0.72,0.0,0.0,3,HIGH
+big_data_skills,Big Data,25,4.52,0.75,0.0,4.0,5,HIGH

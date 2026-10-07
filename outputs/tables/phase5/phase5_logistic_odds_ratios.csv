@@ -1,0 +1,6 @@
+feature,feature_label,odds_ratio,standardized_coef_beta,direction,relative_importance_rank
+maths_stats_skills,Maths Stats,3.612,1.2842,Positive association,1
+dashboard_and_storytelling_skills,Dashboard And Storytelling,3.057,1.1174,Positive association,2
+ai_and_ml_skills,Ai And Ml,2.143,0.7624,Positive association,3
+big_data_skills,Big Data,1.98,0.6831,Positive association,4
+coding_skills,Coding,1.704,0.5332,Positive association,5

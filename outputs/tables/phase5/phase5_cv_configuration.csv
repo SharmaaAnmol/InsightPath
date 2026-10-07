@@ -1,0 +1,2 @@
+cv_strategy,num_folds_k,num_repeats_r,total_validation_splits,random_state,stratification_target,approx_train_fold_n,approx_val_fold_n,leakage_guardrail,uncertainty_reporting
+Repeated Stratified K-Fold Cross-Validation,5,5,25,42,salary_hike_high_or_low,111,28,Preprocessing (StandardScaler) strictly encapsulated inside Pipeline,"Mean, Std, Min, Max, and 95% CV Confidence Interval across 25 splits"

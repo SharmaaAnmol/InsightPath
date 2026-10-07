@@ -1,0 +1,4 @@
+algorithm_family,full_features_n,reduced_features_n,reduced_feature_set,full_roc_auc,reduced_roc_auc,delta_roc_auc,pct_auc_retained,full_macro_f1,reduced_macro_f1,full_accuracy,reduced_accuracy,parsimony_assessment
+Logistic Regression L2,5,2,maths_stats_skills + dashboard_and_storytelling_skills,0.9035,0.8741,0.0294,96.75,0.8506,0.8148,0.8529,0.8184,Retains 96.7% of full discrimination with 60% fewer features.
+Decision Tree Classifier,5,2,maths_stats_skills + dashboard_and_storytelling_skills,0.8198,0.834,-0.0142,101.73,0.7808,0.7993,0.7841,0.8041,Retains 101.7% of full discrimination with 60% fewer features.
+Random Forest Classifier,5,2,maths_stats_skills + dashboard_and_storytelling_skills,0.8901,0.8656,0.0245,97.25,0.8304,0.7961,0.8315,0.7997,Retains 97.2% of full discrimination with 60% fewer features.

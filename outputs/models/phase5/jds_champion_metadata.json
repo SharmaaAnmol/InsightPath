@@ -1,0 +1,31 @@
+{
+  "model_name": "Logistic_Regression_L2",
+  "cohort": "JDS Primary Analytical Dataset (N=139)",
+  "features": [
+    "big_data_skills",
+    "maths_stats_skills",
+    "coding_skills",
+    "ai_and_ml_skills",
+    "dashboard_and_storytelling_skills"
+  ],
+  "target": "salary_hike_high_or_low",
+  "random_state": 42,
+  "validation_strategy": "RepeatedStratifiedKFold (5 Folds x 5 Repeats = 25 Splits)",
+  "cv_mean_roc_auc": 0.9035,
+  "cv_mean_macro_f1": 0.8506,
+  "cv_mean_accuracy": 0.8529,
+  "coefficients": {
+    "big_data_skills": 1.2842,
+    "maths_stats_skills": 1.1174,
+    "coding_skills": 0.7624,
+    "ai_and_ml_skills": 0.6831,
+    "dashboard_and_storytelling_skills": 0.5332
+  },
+  "odds_ratios": {
+    "big_data_skills": 3.612,
+    "maths_stats_skills": 3.057,
+    "coding_skills": 2.143,
+    "ai_and_ml_skills": 1.98,
+    "dashboard_and_storytelling_skills": 1.704
+  }
+}

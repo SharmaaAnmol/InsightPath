@@ -1,0 +1,7 @@
+rule_id,decision_path,predicted_class,outcome_label,leaf_samples_n,prob_high_hike,prob_low_hike
+Rule_1,Dashboard And Storytelling <= 4.15 AND Maths Stats <= 4.6,0,Low Hike (Y=0),26,0.0,0.038
+Rule_2,Dashboard And Storytelling <= 4.15 AND Maths Stats > 4.6 AND Dashboard And Storytelling <= 2.65,0,Low Hike (Y=0),5,0.08,0.12
+Rule_3,Dashboard And Storytelling <= 4.15 AND Maths Stats > 4.6 AND Dashboard And Storytelling > 2.65,0,Low Hike (Y=0),10,0.01,0.09
+Rule_4,Dashboard And Storytelling > 4.15 AND Maths Stats <= 3.55,0,Low Hike (Y=0),9,0.0,0.111
+Rule_5,Dashboard And Storytelling > 4.15 AND Maths Stats > 3.55 AND Coding <= 4.65,1,High Hike (Y=1),32,0.019,0.013
+Rule_6,Dashboard And Storytelling > 4.15 AND Maths Stats > 3.55 AND Coding > 4.65,1,High Hike (Y=1),57,0.016,0.002

@@ -1,0 +1,6 @@
+feature,feature_label,primary_perm_importance,sens_perm_importance,delta_importance,primary_rank,sens_rank,rank_preserved,stability_status
+dashboard_and_storytelling_skills,Dashboard And Storytelling,0.1089,0.1012,0.0077,1,1,True,ROBUST (Identical Rank)
+maths_stats_skills,Maths Stats,0.0703,0.065,0.0053,2,2,True,ROBUST (Identical Rank)
+ai_and_ml_skills,Ai And Ml,0.0269,0.0383,0.0114,3,3,True,ROBUST (Identical Rank)
+coding_skills,Coding,0.0219,0.021,0.0009,4,4,True,ROBUST (Identical Rank)
+big_data_skills,Big Data,0.0057,0.0159,0.0102,5,5,True,ROBUST (Identical Rank)

@@ -1,0 +1,11 @@
+audit_dimension,specification,compliance_status
+Python Version,3.13.6,VERIFIED
+scikit-learn Version,1.9.1,VERIFIED
+Random Seed,random_state = 42 (Pinned across all splitters & estimators),VERIFIED
+CV Strategy,RepeatedStratifiedKFold (5 Folds x 5 Repeats = 25 Splits),VERIFIED
+Primary Cohort,"data/processed/jds_processed.csv (N=139, 73 High, 66 Low)",VERIFIED
+Sensitivity Cohort,"data/processed/jds_sensitivity_3291_removed.csv (N=137, 72 High, 65 Low)",VERIFIED
+Feature Space,"Exactly 5 JDS technical skills (big_data, maths, coding, ml, storytelling)",VERIFIED
+Leakage Safeguards,StandardScaler encapsulated in Pipeline; IDs and target excluded from X,VERIFIED
+Class Balancing,"Zero synthetic sampling (SMOTE omitted, natural 52.5% balance preserved)",VERIFIED
+Cross-Dataset Isolation,Zero cross-dataset row joins (JDS modeled strictly independently),VERIFIED
